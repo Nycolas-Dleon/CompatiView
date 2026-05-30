@@ -1,7 +1,6 @@
 {
-  "cpus": [
-    {
-      "name": "AMD Ryzen 7 9800X3D",
+  "cpus": {
+    "AMD Ryzen 7 9800X3D": {
       "price": 451.5,
       "core_count": 8,
       "core_clock": 4.7,
@@ -10,8 +9,7 @@
       "tdp": 120,
       "graphics": "Radeon"
     },
-    {
-      "name": "AMD Ryzen 7 7800X3D",
+    "AMD Ryzen 7 7800X3D": {
       "price": 340.05,
       "core_count": 8,
       "core_clock": 4.2,
@@ -20,8 +18,7 @@
       "tdp": 120,
       "graphics": "Radeon"
     },
-    {
-      "name": "AMD Ryzen 5 7600X",
+    "AMD Ryzen 5 7600X": {
       "price": 170.49,
       "core_count": 6,
       "core_clock": 4.7,
@@ -30,8 +27,7 @@
       "tdp": 105,
       "graphics": "Radeon"
     },
-    {
-      "name": "AMD Ryzen 5 9600X",
+    "AMD Ryzen 5 9600X": {
       "price": 204.99,
       "core_count": 6,
       "core_clock": 3.9,
@@ -40,8 +36,7 @@
       "tdp": 65,
       "graphics": "Radeon"
     },
-    {
-      "name": "AMD Ryzen 7 7700X",
+    "AMD Ryzen 7 7700X": {
       "price": 242.98,
       "core_count": 8,
       "core_clock": 4.5,
@@ -50,8 +45,7 @@
       "tdp": 105,
       "graphics": "Radeon"
     },
-    {
-      "name": "AMD Ryzen 9 9950X3D",
+    "AMD Ryzen 9 9950X3D": {
       "price": 649.99,
       "core_count": 16,
       "core_clock": 4.3,
@@ -60,8 +54,7 @@
       "tdp": 170,
       "graphics": "Radeon"
     },
-    {
-      "name": "AMD Ryzen 5 5500",
+    "AMD Ryzen 5 5500": {
       "price": 74.22,
       "core_count": 6,
       "core_clock": 3.6,
@@ -70,8 +63,7 @@
       "tdp": 65,
       "graphics": null
     },
-    {
-      "name": "AMD Ryzen 7 9700X",
+    "AMD Ryzen 7 9700X": {
       "price": 305.89,
       "core_count": 8,
       "core_clock": 3.8,
@@ -80,8 +72,7 @@
       "tdp": 65,
       "graphics": "Radeon"
     },
-    {
-      "name": "AMD Ryzen 5 5600X",
+    "AMD Ryzen 5 5600X": {
       "price": 158.99,
       "core_count": 6,
       "core_clock": 3.7,
@@ -90,8 +81,7 @@
       "tdp": 65,
       "graphics": null
     },
-    {
-      "name": "AMD Ryzen 5 5600",
+    "AMD Ryzen 5 5600": {
       "price": 125.61,
       "core_count": 6,
       "core_clock": 3.5,
@@ -100,8 +90,7 @@
       "tdp": 65,
       "graphics": null
     },
-    {
-      "name": "AMD Ryzen 7 5800X",
+    "AMD Ryzen 7 5800X": {
       "price": 179.95,
       "core_count": 8,
       "core_clock": 3.8,
@@ -110,8 +99,7 @@
       "tdp": 105,
       "graphics": null
     },
-    {
-      "name": "Intel Core i7-14700K",
+    "Intel Core i7-14700K": {
       "price": 297.17,
       "core_count": 20,
       "core_clock": 3.4,
@@ -120,8 +108,7 @@
       "tdp": 125,
       "graphics": "Intel UHD Graphics 770"
     },
-    {
-      "name": "Intel Core i9-14900K",
+    "Intel Core i9-14900K": {
       "price": 439,
       "core_count": 24,
       "core_clock": 3.2,
@@ -130,8 +117,7 @@
       "tdp": 125,
       "graphics": "Intel UHD Graphics 770"
     },
-    {
-      "name": "Intel Core i5-12400F",
+    "Intel Core i5-12400F": {
       "price": 108.99,
       "core_count": 6,
       "core_clock": 2.5,
@@ -140,8 +126,7 @@
       "tdp": 65,
       "graphics": null
     },
-    {
-      "name": "AMD Ryzen 5 7600",
+    "AMD Ryzen 5 7600": {
       "price": 196.97,
       "core_count": 6,
       "core_clock": 3.8,
@@ -150,8 +135,7 @@
       "tdp": 65,
       "graphics": "Radeon"
     },
-    {
-      "name": "AMD Ryzen 7 5700X",
+    "AMD Ryzen 7 5700X": {
       "price": 154.99,
       "core_count": 8,
       "core_clock": 3.4,
@@ -160,8 +144,7 @@
       "tdp": 65,
       "graphics": null
     },
-    {
-      "name": "AMD Ryzen 9 7900X",
+    "AMD Ryzen 9 7900X": {
       "price": 314.11,
       "core_count": 12,
       "core_clock": 4.7,
@@ -170,8 +153,7 @@
       "tdp": 170,
       "graphics": "Radeon"
     },
-    {
-      "name": "AMD Ryzen 9 9900X",
+    "AMD Ryzen 9 9900X": {
       "price": 359,
       "core_count": 12,
       "core_clock": 4.4,
@@ -180,8 +162,7 @@
       "tdp": 120,
       "graphics": "Radeon"
     },
-    {
-      "name": "Intel Core i5-14600K",
+    "Intel Core i5-14600K": {
       "price": 189.99,
       "core_count": 14,
       "core_clock": 3.5,
@@ -190,8 +171,7 @@
       "tdp": 125,
       "graphics": "Intel UHD Graphics 770"
     },
-    {
-      "name": "Intel Core Ultra 7 265K",
+    "Intel Core Ultra 7 265K": {
       "price": 269.99,
       "core_count": 20,
       "core_clock": 3.9,
@@ -200,10 +180,9 @@
       "tdp": 125,
       "graphics": "Intel Xe"
     }
-  ],
-  "gpus": [
-    {
-      "name": "MSI GeForce RTX 3060 Ventus 2X 12G",
+  },
+  "gpus": {
+    "MSI GeForce RTX 3060 Ventus 2X 12G": {
       "price": 299.97,
       "chipset": "GeForce RTX 3060 12GB",
       "memory": 12,
@@ -212,8 +191,7 @@
       "color": "Black",
       "length": 235
     },
-    {
-      "name": "Sapphire PULSE",
+    "Sapphire PULSE": {
       "price": 379.99,
       "chipset": "Radeon RX 9060 XT",
       "memory": 16,
@@ -222,8 +200,7 @@
       "color": "Black",
       "length": 240
     },
-    {
-      "name": "MSI SHADOW 3X OC",
+    "MSI SHADOW 3X OC": {
       "price": 829.99,
       "chipset": "GeForce RTX 5070 Ti",
       "memory": 16,
@@ -232,8 +209,7 @@
       "color": "Black",
       "length": 303
     },
-    {
-      "name": "Gigabyte WINDFORCE OC SFF",
+    "Gigabyte WINDFORCE OC SFF": {
       "price": 549.99,
       "chipset": "GeForce RTX 5070",
       "memory": 12,
@@ -242,8 +218,7 @@
       "color": "Black",
       "length": 282
     },
-    {
-      "name": "ASRock Challenger OC",
+    "ASRock Challenger OC": {
       "price": 369.99,
       "chipset": "Radeon RX 9060 XT",
       "memory": 16,
@@ -252,8 +227,7 @@
       "color": "Black / Silver",
       "length": 249
     },
-    {
-      "name": "Gigabyte GAMING OC",
+    "Gigabyte GAMING OC": {
       "price": 729.99,
       "chipset": "Radeon RX 9070 XT",
       "memory": 16,
@@ -262,8 +236,7 @@
       "color": "Black",
       "length": 288
     },
-    {
-      "name": "Asus ROG Astral OC",
+    "Asus ROG Astral OC": {
       "price": 3359.99,
       "chipset": "GeForce RTX 5090",
       "memory": 32,
@@ -272,8 +245,7 @@
       "color": "Black / Silver",
       "length": 358
     },
-    {
-      "name": "ASRock Challenger D",
+    "ASRock Challenger D": {
       "price": 219.99,
       "chipset": "Radeon RX 6600",
       "memory": 8,
@@ -282,8 +254,7 @@
       "color": "Black",
       "length": 269
     },
-    {
-      "name": "Asus PRIME OC",
+    "Asus PRIME OC": {
       "price": 719.99,
       "chipset": "Radeon RX 9070 XT",
       "memory": 16,
@@ -292,8 +263,7 @@
       "color": "Black",
       "length": 312
     },
-    {
-      "name": "Asus PRIME",
+    "Asus PRIME": {
       "price": 479.99,
       "chipset": "GeForce RTX 5060 Ti",
       "memory": 16,
@@ -302,8 +272,7 @@
       "color": "Black",
       "length": 304
     },
-    {
-      "name": "MSI VENTUS 2X BLACK OC",
+    "MSI VENTUS 2X BLACK OC": {
       "price": 449.99,
       "chipset": "GeForce RTX 4060",
       "memory": 8,
@@ -312,8 +281,7 @@
       "color": "Black",
       "length": 199
     },
-    {
-      "name": "MSI VENTUS 2X PLUS OC",
+    "MSI VENTUS 2X PLUS OC": {
       "price": 499.99,
       "chipset": "GeForce RTX 5060 Ti",
       "memory": 16,
@@ -322,8 +290,7 @@
       "color": "Black / Gray",
       "length": 227
     },
-    {
-      "name": "MSI VENTUS 3X OC",
+    "MSI VENTUS 3X OC": {
       "price": 789.99,
       "chipset": "GeForce RTX 5070 Ti",
       "memory": 16,
@@ -332,8 +299,7 @@
       "color": "Silver / Black",
       "length": 303
     },
-    {
-      "name": "ASRock Steel Legend",
+    "ASRock Steel Legend": {
       "price": 699.99,
       "chipset": "Radeon RX 9070 XT",
       "memory": 16,
@@ -342,8 +308,7 @@
       "color": "White / Gray",
       "length": 298
     },
-    {
-      "name": "Intel Limited Edition",
+    "Intel Limited Edition": {
       "price": 289.99,
       "chipset": "Arc B580",
       "memory": 12,
@@ -352,8 +317,7 @@
       "color": "Black",
       "length": 272
     },
-    {
-      "name": "MSI SHADOW 2X OC",
+    "MSI SHADOW 2X OC": {
       "price": 299.99,
       "chipset": "GeForce RTX 5060",
       "memory": 8,
@@ -362,8 +326,7 @@
       "color": "Black / Silver",
       "length": 197
     },
-    {
-      "name": "PNY OC",
+    "PNY OC": {
       "price": 549.99,
       "chipset": "GeForce RTX 5070",
       "memory": 12,
@@ -372,8 +335,7 @@
       "color": "Black",
       "length": 300
     },
-    {
-      "name": "XFX Swift OC",
+    "XFX Swift OC": {
       "price": 389.98,
       "chipset": "Radeon RX 9060 XT",
       "memory": 16,
@@ -382,8 +344,7 @@
       "color": "Black",
       "length": 290
     },
-    {
-      "name": "MSI VENTUS 2X OC",
+    "MSI VENTUS 2X OC": {
       "price": 179.99,
       "chipset": "GeForce RTX 3050 6GB",
       "memory": 6,
@@ -392,8 +353,7 @@
       "color": "Black",
       "length": 189
     },
-    {
-      "name": "Gigabyte WINDFORCE OC",
+    "Gigabyte WINDFORCE OC": {
       "price": 299.99,
       "chipset": "GeForce RTX 5060",
       "memory": 8,
@@ -402,10 +362,9 @@
       "color": "Black",
       "length": 199
     }
-  ],
-  "motherboards": [
-    {
-      "name": "Asus PRIME B650-PLUS WIFI",
+  },
+  "motherboards": {
+    "Asus PRIME B650-PLUS WIFI": {
       "price": 159.99,
       "socket": "AM5",
       "form_factor": "ATX",
@@ -413,8 +372,7 @@
       "memory_slots": 4,
       "color": "Black / Silver"
     },
-    {
-      "name": "MSI B650 GAMING PLUS WIFI",
+    "MSI B650 GAMING PLUS WIFI": {
       "price": 169.99,
       "socket": "AM5",
       "form_factor": "ATX",
@@ -422,8 +380,7 @@
       "memory_slots": 4,
       "color": "Black"
     },
-    {
-      "name": "MSI MAG B650 TOMAHAWK WIFI",
+    "MSI MAG B650 TOMAHAWK WIFI": {
       "price": 189.42,
       "socket": "AM5",
       "form_factor": "ATX",
@@ -431,8 +388,7 @@
       "memory_slots": 4,
       "color": "Black"
     },
-    {
-      "name": "Gigabyte X870E AORUS ELITE WIFI7",
+    "Gigabyte X870E AORUS ELITE WIFI7": {
       "price": 325.31,
       "socket": "AM5",
       "form_factor": "ATX",
@@ -440,8 +396,7 @@
       "memory_slots": 4,
       "color": "Black"
     },
-    {
-      "name": "Asus PRIME B550M-A WIFI II",
+    "Asus PRIME B550M-A WIFI II": {
       "price": 99.99,
       "socket": "AM4",
       "form_factor": "Micro ATX",
@@ -449,8 +404,7 @@
       "memory_slots": 4,
       "color": "Blue / Silver"
     },
-    {
-      "name": "Gigabyte B650 EAGLE AX",
+    "Gigabyte B650 EAGLE AX": {
       "price": 157.99,
       "socket": "AM5",
       "form_factor": "ATX",
@@ -458,8 +412,7 @@
       "memory_slots": 4,
       "color": "Gray / Black"
     },
-    {
-      "name": "Asus TUF GAMING B850-PLUS WIFI",
+    "Asus TUF GAMING B850-PLUS WIFI": {
       "price": 217.99,
       "socket": "AM5",
       "form_factor": "ATX",
@@ -467,8 +420,7 @@
       "memory_slots": 4,
       "color": "Black / Silver"
     },
-    {
-      "name": "ASRock B650M Pro RS WiFi",
+    "ASRock B650M Pro RS WiFi": {
       "price": 139.99,
       "socket": "AM5",
       "form_factor": "Micro ATX",
@@ -476,8 +428,7 @@
       "memory_slots": 4,
       "color": "Black / Silver"
     },
-    {
-      "name": "MSI MAG X870 TOMAHAWK WIFI",
+    "MSI MAG X870 TOMAHAWK WIFI": {
       "price": 269.99,
       "socket": "AM5",
       "form_factor": "ATX",
@@ -485,8 +436,7 @@
       "memory_slots": 4,
       "color": "Black"
     },
-    {
-      "name": "Gigabyte A520M K V2",
+    "Gigabyte A520M K V2": {
       "price": 68.47,
       "socket": "AM4",
       "form_factor": "Micro ATX",
@@ -494,8 +444,7 @@
       "memory_slots": 2,
       "color": "Brown / Black"
     },
-    {
-      "name": "Asus B650E MAX GAMING WIFI W",
+    "Asus B650E MAX GAMING WIFI W": {
       "price": 149.99,
       "socket": "AM5",
       "form_factor": "ATX",
@@ -503,8 +452,7 @@
       "memory_slots": 4,
       "color": "White"
     },
-    {
-      "name": "MSI PRO B650-S WIFI",
+    "MSI PRO B650-S WIFI": {
       "price": 135.99,
       "socket": "AM5",
       "form_factor": "ATX",
@@ -512,8 +460,7 @@
       "memory_slots": 4,
       "color": "Black"
     },
-    {
-      "name": "Gigabyte B550M K",
+    "Gigabyte B550M K": {
       "price": 99.99,
       "socket": "AM4",
       "form_factor": "Micro ATX",
@@ -521,8 +468,7 @@
       "memory_slots": 4,
       "color": "Brown / Silver"
     },
-    {
-      "name": "ASRock B850I Lightning WiFi",
+    "ASRock B850I Lightning WiFi": {
       "price": 253.44,
       "socket": "AM5",
       "form_factor": "Mini ITX",
@@ -530,8 +476,7 @@
       "memory_slots": 2,
       "color": "Black"
     },
-    {
-      "name": "MSI B760 GAMING PLUS WIFI",
+    "MSI B760 GAMING PLUS WIFI": {
       "price": 169.99,
       "socket": "LGA1700",
       "form_factor": "ATX",
@@ -539,8 +484,7 @@
       "memory_slots": 4,
       "color": "Black / Silver"
     },
-    {
-      "name": "MSI PRO B550M-VC WIFI",
+    "MSI PRO B550M-VC WIFI": {
       "price": 99.99,
       "socket": "AM4",
       "form_factor": "Micro ATX",
@@ -548,8 +492,7 @@
       "memory_slots": 4,
       "color": "Black"
     },
-    {
-      "name": "MSI PRO Z790-A MAX WIFI",
+    "MSI PRO Z790-A MAX WIFI": {
       "price": 220,
       "socket": "LGA1700",
       "form_factor": "ATX",
@@ -557,8 +500,7 @@
       "memory_slots": 4,
       "color": "Silver / Black"
     },
-    {
-      "name": "Asus TUF GAMING B650-PLUS WIFI",
+    "Asus TUF GAMING B650-PLUS WIFI": {
       "price": 159.99,
       "socket": "AM5",
       "form_factor": "ATX",
@@ -566,8 +508,7 @@
       "memory_slots": 4,
       "color": "Black"
     },
-    {
-      "name": "Gigabyte X870 EAGLE WIFI7",
+    "Gigabyte X870 EAGLE WIFI7": {
       "price": 229.99,
       "socket": "AM5",
       "form_factor": "ATX",
@@ -575,8 +516,7 @@
       "memory_slots": 4,
       "color": "Black"
     },
-    {
-      "name": "Gigabyte X870 AORUS ELITE WIFI7 ICE",
+    "Gigabyte X870 AORUS ELITE WIFI7 ICE": {
       "price": 299.99,
       "socket": "AM5",
       "form_factor": "ATX",
@@ -584,7 +524,7 @@
       "memory_slots": 4,
       "color": "White"
     }
-  ],
+  },
   "cpu_sockets": {
     "Zen": "AM4",
     "Zen+": "AM4",
@@ -599,5 +539,5 @@
     "Comet Lake": "LGA1200",
     "Rocket Lake": "LGA1200",
     "Cascade Lake": "LGA3647"
-}
+  }
 }
