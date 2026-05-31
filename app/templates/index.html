@@ -3,6 +3,73 @@
 CompatiView
 {% endblock%}
 
+{% block link_css %}
+<link rel="stylesheet" href="../static/css/style.css">
+{% endblock %}
+
+{% block nav_links %}
+
+    <ul class="area-login">
+        <li id="login-btn">
+            <a href="#" target="_blank" rel="noopenenoreferrer">Entrar</a>
+        </li>
+        <li id="cadastro-btn">
+            <a href="#" target="_blank" rel="noopenenoreferrer">Cadastre-se</a>
+        </li>
+    </ul>
+
+    <div class="menu-hamburguer">
+        <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">
+                <div class="linha"></div>
+                <div class="linha"></div>
+                <div class="linha"></div>
+            </label>
+
+            <div class="overlay">
+            <ul class="nav_links">
+                <li id="mais-button">
+                    <a href="/#view-more">View+</a>
+                </li>
+                <li id="sobre-button">
+                    <a href="#">Sobre</a>
+                </li>
+                <li id="contatos-button">
+                    <a href="#">Contatos</a>
+                </li>
+            </ul>
+            </div>
+    </div>
+
+{% endblock %}
+
 {% block body %}
 
+<section class="apresentacao">
+    
+    <h1>Compati<span>View</span></h1>
+    <p id="descricao">A melhor escolha para verificar a compatibilidade entre Hardwares</p>
+    <p>Clique no botão abaixo e teste já!</p>
+
+    <a href="#" target="_blank" rel="noopener noreferrer">Acessar</a>
+
+</section>
+
+<section id="view-more">
+    <h2>View<span>+</span></h2>
+    <hr>
+    <div class="cards-outros">
+        <ul>
+            <li>
+                <div class="card"></div>
+            </li>
+            <li>
+                <div class="card"></div>
+            </li>
+            <li>
+                <div class="card"></div>
+            </li>
+        </ul>
+    </div>
+</section>
 {% endblock %}
