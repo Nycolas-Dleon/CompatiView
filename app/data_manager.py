@@ -46,9 +46,6 @@ def load_json(categoria:str=''):
     elif categoria == 'motherboards':
         return componentes_geral["motherboards"]
     
-    elif categoria == 'psus':
-        return componentes_geral["psus"]
-    
     elif categoria == 'memory':
         return componentes_geral["memory"]
 
