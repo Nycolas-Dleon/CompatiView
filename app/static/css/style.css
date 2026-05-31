@@ -1,0 +1,379 @@
+/* Formatação para Mobile (Padrão) */
+/* Estilos Globais */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Epilogue', sans-serif;
+    text-transform: uppercase;
+    align-items: center;
+    justify-content: center;
+}
+
+.background{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../imgs/BgMobile.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-position: center;
+    z-index: -2;
+}
+
+.background-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: -1;
+}
+
+header{
+    position: sticky;
+    top: 0;
+}
+
+body{
+    background-color: transparent;
+    font-size: 1.5rem;
+    color: #f0f0f0;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: #f0f0f0;
+}
+
+footer{
+    font-size: 1rem;
+    text-transform: none;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    background-color: #0a0a0acf;
+    color: #f0f0f09a;
+    position: relative;
+    bottom: 0;
+}
+
+/* Estilos Navbar */
+
+.navbar{
+    position: sticky;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 0.4fr 1fr;
+    padding: 1rem;
+    height: 7rem;
+    width: 100%;
+    margin: auto;
+    background-color: #0a0a0acf;
+    font-size: 2rem;
+}
+
+.navbar img{
+    height: 53px;
+    width: 90px;
+}
+
+.area-login{
+    position: fixed;
+    top: 2.4rem;
+    right: 7rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+#login-btn{
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    background-color: #7041cd;
+    transition: 0.3s ease-in-out;
+}
+
+#login-btn:hover{
+    background-color: #a600ff;
+    transition: 0.2s ease-in-out;
+}
+
+#login-btn:active{
+    transform: scale(0.95);
+    background-color: #7041cdc2;
+    transition: 0.1s ease-in-out;
+}
+
+#cadastro-btn:hover a{
+    color: #a600ff;
+    transition: 0.2s ease-in-out;
+}
+
+#cadastro-btn:active a{
+    transform: scale(0.95);
+    color: #7041cdc2;
+    transition: 0.1s ease-in-out;
+}
+
+/* Estilos Menu Hambúrguer */
+
+.menu-hamburguer{
+    position: absolute;
+    top: 2.2rem;
+    right: 1.8rem;
+    z-index: 4;
+    transition: 0.5s ease-in-out;
+}
+
+.menu-hamburguer:has(#menu-toggle:checked){
+    position: fixed;
+    top: 2.2rem;
+    right: 1.8rem;
+}
+
+#menu-toggle{
+    display: none;
+}
+
+.menu-icon{
+    width: 30px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 5;
+    position: relative;
+    cursor: pointer;
+}
+
+.linha{
+    height: 3px;
+    background-color: #f0f0f0;
+    border-radius: 2px;
+    transition: 0.3s ease-in-out;
+}
+
+/* Estilos do Menu */
+
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 2;
+    transform: scale(0);
+    transition: 0.3s;
+}
+
+.nav_links{
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    text-align: center;
+}
+
+.nav_links ul{
+    display: flex;
+    flex-direction: column;
+}
+
+.nav_links li{
+    margin: 4.5rem 0;
+}
+
+.nav_links a{
+    font-size: 3rem;
+    transition: 0.3s;
+}
+
+.nav_links a:hover{
+    font-weight: bolder;
+    font-size: 3.8rem;
+    border-bottom: 2px solid #7041cd;
+    color: #7041cd;
+    transition: 0.2s ease-in-out;
+}
+
+/* Animação Menu Hambúrguer*/
+
+#menu-toggle:checked + .menu-icon .linha:nth-child(1){
+    transform: rotate(45deg) translate(10.5px, 10.5px);
+    background-color: #7041cd;
+}
+
+#menu-toggle:checked + .menu-icon .linha:nth-child(2){
+    opacity: 0;
+}
+
+#menu-toggle:checked + .menu-icon .linha:nth-child(3){
+    transform: rotate(-45deg) translate(5px, -5px);
+    background-color: #7041cd;
+}
+
+#menu-toggle:checked ~ .overlay{
+    transform: scale(1);
+}
+
+/* Estilos Seção de Apresentação*/
+
+.apresentacao{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem;
+    padding: 3rem;
+    margin-top: 15rem;
+    margin-bottom: 50rem;
+}
+
+.apresentacao h1{
+    font-size: 6rem;
+    text-transform: none;
+    color: #7041cd;
+}
+
+.apresentacao h1 span{
+    color: #f0f0f0;
+}
+
+.apresentacao p{
+    font-size: 1.6rem;
+    color: #f0f0f0;
+    margin-bottom: 1.5rem;
+}
+
+#descricao{
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1.8rem;
+}
+
+.apresentacao a{
+    padding: 1.5rem 3rem;
+    background-color: #7041cd;
+    border-radius: 3rem;
+    font-size: 2rem;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+}
+
+.apresentacao a:hover{
+    scale: 1.1;
+    background-color: #a600ff;
+    transition: 0.2s ease-in-out;
+}
+
+.apresentacao a:active{
+    transform: scale(0.95);
+    background-color: #7041cdc2;
+    transition: 0.1s ease-in-out;
+}
+
+/* Estilos da Seção View+ */
+
+#view-more{
+    padding: 1rem;
+    margin-bottom: 50rem;
+}
+
+#view-more h2{
+    font-size: 4rem;
+    text-transform: none;
+    margin-left: 2rem;
+    color: #f0f0f0;
+}
+
+#view-more h2 span{
+    color: #a600ff;
+}
+
+#view-more hr{
+    margin-left: 2rem;
+    margin-right: 2rem;
+    border: 0.5px solid #f0f0f0;
+}
+
+/* Formatação para Tablet */
+
+@media (min-width: 768px) {
+
+    .background{
+        background-image: url('../imgs/BgDesktop.png');
+    }
+
+    .apresentacao{
+        margin-top: 14rem;
+    }
+
+    .apresentacao h1{
+        font-size: 6rem;
+    }
+
+    .apresentacao p{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    }
+
+    #descricao{
+        font-size: 2.2rem;
+    }
+
+    .apresentacao a{
+        font-size: 2.2rem;
+        padding: 2rem 4rem;
+    }
+
+}
+
+/* Formatação para Desktop */
+
+@media (min-width: 1024px) {
+    
+    .apresentacao{
+        margin-top: 16rem;
+    }
+
+    .apresentacao h1{
+        font-size: 8rem;
+    }
+
+    .apresentacao p{
+    font-size: 2.6rem;
+    margin-bottom: 2rem;
+    }
+
+    #descricao{
+        font-size: 2.8rem;
+    }
+
+    .apresentacao a{
+        font-size: 2.8rem;
+        padding: 2rem 4rem;
+    }
+
+}

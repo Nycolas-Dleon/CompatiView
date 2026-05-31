@@ -3,13 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title%}Document{% endblock %}</title>
+    <title>{% block title%}CompatiView{% endblock %}</title>
     {% block link_css %}{% endblock %} 
+    <link rel="shortcut icon" href="../static/imgs/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="background"></div>
+    <div class="background-overlay"></div>
     
+    <header>
+
+        <nav class="navbar">
+            <img src="../static/imgs/Logo.svg" alt="Logo">
+        
+            {% block nav_links %}
+            {% endblock %}
+        
+        </nav>
+
+    </header>
     {% block body %}
     {% endblock %}
-
+    <footer class="footer">
+        <div class="footer-content">
+                <p>&copy; 2026 CompatiView. Todos os direitos reservados.</p>
+                <p>Desenvolvido por CompatiView Team.</p>
+        </div>
+    </footer>
 </body>
 </html>
