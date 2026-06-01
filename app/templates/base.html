@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title%}CompatiView{% endblock %}</title>
     {% block link_css %}{% endblock %} 
-    <link rel="shortcut icon" href="../static/imgs/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='imgs/favicon.ico') }}" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -15,7 +15,7 @@
     <header>
 
         <nav class="navbar">
-            <img src="../static/imgs/Logo.svg" alt="Logo">
+            <img src="{{ url_for('static', filename='imgs/Logo.svg') }}" alt="Logo">
         
             {% block nav_links %}
             {% endblock %}

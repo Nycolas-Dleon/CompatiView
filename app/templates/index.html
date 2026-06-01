@@ -4,7 +4,7 @@ CompatiView
 {% endblock%}
 
 {% block link_css %}
-<link rel="stylesheet" href="../static/css/style.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 {% endblock %}
 
 {% block nav_links %}
@@ -51,7 +51,7 @@ CompatiView
     <p id="descricao">A melhor escolha para verificar a compatibilidade entre Hardwares</p>
     <p>Clique no botão abaixo e teste já!</p>
 
-    <a href="#" target="_blank" rel="noopener noreferrer">Acessar</a>
+    <a href="{{ url_for('selectionpage') }}" target="_self" rel="noopener noreferrer">Acessar</a>
 
 </section>
 
