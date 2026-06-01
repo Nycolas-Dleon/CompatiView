@@ -4,7 +4,7 @@ CompatiView
 {% endblock%}
 
 {% block link_css %}
-<link rel="stylesheet" href="../static/css/style.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 {% endblock %}
 
 {% block nav_links %}

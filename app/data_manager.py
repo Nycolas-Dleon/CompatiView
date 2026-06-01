@@ -2,8 +2,6 @@ import json
 import csv
 from pathlib import Path
 
-
-
 '''
 O fluxo de relacionar os paths com variáveis usando a biblioteca pathlib serve para evitar problemas de caminho para pastas em outros computadores ou com diferentes sistemas operacionais.
 Sem ele, como o caminho relativo dos arquivos pode variar, o sistema pode quebrar.
