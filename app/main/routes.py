@@ -5,4 +5,8 @@ from app import app
 def homepage():
     return render_template('index.html')
 
+@app.route('/selection')
+def selectionpage():
+    return render_template('selection.html')
+
 
