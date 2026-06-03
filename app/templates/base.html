@@ -6,6 +6,7 @@
     <title>{% block title%}CompatiView{% endblock %}</title>
     {% block link_css %}{% endblock %} 
     <link rel="shortcut icon" href="{{ url_for('static', filename='imgs/favicon.ico') }}" type="image/x-icon">
+    {% block link_icons %}{% endblock %}
     <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -16,7 +17,7 @@
 
         <nav class="navbar">
             <div class="navbar-overlay"></div>
-            <img src="{{ url_for('static', filename='imgs/Logo.svg') }}" alt="Logo">
+            <a href="/" id="logo-link"><img src="{{ url_for('static', filename='imgs/Logo.svg') }}" alt="Logo"></a>
         
             {% block nav_links %}
             {% endblock %}
