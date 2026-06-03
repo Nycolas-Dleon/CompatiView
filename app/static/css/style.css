@@ -100,6 +100,12 @@ footer{
     z-index: 0;
 }
 
+#logo-link{
+    z-index: 4;
+    height: fit-content;
+    width: fit-content;
+}
+
 .navbar img{
     height: 53px;
     width: 90px;
@@ -351,6 +357,111 @@ footer{
     margin-left: 2rem;
     margin-right: 2rem;
     border: 0.5px solid #f0f0f0;
+}
+
+/* Estilos da Seção Sobre */
+
+#sobre{
+    padding: 1rem;
+    margin-bottom: 50rem;
+}
+
+#sobre h2{
+    font-size: 4rem;
+    text-transform: none;
+    margin-left: 2rem;
+    color: #f0f0f0;
+}
+
+#sobre p{
+    text-transform: none;
+    font-size: 1.8rem;
+    font-weight: bolder;
+    color: #f0f0f0;
+    backdrop-filter: blur(10px);
+    background-color: #0c0c0c95;
+    border-radius: 0 3rem 0 3rem;
+    padding: 2rem;
+    margin: 2rem;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 8rem;
+    margin-top: 2rem;
+}
+
+#sobre span{
+    text-decoration: solid underline 1.5px #f0f0f0;
+    font-size: 2.2rem;
+    color: #7041cd;
+}
+
+#sobre span #destaque{
+    color: #f0f0f0;
+    font-weight: bold;
+}
+
+#sobre hr{
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 4rem;
+    border: 0.5px solid #f0f0f0;
+}
+
+/* Estilos da Seção Contatos */
+
+#contatos{
+    padding: 1rem;
+    margin-bottom: 50rem;
+}
+
+#contatos h2{
+    font-size: 4rem;
+    text-transform: none;
+    margin-left: 2rem;
+    color: #f0f0f0;
+}
+
+#contatos p{
+    font-size: 2rem;
+    font-weight: bold;
+    color: #f0f0f0;
+    padding: 2rem;
+    margin: 2rem;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 5rem;
+    margin-top: 2rem;
+}
+
+#contatos hr{
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 4rem;
+    border: 0.5px solid #f0f0f0;
+}
+
+#contatos .links-contatos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+}
+
+#contatos .links-contatos i{
+    font-size: 2.5rem;
+    margin-right: 1rem;
+}
+
+#contatos a:hover{
+    text-decoration: solid underline 1.5px #7041cd;
+    color: #7041cd;
+    transition: 0.2s ease-in-out;
+}
+
+#contatos a:active{
+    color: #4d2e89;
+    transition: 0.1s ease-in-out;
 }
 
 /* Formatação para Tablet */
