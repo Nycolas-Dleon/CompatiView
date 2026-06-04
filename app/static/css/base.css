@@ -1,0 +1,120 @@
+/* Estilos Globais */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Epilogue', sans-serif;
+    text-transform: uppercase;
+    align-items: center;
+    justify-content: center;
+}
+
+.background{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../imgs/BgMobile.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-position: center;
+    z-index: -2;
+}
+
+.background-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: -1;
+}
+
+header{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+body{
+    background-color: transparent;
+    font-size: 1.5rem;
+    color: #f0f0f0;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: #f0f0f0;
+}
+
+footer{
+    font-size: 1rem;
+    text-transform: none;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    background-color: #0a0a0acf;
+    color: #f0f0f09a;
+    position: relative;
+    bottom: 0;
+}
+
+/* Estilos Navbar */
+
+.navbar{
+    position: sticky;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 0.4fr 1fr;
+    padding: 1rem;
+    height: 7rem;
+    width: 100%;
+    margin: auto;
+    font-size: 2rem;
+}
+
+.navbar-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0a0a0acf;
+    backdrop-filter: blur(8px);
+    z-index: 0;
+}
+
+#logo-link{
+    z-index: 4;
+    height: fit-content;
+    width: fit-content;
+}
+
+.navbar img{
+    height: 53px;
+    width: 90px;
+    z-index: 4;
+}
+
+@media (min-width: 768px) {
+
+    .background{
+        background-image: url('../imgs/BgDesktop.png');
+    }
+    
+}
