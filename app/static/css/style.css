@@ -1,3 +1,7 @@
+/* Global */
+
+@import url('base.css');
+
 /* Formatação para Mobile (Padrão) */
 /* Estilos da Área de Login */
 
@@ -216,12 +220,14 @@
     scale: 1.1;
     background-color: #a600ff;
     transition: 0.2s ease-in-out;
+    box-shadow: 0 0 2.5rem #f0f0f0c2;
 }
 
 .apresentacao a:active{
     transform: scale(0.95);
     background-color: #7041cdc2;
     transition: 0.1s ease-in-out;
+    box-shadow: 0 0 2.5rem #f0f0f06a;
 }
 
 /* Estilos da Seção View+ */
@@ -246,6 +252,95 @@
     margin-left: 2rem;
     margin-right: 2rem;
     border: 0.5px solid #f0f0f0;
+}
+
+.cards-outros{
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    padding: 2rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.cards-outros a{
+    display: block;
+    width: 100%;
+    max-width: 85%;
+    margin: 0 auto;
+}
+
+.card{
+    width: 100%;
+    height: 22rem;
+    background-color: #0c0c0ccd;
+    backdrop-filter: blur(5px);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 2rem;
+    transition: 1s ease-in-out;
+}
+
+.card i{
+    font-size: 4rem;
+    color: #7041cd;
+    transition: 0.6s ease-in-out;
+}
+
+.card h3{
+    font-size: 2.5rem;
+    text-transform: none;
+    color: #7041cd;
+    transition: 0.6s ease-in-out;
+}
+
+.card p{
+    text-transform: none;
+    font-size: 1.8rem;
+    font-weight: bold;
+    transition: 0.6s ease-in-out;
+}
+
+.card:hover{
+    background-color: #f0f0f06a;
+    transition: 1s ease;
+    scale: 1.04;
+    text-decoration: none;
+    border-radius: 2rem;
+    box-shadow: 0 0 2.5rem #7041cd;
+}
+
+.card:active{
+    background-color: #f0f0f0a0;
+    transition: 0.5s ease-in-out;
+    transform: scale(0.95);
+    text-decoration: none;
+    border-radius: 5rem;
+}
+
+.card:hover i{
+    color: #f0f0f0;
+    transition: 0.6s ease-in-out;
+    scale: 1.2;
+}
+
+.card:hover h3{
+    color: #f0f0f0;
+    transition: 0.6s ease-in-out;
+    scale: 1.2;
+}
+
+.card:hover p{
+    color: #f0f0f0;
+    transition: 0.6s ease-in-out;
+    scale: 0.8;
 }
 
 /* Estilos da Seção Sobre */
@@ -300,7 +395,7 @@
 
 #contatos{
     padding: 1rem;
-    margin-bottom: 45rem;
+    margin-bottom: 35rem;
 }
 
 #contatos h2{
@@ -379,6 +474,9 @@
         padding: 2rem 4rem;
     }
 
+    .cards-outros a{
+    max-width: 90%;
+    }
 }
 
 /* Formatação para Desktop */
@@ -409,6 +507,22 @@
     .apresentacao a{
         font-size: 2.8rem;
         padding: 2rem 4rem;
+    }
+
+    .cards-outros{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+    max-width: 98%;
+    margin: 2rem auto 0 auto;
+    }
+
+    .cards-outros a{
+        max-width: 100%;
+    }
+
+    .cards-outros a:nth-child(3){
+        grid-column: span 2;
     }
 
 }
