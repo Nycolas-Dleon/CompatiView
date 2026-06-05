@@ -3,7 +3,6 @@
 @import url('base.css');
 
 /* Estilização dos containers de categorias/componentes */
-/* A formatação do grid-template-columns já garante uma responsividade poderosa */
 
 .container-geral {
     display: grid;
