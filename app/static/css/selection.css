@@ -1,0 +1,168 @@
+/* Global */
+
+@import url('base.css');
+
+/* Estilização dos containers de categorias/componentes */
+/* A formatação do grid-template-columns já garante uma responsividade poderosa */
+
+.container-geral {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+    gap: 1.5rem;
+    width: min(120rem, 100%);
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+.containers-components {
+    display: grid;
+    grid-template-columns: 1fr 30rem;
+    gap: 1.5rem;
+    background: rgba(12, 12, 12, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 1.6rem 4.5rem rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(5rem);
+    min-height: 16rem;
+}
+
+.listagem-components {
+    display: block;
+    gap: 0.85rem;
+    max-height: 28rem;
+    overflow-y: auto;
+    padding-right: 0.25rem;
+    text-align: center;
+
+    margin-bottom: 0.5rem;
+}
+
+.listagem-components::-webkit-scrollbar {
+    width: 0.8rem;
+}
+
+.listagem-components::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.listagem-components::-webkit-scrollbar-thumb {
+    background: rgba(132, 94, 255, 0.35);
+    border-radius: 99rem;
+}
+
+.listagem-components input[type="radio"] {
+    display: none;
+}
+
+.listagem-components label {
+    display: block;
+    width: 100%;
+    height: 44%;
+    padding: 1rem 1rem;
+    border-radius: 0.85rem;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid transparent;
+    color: #ececf5;
+    cursor: pointer;
+    transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease, background 160ms ease;
+    font-weight: bolder;
+    box-sizing: border-box;
+}
+
+.listagem-components label:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.listagem-components input[type="radio"]:checked + label {
+    border-color: #7041cd;
+    background: rgba(109, 75, 255, 0.14);
+}
+
+.btns {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1rem;
+    align-items: stretch;
+}
+
+.btns input {
+    width: 100%;
+    padding: 0.95rem 1rem;
+    border-radius: 0.75rem;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
+}
+
+.submit-btn {
+    background: linear-gradient(180deg, #7041cd 0%, #503dff 100%);
+    color: #fff;
+}
+
+.reset-btn {
+    background: transparent;
+    color: #dcdcff;
+}
+
+.btns .submit-btn:hover {
+    transform: translateY(-0.1rem);
+    opacity: 0.98;
+}
+
+.btns .reset-btn:hover {
+    transform: translateY(-0.1rem);
+    color: #7041cd;
+}
+
+.nome-categoria {
+    margin-bottom: 0.9rem;
+    color: #ececf5;
+    font-size: 2rem;
+}
+
+/* Responsividade para dispositivos móveis */
+
+/* Tablets */
+@media (max-width: 860px) {
+    .containers-components {
+        grid-template-columns: 1fr;
+    }
+
+    .btns {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 0.9rem;
+    }
+
+    .btns input {
+        width: calc(50% - 0.45rem);
+    }
+}
+
+/* Mudanças para responsividade em celulares */
+@media (max-width: 620px) {
+    .container-geral {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .containers-components {
+        padding: 1.1rem;
+    }
+
+    .btns {
+        flex-direction: column;
+    }
+
+    .btns input {
+        width: 100%;
+    }
+}
+
+
