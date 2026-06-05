@@ -4,13 +4,12 @@
 {% block body %}
 
 <div class="container-geral">
-    <form action="" method="POST">
 
     {% for categoria in components.keys() %}
         {% if categoria != 'cpu_sockets' %}
 
-            <h2 class="nome-categoria">{{ nomes[categoria] }}</h2>
-                <div class="containers-components">
+                <form class="containers-components" action="" method="POST">
+                    <h2 class="nome-categoria">{{ nomes[categoria] }}</h2>
                     <div class='listagem-components'>
                     {% for component in components[categoria].keys() %}
                         <input type="radio" id="{{ component }}" name="{{ categoria }}" value="{{ component}}">
@@ -21,10 +20,10 @@
                         <input class="submit-btn" type="submit" value="Selecionar">
                         <input class="reset-btn" type="reset" value="Limpar">
                     </div>
-                </div>
+                </form>
         {% endif %}
     {% endfor %}
-    </form>
+
 </div>
 
 {% endblock %}
