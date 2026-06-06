@@ -9,6 +9,7 @@ def homepage():
 @app.route('/selection')
 def selectionpage():
     components = load_json()
-    return render_template('selection.html', components=components)
+    nomes = app.config["nomes"]
+    return render_template('selection.html', components=components, nomes=nomes)
 
 
