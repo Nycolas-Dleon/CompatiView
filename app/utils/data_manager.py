@@ -48,5 +48,5 @@ def load_json(categoria:str=''):
     elif categoria == 'memory':
         return componentes_geral["memory"]
 
-    elif categoria == 'cpu_sockets':
-        return componentes_geral["cpu_sockets"]
+    elif categoria == 'rams':
+        return componentes_geral["rams"]
