@@ -7,7 +7,9 @@
       "boost_clock": 5.2,
       "microarchitecture": "Zen 5",
       "tdp": 120,
-      "graphics": "Radeon"
+      "graphics": "Radeon",
+      "socket": "AM5",
+      "memory_type": "DDR5"
     },
     "AMD Ryzen 7 7800X3D": {
       "price": 340.05,
@@ -16,7 +18,9 @@
       "boost_clock": 5,
       "microarchitecture": "Zen 4",
       "tdp": 120,
-      "graphics": "Radeon"
+      "graphics": "Radeon",
+      "socket": "AM5",
+      "memory_type": "DDR5"
     },
     "AMD Ryzen 5 7600X": {
       "price": 170.49,
@@ -25,7 +29,9 @@
       "boost_clock": 5.3,
       "microarchitecture": "Zen 4",
       "tdp": 105,
-      "graphics": "Radeon"
+      "graphics": "Radeon",
+      "socket": "AM5",
+      "memory_type": "DDR5"
     },
     "AMD Ryzen 5 9600X": {
       "price": 204.99,
@@ -34,7 +40,9 @@
       "boost_clock": 5.4,
       "microarchitecture": "Zen 5",
       "tdp": 65,
-      "graphics": "Radeon"
+      "graphics": "Radeon",
+      "socket": "AM5",
+      "memory_type": "DDR5"
     },
     "AMD Ryzen 7 7700X": {
       "price": 242.98,
@@ -43,7 +51,9 @@
       "boost_clock": 5.4,
       "microarchitecture": "Zen 4",
       "tdp": 105,
-      "graphics": "Radeon"
+      "graphics": "Radeon",
+      "socket": "AM5",
+      "memory_type": "DDR5"
     },
     "AMD Ryzen 9 9950X3D": {
       "price": 649.99,
@@ -52,7 +62,9 @@
       "boost_clock": 5.7,
       "microarchitecture": "Zen 5",
       "tdp": 170,
-      "graphics": "Radeon"
+      "graphics": "Radeon",
+      "socket": "AM5",
+      "memory_type": "DDR5"
     },
     "AMD Ryzen 5 5500": {
       "price": 74.22,
@@ -61,7 +73,9 @@
       "boost_clock": 4.2,
       "microarchitecture": "Zen 3",
       "tdp": 65,
-      "graphics": null
+      "graphics": null,
+      "socket": "AM4",
+      "memory_type": "DDR4"
     },
     "AMD Ryzen 7 9700X": {
       "price": 305.89,
@@ -70,7 +84,9 @@
       "boost_clock": 5.5,
       "microarchitecture": "Zen 5",
       "tdp": 65,
-      "graphics": "Radeon"
+      "graphics": "Radeon",
+      "socket": "AM5",
+      "memory_type": "DDR5"
     },
     "AMD Ryzen 5 5600X": {
       "price": 158.99,
@@ -79,7 +95,9 @@
       "boost_clock": 4.6,
       "microarchitecture": "Zen 3",
       "tdp": 65,
-      "graphics": null
+      "graphics": null,
+      "socket": "AM4",
+      "memory_type": "DDR4"
     },
     "AMD Ryzen 5 5600": {
       "price": 125.61,
@@ -88,7 +106,9 @@
       "boost_clock": 4.4,
       "microarchitecture": "Zen 3",
       "tdp": 65,
-      "graphics": null
+      "graphics": null,
+      "socket": "AM4",
+      "memory_type": "DDR4"
     },
     "AMD Ryzen 7 5800X": {
       "price": 179.95,
@@ -97,7 +117,9 @@
       "boost_clock": 4.7,
       "microarchitecture": "Zen 3",
       "tdp": 105,
-      "graphics": null
+      "graphics": null,
+      "socket": "AM4",
+      "memory_type": "DDR4"
     },
     "Intel Core i7-14700K": {
       "price": 297.17,
@@ -106,7 +128,9 @@
       "boost_clock": 5.6,
       "microarchitecture": "Raptor Lake Refresh",
       "tdp": 125,
-      "graphics": "Intel UHD Graphics 770"
+      "graphics": "Intel UHD Graphics 770",
+      "socket": "LGA1700",
+      "memory_type": "DDR4/DDR5"
     },
     "Intel Core i9-14900K": {
       "price": 439,
@@ -115,7 +139,9 @@
       "boost_clock": 6,
       "microarchitecture": "Raptor Lake Refresh",
       "tdp": 125,
-      "graphics": "Intel UHD Graphics 770"
+      "graphics": "Intel UHD Graphics 770",
+      "socket": "LGA1700",
+      "memory_type": "DDR4/DDR5"
     },
     "Intel Core i5-12400F": {
       "price": 108.99,
@@ -124,7 +150,9 @@
       "boost_clock": 4.4,
       "microarchitecture": "Alder Lake",
       "tdp": 65,
-      "graphics": null
+      "graphics": null,
+      "socket": "LGA1700",
+      "memory_type": "DDR4/DDR5"
     },
     "AMD Ryzen 5 7600": {
       "price": 196.97,
@@ -133,7 +161,9 @@
       "boost_clock": 5.1,
       "microarchitecture": "Zen 4",
       "tdp": 65,
-      "graphics": "Radeon"
+      "graphics": "Radeon",
+      "socket": "AM5",
+      "memory_type": "DDR5"
     },
     "AMD Ryzen 7 5700X": {
       "price": 154.99,
@@ -142,7 +172,9 @@
       "boost_clock": 4.6,
       "microarchitecture": "Zen 3",
       "tdp": 65,
-      "graphics": null
+      "graphics": null,
+      "socket": "AM4",
+      "memory_type": "DDR4"
     },
     "AMD Ryzen 9 7900X": {
       "price": 314.11,
@@ -151,7 +183,9 @@
       "boost_clock": 5.6,
       "microarchitecture": "Zen 4",
       "tdp": 170,
-      "graphics": "Radeon"
+      "graphics": "Radeon",
+      "socket": "AM5",
+      "memory_type": "DDR5"
     },
     "AMD Ryzen 9 9900X": {
       "price": 359,
@@ -160,7 +194,9 @@
       "boost_clock": 5.6,
       "microarchitecture": "Zen 5",
       "tdp": 120,
-      "graphics": "Radeon"
+      "graphics": "Radeon",
+      "socket": "AM5",
+      "memory_type": "DDR5"
     },
     "Intel Core i5-14600K": {
       "price": 189.99,
@@ -169,7 +205,9 @@
       "boost_clock": 5.3,
       "microarchitecture": "Raptor Lake Refresh",
       "tdp": 125,
-      "graphics": "Intel UHD Graphics 770"
+      "graphics": "Intel UHD Graphics 770",
+      "socket": "LGA1700",
+      "memory_type": "DDR4/DDR5"
     },
     "Intel Core Ultra 7 265K": {
       "price": 269.99,
@@ -178,7 +216,9 @@
       "boost_clock": 5.5,
       "microarchitecture": "Arrow Lake",
       "tdp": 125,
-      "graphics": "Intel Xe"
+      "graphics": "Intel Xe",
+      "socket": "LGA1851",
+      "memory_type": "DDR5"
     }
   },
   "gpus": {
@@ -189,7 +229,8 @@
       "core_clock": 1320,
       "boost_clock": 1777,
       "color": "Black",
-      "length": 235
+      "length": 235,
+      "estimated_tdp": 170
     },
     "Sapphire PULSE": {
       "price": 379.99,
@@ -198,7 +239,8 @@
       "core_clock": 2220,
       "boost_clock": 3290,
       "color": "Black",
-      "length": 240
+      "length": 240,
+      "estimated_tdp": 180
     },
     "MSI SHADOW 3X OC": {
       "price": 829.99,
@@ -207,7 +249,8 @@
       "core_clock": 2300,
       "boost_clock": 2497,
       "color": "Black",
-      "length": 303
+      "length": 303,
+      "estimated_tdp": 300
     },
     "Gigabyte WINDFORCE OC SFF": {
       "price": 549.99,
@@ -216,7 +259,8 @@
       "core_clock": 2160,
       "boost_clock": 2542,
       "color": "Black",
-      "length": 282
+      "length": 282,
+      "estimated_tdp": 250
     },
     "ASRock Challenger OC": {
       "price": 369.99,
@@ -225,7 +269,8 @@
       "core_clock": 2220,
       "boost_clock": 3290,
       "color": "Black / Silver",
-      "length": 249
+      "length": 249,
+      "estimated_tdp": 180
     },
     "Gigabyte GAMING OC": {
       "price": 729.99,
@@ -234,7 +279,8 @@
       "core_clock": 2520,
       "boost_clock": 3060,
       "color": "Black",
-      "length": 288
+      "length": 288,
+      "estimated_tdp": 304
     },
     "Asus ROG Astral OC": {
       "price": 3359.99,
@@ -243,7 +289,8 @@
       "core_clock": 2010,
       "boost_clock": 2610,
       "color": "Black / Silver",
-      "length": 358
+      "length": 358,
+      "estimated_tdp": 575
     },
     "ASRock Challenger D": {
       "price": 219.99,
@@ -252,7 +299,8 @@
       "core_clock": 1626,
       "boost_clock": null,
       "color": "Black",
-      "length": 269
+      "length": 269,
+      "estimated_tdp": 132
     },
     "Asus PRIME OC": {
       "price": 719.99,
@@ -261,7 +309,8 @@
       "core_clock": 2460,
       "boost_clock": 3030,
       "color": "Black",
-      "length": 312
+      "length": 312,
+      "estimated_tdp": 304
     },
     "Asus PRIME": {
       "price": 479.99,
@@ -270,7 +319,8 @@
       "core_clock": 2410,
       "boost_clock": 2602,
       "color": "Black",
-      "length": 304
+      "length": 304,
+      "estimated_tdp": 180
     },
     "MSI VENTUS 2X BLACK OC": {
       "price": 449.99,
@@ -279,7 +329,8 @@
       "core_clock": 1830,
       "boost_clock": 2505,
       "color": "Black",
-      "length": 199
+      "length": 199,
+      "estimated_tdp": 115
     },
     "MSI VENTUS 2X PLUS OC": {
       "price": 499.99,
@@ -288,7 +339,8 @@
       "core_clock": 2410,
       "boost_clock": 2617,
       "color": "Black / Gray",
-      "length": 227
+      "length": 227,
+      "estimated_tdp": 180
     },
     "MSI VENTUS 3X OC": {
       "price": 789.99,
@@ -297,7 +349,8 @@
       "core_clock": 2300,
       "boost_clock": 2497,
       "color": "Silver / Black",
-      "length": 303
+      "length": 303,
+      "estimated_tdp": 300
     },
     "ASRock Steel Legend": {
       "price": 699.99,
@@ -306,7 +359,8 @@
       "core_clock": 2400,
       "boost_clock": 2970,
       "color": "White / Gray",
-      "length": 298
+      "length": 298,
+      "estimated_tdp": 304
     },
     "Intel Limited Edition": {
       "price": 289.99,
@@ -315,7 +369,8 @@
       "core_clock": 2670,
       "boost_clock": null,
       "color": "Black",
-      "length": 272
+      "length": 272,
+      "estimated_tdp": 190
     },
     "MSI SHADOW 2X OC": {
       "price": 299.99,
@@ -324,7 +379,8 @@
       "core_clock": 2280,
       "boost_clock": 2535,
       "color": "Black / Silver",
-      "length": 197
+      "length": 197,
+      "estimated_tdp": 145
     },
     "PNY OC": {
       "price": 549.99,
@@ -333,7 +389,8 @@
       "core_clock": 2325,
       "boost_clock": 2587,
       "color": "Black",
-      "length": 300
+      "length": 300,
+      "estimated_tdp": 250
     },
     "XFX Swift OC": {
       "price": 389.98,
@@ -342,7 +399,8 @@
       "core_clock": 2220,
       "boost_clock": 3320,
       "color": "Black",
-      "length": 290
+      "length": 290,
+      "estimated_tdp": 180
     },
     "MSI VENTUS 2X OC": {
       "price": 179.99,
@@ -351,7 +409,8 @@
       "core_clock": 1040,
       "boost_clock": 1492,
       "color": "Black",
-      "length": 189
+      "length": 189,
+      "estimated_tdp": 70
     },
     "Gigabyte WINDFORCE OC": {
       "price": 299.99,
@@ -360,7 +419,8 @@
       "core_clock": 2280,
       "boost_clock": null,
       "color": "Black",
-      "length": 199
+      "length": 199,
+      "estimated_tdp": 145
     }
   },
   "motherboards": {
@@ -370,7 +430,8 @@
       "form_factor": "ATX",
       "max_memory": 192,
       "memory_slots": 4,
-      "color": "Black / Silver"
+      "color": "Black / Silver",
+      "memory_type": "DDR5"
     },
     "MSI B650 GAMING PLUS WIFI": {
       "price": 169.99,
@@ -378,7 +439,8 @@
       "form_factor": "ATX",
       "max_memory": 192,
       "memory_slots": 4,
-      "color": "Black"
+      "color": "Black",
+      "memory_type": "DDR5"
     },
     "MSI MAG B650 TOMAHAWK WIFI": {
       "price": 189.42,
@@ -386,7 +448,8 @@
       "form_factor": "ATX",
       "max_memory": 256,
       "memory_slots": 4,
-      "color": "Black"
+      "color": "Black",
+      "memory_type": "DDR5"
     },
     "Gigabyte X870E AORUS ELITE WIFI7": {
       "price": 325.31,
@@ -394,7 +457,8 @@
       "form_factor": "ATX",
       "max_memory": 256,
       "memory_slots": 4,
-      "color": "Black"
+      "color": "Black",
+      "memory_type": "DDR5"
     },
     "Asus PRIME B550M-A WIFI II": {
       "price": 99.99,
@@ -402,7 +466,8 @@
       "form_factor": "Micro ATX",
       "max_memory": 128,
       "memory_slots": 4,
-      "color": "Blue / Silver"
+      "color": "Blue / Silver",
+      "memory_type": "DDR4"
     },
     "Gigabyte B650 EAGLE AX": {
       "price": 157.99,
@@ -410,7 +475,8 @@
       "form_factor": "ATX",
       "max_memory": 192,
       "memory_slots": 4,
-      "color": "Gray / Black"
+      "color": "Gray / Black",
+      "memory_type": "DDR5"
     },
     "Asus TUF GAMING B850-PLUS WIFI": {
       "price": 217.99,
@@ -418,7 +484,8 @@
       "form_factor": "ATX",
       "max_memory": 192,
       "memory_slots": 4,
-      "color": "Black / Silver"
+      "color": "Black / Silver",
+      "memory_type": "DDR5"
     },
     "ASRock B650M Pro RS WiFi": {
       "price": 139.99,
@@ -426,7 +493,8 @@
       "form_factor": "Micro ATX",
       "max_memory": 256,
       "memory_slots": 4,
-      "color": "Black / Silver"
+      "color": "Black / Silver",
+      "memory_type": "DDR5"
     },
     "MSI MAG X870 TOMAHAWK WIFI": {
       "price": 269.99,
@@ -434,7 +502,8 @@
       "form_factor": "ATX",
       "max_memory": 256,
       "memory_slots": 4,
-      "color": "Black"
+      "color": "Black",
+      "memory_type": "DDR5"
     },
     "Gigabyte A520M K V2": {
       "price": 68.47,
@@ -442,7 +511,8 @@
       "form_factor": "Micro ATX",
       "max_memory": 64,
       "memory_slots": 2,
-      "color": "Brown / Black"
+      "color": "Brown / Black",
+      "memory_type": "DDR4"
     },
     "Asus B650E MAX GAMING WIFI W": {
       "price": 149.99,
@@ -450,7 +520,8 @@
       "form_factor": "ATX",
       "max_memory": 256,
       "memory_slots": 4,
-      "color": "White"
+      "color": "White",
+      "memory_type": "DDR5"
     },
     "MSI PRO B650-S WIFI": {
       "price": 135.99,
@@ -458,7 +529,8 @@
       "form_factor": "ATX",
       "max_memory": 192,
       "memory_slots": 4,
-      "color": "Black"
+      "color": "Black",
+      "memory_type": "DDR5"
     },
     "Gigabyte B550M K": {
       "price": 99.99,
@@ -466,7 +538,8 @@
       "form_factor": "Micro ATX",
       "max_memory": 128,
       "memory_slots": 4,
-      "color": "Brown / Silver"
+      "color": "Brown / Silver",
+      "memory_type": "DDR4"
     },
     "ASRock B850I Lightning WiFi": {
       "price": 253.44,
@@ -474,7 +547,8 @@
       "form_factor": "Mini ITX",
       "max_memory": 128,
       "memory_slots": 2,
-      "color": "Black"
+      "color": "Black",
+      "memory_type": "DDR5"
     },
     "MSI B760 GAMING PLUS WIFI": {
       "price": 169.99,
@@ -482,7 +556,8 @@
       "form_factor": "ATX",
       "max_memory": 192,
       "memory_slots": 4,
-      "color": "Black / Silver"
+      "color": "Black / Silver",
+      "memory_type": "DDR4/DDR5"
     },
     "MSI PRO B550M-VC WIFI": {
       "price": 99.99,
@@ -490,7 +565,8 @@
       "form_factor": "Micro ATX",
       "max_memory": 128,
       "memory_slots": 4,
-      "color": "Black"
+      "color": "Black",
+      "memory_type": "DDR4"
     },
     "MSI PRO Z790-A MAX WIFI": {
       "price": 220,
@@ -498,7 +574,8 @@
       "form_factor": "ATX",
       "max_memory": 192,
       "memory_slots": 4,
-      "color": "Silver / Black"
+      "color": "Silver / Black",
+      "memory_type": "DDR4/DDR5"
     },
     "Asus TUF GAMING B650-PLUS WIFI": {
       "price": 159.99,
@@ -506,7 +583,8 @@
       "form_factor": "ATX",
       "max_memory": 128,
       "memory_slots": 4,
-      "color": "Black"
+      "color": "Black",
+      "memory_type": "DDR5"
     },
     "Gigabyte X870 EAGLE WIFI7": {
       "price": 229.99,
@@ -514,7 +592,8 @@
       "form_factor": "ATX",
       "max_memory": 256,
       "memory_slots": 4,
-      "color": "Black"
+      "color": "Black",
+      "memory_type": "DDR5"
     },
     "Gigabyte X870 AORUS ELITE WIFI7 ICE": {
       "price": 299.99,
@@ -522,22 +601,28 @@
       "form_factor": "ATX",
       "max_memory": 256,
       "memory_slots": 4,
-      "color": "White"
+      "color": "White",
+      "memory_type": "DDR5"
     }
   },
-  "cpu_sockets": {
-    "Zen": "AM4",
-    "Zen+": "AM4",
-    "Zen 2": "AM4",
-    "Zen 3": "AM4",
-    "Zen 4": "AM5",
-    "Zen 5": "AM5",
-    "Alder Lake": "LGA1700",
-    "Raptor Lake": "LGA1700",
-    "Raptor Lake Refresh": "LGA1700",
-    "Arrow Lake": "LGA1851",
-    "Comet Lake": "LGA1200",
-    "Rocket Lake": "LGA1200",
-    "Cascade Lake": "LGA3647"
+  "rams": {
+    "slot_amount": {
+      "1":1,
+      "2":2,
+      "3":3,
+      "4":4
+    },
+    "ram_size": {
+      "2gb":2,
+      "4gb:":4,
+      "8gb":8,
+      "16gb":16,
+      "32gb":32,
+      "64gb":64
+    },
+    "memory_type": [
+      "DDR4",
+      "DDR5"
+    ]
   }
 }
