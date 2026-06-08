@@ -6,7 +6,7 @@
 <div class="container-geral">
 
     {% for categoria in components.keys() %}
-        {% if categoria != 'cpu_sockets' %}
+        {% if categoria != 'rams' %}
 
                 <form class="containers-components" action="" method="POST">
                     <h2 class="nome-categoria">{{ nomes[categoria] }}</h2>
@@ -21,6 +21,26 @@
                         <input class="reset-btn" type="reset" value="Limpar">
                     </div>
                 </form>
+        {% else %}
+
+                <form class="containers-components-ram" action="" method="POST">
+                    <h2 class="nome-categoria">{{ nomes[categoria] }}</h2>
+                    {% for select in components[categoria].keys() %}
+                    <div class='listagem-components-ram'>
+                    <h3 class="nome-categoria-ram"> {{ nomes[select] }}</h3>
+                        <select name="{{ select }}">
+                            {% for option in components[categoria][select] %}
+                            <option value="{{ option }}">{{ option }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    {% endfor %}
+                    <div class="btns">
+                        <input class="submit-btn" type="submit" value="Selecionar">
+                        <input class="reset-btn" type="reset" value="Limpar">
+                    </div>
+                </form>
+            
         {% endif %}
     {% endfor %}
 
