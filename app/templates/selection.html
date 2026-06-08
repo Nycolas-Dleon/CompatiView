@@ -8,11 +8,11 @@
     {% for categoria in components.keys() %}
         {% if categoria != 'rams' %}
 
-                <form class="containers-components" action="" method="POST">
+        <form class="containers-components" action="{{ url_for('adicionar_componente') }}" method="POST">
                     <h2 class="nome-categoria">{{ nomes[categoria] }}</h2>
                     <div class='listagem-components'>
                     {% for component in components[categoria].keys() %}
-                        <input type="radio" id="{{ component }}" name="{{ categoria }}" value="{{ component}}">
+                        <input type="radio" id="{{ component }}" name="{{ categoria }}" value="{{ component }}">
                         <label for="{{ component }}">{{ component }}</label>
                     {% endfor %}
                     </div>
@@ -23,11 +23,11 @@
                 </form>
         {% else %}
 
-                <form class="containers-components-ram" action="" method="POST">
+        <form class="containers-components-ram" action="{{ url_for('adicionar_componente')}}" method="POST">
                     <h2 class="nome-categoria">{{ nomes[categoria] }}</h2>
                     {% for select in components[categoria].keys() %}
                     <div class='listagem-components-ram'>
-                    <h3 class="nome-categoria-ram"> {{ nomes[select] }}</h3>
+                    <h3 class="nome-categoria-ram"> {{ select }}</h3>
                         <select name="{{ select }}">
                             {% for option in components[categoria][select] %}
                             <option value="{{ option }}">{{ option }}</option>

@@ -606,7 +606,7 @@
     }
   },
   "rams": {
-    "ram_size": {
+    "tamanho": {
       "2 GB":2,
       "4 GB":4,
       "8 GB":8,
@@ -614,11 +614,11 @@
       "32 GB":32,
       "64 GB":64
     },
-    "memory_type": [
+    "tipo": [
       "DDR4",
       "DDR5"
     ],
-    "slot_amount": {
+    "quantidade": {
       "1":1,
       "2":2,
       "3":3,
