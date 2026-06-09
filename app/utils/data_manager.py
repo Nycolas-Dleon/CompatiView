@@ -8,7 +8,7 @@ Sem ele, como o caminho relativo dos arquivos pode variar, o sistema pode quebra
 '''
 # Inicializa variável com o caminho da pasta atual (utils/)
 PATH_DIR = Path(__file__).resolve().parent
-# Do "app/" vai para a pasta "data/"
+# Do "utils/app/" vai para a pasta "data/"
 PATH_DATA = PATH_DIR.parent / 'data'
 
 ## Função de leitura do .json (Essa função será importada no models.py para ser utilizada em outras funções que a necessitem.)
@@ -22,7 +22,7 @@ def load_json(categoria:str=''):
     ----------
     categoria : str
         Esse parâmetro serve para filtrar a categoria de peça que será retornada, fazendo com que o dicionário seja, consequentemente, menor.
-        categorias válidas são -> 'cpus', 'gpus', 'motherboards', 'psu', 'memory', cpus_sockets e ''.
+        categorias válidas são -> 'cpus', 'gpus', 'motherboards', 'rams'.
         Ao não passar nenhum parâmetro, o dicionário retornado estará completo, sem nenhum filtro.
     '''
     # Pega o arquivo .json para ser utilizado nas funções
@@ -45,8 +45,5 @@ def load_json(categoria:str=''):
     elif categoria == 'motherboards':
         return componentes_geral["motherboards"]
     
-    elif categoria == 'memory':
-        return componentes_geral["memory"]
-
     elif categoria == 'rams':
         return componentes_geral["rams"]
