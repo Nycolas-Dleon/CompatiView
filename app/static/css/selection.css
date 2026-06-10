@@ -3,19 +3,15 @@
 @import url('base.css');
 
 /* Estilização dos containers de categorias/componentes */
-
 .container-geral {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(45rem, auto));
     gap: 2rem;
+    justify-content: space-evenly;
     padding: 1.5rem;
-    margin-bottom: 55rem;
 }
 
 .containers-components {
-    max-width: 45rem;
-    min-width: 45rem;
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 1.5rem;
@@ -26,13 +22,15 @@
     box-shadow: 0 1.6rem 4.5rem rgba(0, 0, 0, 0.22);
     backdrop-filter: blur(2rem);
     min-height: 16rem;
+    max-height: 34rem;
+    min-width: 30rem;
 }
 
 .listagem-components {
     display: block;
     grid-column: 1/3;
     gap: 0.85rem;
-    max-height: 20rem;
+    max-height: 45rem;
     overflow-y: auto;
     padding-right: 0.25rem;
     text-align: center;
@@ -58,8 +56,7 @@
 
 .listagem-components label {
     display: block;
-    width: 100%;
-    height: 23%;
+    height: 15%;
     padding: 1rem 1rem;
     border-radius: 0.85rem;
     background: rgba(255, 255, 255, 0.06);
@@ -88,11 +85,11 @@
     flex-direction: column;
     justify-content: flex-start;
     gap: 1rem;
-    align-items: stretch;
+    align-items: center;
 }
 
 .btns input {
-    width: 100%;
+    width: 97.8%;
     max-height: 5rem;
     padding: 0.95rem 1rem;
     border-radius: 0.75rem;
@@ -131,8 +128,6 @@
 
 .containers-components-ram {
     display: grid;
-    max-width: 45rem;
-    min-width: 45rem;
     background: rgba(12, 12, 12, 0.92);
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 1rem;
@@ -140,12 +135,13 @@
     box-shadow: 0 1.6rem 4.5rem rgba(0, 0, 0, 0.22);
     backdrop-filter: blur(5rem);
     min-height: 16rem;
+    max-height: 34rem;
     gap: 1.3rem;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 1fr;
 }
 
 .nome-categoria-ram {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.4rem;
 }
 
 select {
@@ -164,25 +160,34 @@ select:active {
 
 .listagem-components-ram {
     background: rgba(255, 255, 255, 0.06);
-    padding: 1.3rem;
-    margin-bottom: 1rem;
+    padding: 1.2rem;
+    margin-bottom: 0.1rem;
     border-radius: 0.85rem;
+    grid-column: 1/3;
+    min-height: 8rem;
+    max-height: 20rem;
 }
 
-/* Responsividade para dispositivos móveis */
 
-/* Tablets */
-@media (max-width: 860px) {
+@media (max-width: 490px) {
+    .container-geral {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     .containers-components {
-        grid-template-columns: 2fr 1fr;
-        max-width: 70%;
-        min-width: 70%;
+        max-width: 5rem;
+        min-width: 30rem;
+        max-height: 40rem;
+    }
+
+    .listagem-components {
+        max-height: 27rem;
     }
 
     .containers-components-ram {
-        grid-template-columns: 2fr 1fr;
-        max-width: 70%;
-        min-width: 70%;
+        max-width: 5rem;
+        min-width: 30rem;
     }
 
     .btns {
@@ -191,55 +196,35 @@ select:active {
     }
 
     .btns input {
-        min-width: 10rem;
-        max-width: 15rem;
+        min-width: 30rem;
+        max-width: 20rem;
     }
 }
 
-/* Mudanças para responsividade em celulares */
-@media (max-width: 620px) {
+@media (min-width: 490px) and (max-width: 800px) {
     .container-geral {
-        padding: 1rem;
-    }
-
-    .containers-components {
-        padding: 1.1rem;
-    }
-
-    .containers-components-ram {
-        padding: 1.1rem;
-    }
-
-    .btns {
-        flex-direction: column;
-        margin-left: 1rem;
-    }
-
-    .btns input {
-        width: 100%;
-    }
-
-    label {
-        min-height: 6.5rem;
+        display: grid;
+        grid-template-columns: 1fr;
     }
 }
 
-/* Formatação para dispositivos muito pequenos */
-@media (max-width: 450px) {
-    label {
-        min-height: 8rem;
-        min-width: 10rem;
+@media (min-width: 800px) and (max-width: 1420px) {
+    .container-geral {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
-
-    .containers-components {
-        min-width: 90%;
-    }
-
-    .containers-components-ram {
-        min-width: 90%;
-    }
-
 }
+
+
+@media (min-width: 1420px) and (max-width: 1890px) {
+    .container-geral {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+
+
 
 
 
