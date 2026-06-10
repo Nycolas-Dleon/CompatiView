@@ -46,21 +46,6 @@
 
 </form>
 
-<div class="resumo-escolhas">
-    <h3>Seu Computador Atual:</h3>
-    <p><strong>Processador:</strong> {{ escolha.cpu_user or 'Não selecionado' }}</p>
-    <p><strong>Placa de Vídeo:</strong> {{ escolha.gpu_user or 'Não selecionado' }}</p>
-    <p><strong>Placa-Mãe:</strong> {{ escolha.motherboard_user or 'Não selecionado' }}</p>
-    
-    <h4>Memória RAM:</h4>
-    <ul>
-        <li>Tamanho: {{ escolha.ram_user.tamanho or '0' }}</li>
-        <li>Tipo: {{ escolha.ram_user.tipo or '-' }}</li>
-        <li>Quantidade: {{ escolha.ram_user.quantidade or '0' }}</li>
-    </ul>
-</div>
-
-
 {% endblock %}
 
 
