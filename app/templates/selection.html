@@ -3,12 +3,13 @@
 
 {% block body %}
 
-<div class="container-geral">
+<form action="{{ url_for('adicionar_componente')}}" method="POST">
+    <div class="container-geral">
 
-    {% for categoria in components.keys() %}
-        {% if categoria != 'rams' %}
+        {% for categoria in components.keys() %}
+            {% if categoria != 'rams' %}
 
-        <form class="containers-components" action="{{ url_for('adicionar_componente') }}" method="POST">
+                <div class="containers-components"> 
                     <h2 class="nome-categoria">{{ nomes[categoria] }}</h2>
                     <div class='listagem-components'>
                     {% for component in components[categoria].keys() %}
@@ -16,35 +17,34 @@
                         <label for="{{ component }}">{{ component }}</label>
                     {% endfor %}
                     </div>
-                    <div class="btns">
-                        <input class="submit-btn" type="submit" value="Selecionar">
-                        <input class="reset-btn" type="reset" value="Limpar">
-                    </div>
-                </form>
-        {% else %}
+                </div>
 
-        <form class="containers-components-ram" action="{{ url_for('adicionar_componente')}}" method="POST">
+                {% else %}
+
+                <div class="containers-components-ram">
+
                     <h2 class="nome-categoria">{{ nomes[categoria] }}</h2>
                     {% for select in components[categoria].keys() %}
-                    <div class='listagem-components-ram'>
-                    <h3 class="nome-categoria-ram"> {{ select }}</h3>
-                        <select name="{{ select }}">
-                            {% for option in components[categoria][select] %}
-                            <option value="{{ option }}">{{ option }}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
+                        <div class='listagem-components-ram'>
+                        <h3 class="nome-categoria-ram"> {{ select }}</h3>
+                            <select name="{{ select }}">
+                                {% for option in components[categoria][select] %}
+                                <option value="{{ option }}">{{ option }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
                     {% endfor %}
-                    <div class="btns">
-                        <input class="submit-btn" type="submit" value="Selecionar">
-                        <input class="reset-btn" type="reset" value="Limpar">
-                    </div>
-                </form>
-            
-        {% endif %}
-    {% endfor %}
+                </div>
+                {% endif %}
+                    {% endfor %}
+    </div>
 
+<div class="btns">
+    <input class="submit-btn" type="submit" value="Selecionar">
+    <input class="reset-btn" type="reset" value="Limpar">
 </div>
+
+</form>
 
 {% endblock %}
 

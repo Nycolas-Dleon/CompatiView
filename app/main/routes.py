@@ -39,14 +39,14 @@ def adicionar_componente():
             dados['ram_user']['tipo'] = form_enviado.get('tipo')
         if form_enviado.get('quantidade'):
             dados['ram_user']['quantidade'] = form_enviado.get('quantidade')
-    else:
+
         if 'cpus' in form_enviado: 
             dados['cpu_user'] = form_enviado.get('cpus')
             
-        elif 'gpus' in form_enviado: 
+        if 'gpus' in form_enviado: 
             dados['gpu_user'] = form_enviado.get('gpus')
             
-        elif 'motherboards' in form_enviado:
+        if 'motherboards' in form_enviado:
             dados['motherboard_user'] = form_enviado.get('motherboards')
 
     session['dados_usuario'] = dados
