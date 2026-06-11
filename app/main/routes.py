@@ -1,5 +1,6 @@
 from flask import Flask, redirect, render_template, url_for, session, request
 from app.utils.data_manager import load_json
+from app import models
 from app import app 
 
 @app.route('/')
@@ -54,3 +55,7 @@ def adicionar_componente():
     
     return redirect(url_for('selectionpage'))
 
+@app.route('/testarcompat')
+def testar_compatibilidade():
+    return render_template('selectionpage.html')
+    
