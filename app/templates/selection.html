@@ -59,27 +59,29 @@
             <tbody>
                 <tr>
                     <td>Processador</td>
-                    <td>{{ escolha.cpu_user or 'Não selecionado' }}</td>
+                    <td>{{ escolha.cpu_user or '-' }}</td>
                 </tr>
                 <tr>
                     <td>Placa de Vídeo</td>
-                    <td>{{ escolha.gpu_user or 'Não selecionado' }}</td>
+                    <td>{{ escolha.gpu_user or '-' }}</td>
                 </tr>
 
                 <tr>
                     <td>Placa-mãe</td>
-                    <td>{{ escolha.motherboard_user or 'Não selecionado' }}</td>
+                    <td>{{ escolha.motherboard_user or '-' }}</td>
                 </tr>
 
                 <tr>
                     <td>Memória RAM</td>
                     <td>
                         {% if escolha.ram_user %}
+                            {% if escolha.ram_user.tamanho != None and escolha.ram_user.tipo != None and escolha.ram_user.quantidade != None %}
                             {{ escolha.ram_user.tamanho }}
                             {{ escolha.ram_user.tipo }}
                             ({{ escolha.ram_user.quantidade }}x)
-                        {% else %}
-                            Não selecionado
+                            {% else %}
+                            -
+                            {% endif %}
                         {% endif %}
                     </td>
                 </tr>
@@ -90,7 +92,7 @@
                 <input class="btn-testar-compatibilidade" type="button" value="Verificar Compatibilidade"> 
             </form>
             <form action="" method="POST">
-                <input class="btn-salvar-config" type="button" value="Salvar Configuração">
+                <abbr title="Indisponível"><input class="btn-salvar-config" type="button" value="Salvar Configuração"></abbr>
             </form>
         </div>
     </div>
