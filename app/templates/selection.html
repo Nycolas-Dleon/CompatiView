@@ -46,6 +46,60 @@
 
 </form>
 
+<div class="grid-exibicao">
+    <div class="sessao-dinamica">
+        <table class="table-session">
+            <thead>
+                <tr>
+                    <th>Componente</th>
+                    <th>Escolha</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Processador</td>
+                    <td>{{ escolha.cpu_user or 'Não selecionado' }}</td>
+                </tr>
+                <tr>
+                    <td>Placa de Vídeo</td>
+                    <td>{{ escolha.gpu_user or 'Não selecionado' }}</td>
+                </tr>
+
+                <tr>
+                    <td>Placa-mãe</td>
+                    <td>{{ escolha.motherboard_user or 'Não selecionado' }}</td>
+                </tr>
+
+                <tr>
+                    <td>Memória RAM</td>
+                    <td>
+                        {% if escolha.ram_user %}
+                            {{ escolha.ram_user.tamanho }}
+                            {{ escolha.ram_user.tipo }}
+                            ({{ escolha.ram_user.quantidade }}x)
+                        {% else %}
+                            Não selecionado
+                        {% endif %}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="btns-session">
+            <form action="" method="POST">
+                <input class="btn-testar-compatibilidade" type="button" value="Verificar Compatibilidade"> 
+            </form>
+            <form action="" method="POST">
+                <input class="btn-salvar-config" type="button" value="Salvar Configuração">
+            </form>
+        </div>
+    </div>
+
+    <div class="resultado">
+
+    </div>
+</div>
+
 {% endblock %}
 
 
