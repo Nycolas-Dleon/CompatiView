@@ -234,7 +234,7 @@
 
 #view-more{
     padding: 1rem;
-    margin-bottom: 50rem;
+    margin-bottom: 30rem;
 }
 
 #view-more h2{
@@ -347,7 +347,7 @@
 
 #sobre{
     padding: 1rem;
-    margin-bottom: 50rem;
+    margin-bottom: 30rem;
 }
 
 #sobre h2{
@@ -395,7 +395,7 @@
 
 #contatos{
     padding: 1rem;
-    margin-bottom: 35rem;
+    margin-bottom: 47rem;
 }
 
 #contatos h2{
@@ -568,6 +568,10 @@
 
     .cards-outros a:nth-child(3){
         grid-column: span 2;
+    }
+
+    #contatos{
+        margin-bottom: 35rem;
     }
 
 }
