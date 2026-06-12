@@ -1,4 +1,4 @@
-from flask import Flask, redirect, render_template, url_for, session, request
+from flask import Flask, redirect, render_template, url_for, session, request, flash
 from app.utils.data_manager import load_json
 from app import models
 from app import app 
@@ -55,7 +55,15 @@ def adicionar_componente():
     
     return redirect(url_for('selectionpage'))
 
-@app.route('/testarcompat')
+@app.route('/testarcompat', methods=['GET', 'POST'])
 def testar_compatibilidade():
-    return render_template('selectionpage.html')
+    dados_atuais = session.get('dados_usuario')
+    if not dados_atuais:
+        flash('Nenhuma configuração encontrada.')
+        return redirect(url_for('selectionpage'))
+    if dados_atuais['gpu_user'] is None or dados_atuais['cpu_user'] is None or dados_atuais['motherboard_user'] is None or dados_atuais['ram_user']['quantidade'] == None:
+        flash('Não foi possível verificar a compatibilidade! Preencha os campos vazios.')
+        return redirect(url_for('selectionpage'))
+
+    return redirect(url_for('selectionpage'))
     
