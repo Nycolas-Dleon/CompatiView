@@ -448,6 +448,51 @@
     transition: 0.1s ease-in-out;
 }
 
+/* Botão de retorno ao topo */
+
+#botao-topo{
+    background-color: #f0f0f0;
+    color: #7041cd;
+    position: fixed;
+    bottom: 2.2rem;
+    right: 1.8rem;
+    padding: 1rem;
+    border-radius: 100%;
+    scale: 0.8;
+    font-size: 2rem;
+    text-align: center;
+    justify-content: center;
+    z-index: 5;
+    transition: 0.5s ease-in-out;
+    box-shadow: 0 0 1.5rem #7041cd;
+}
+
+#botao-topo:hover{
+    scale: 1;
+    font-size: 2.5rem;
+    background-color: #7041cd;
+    color: #f0f0f0;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 0 1.5rem #f0f0f0c2;
+}
+
+#botao-topo:active{
+    scale: 0.9;
+    background-color: #4d2e89;
+    color: #f0f0f0a0;
+    transition: 0.1s ease-in-out;
+    box-shadow: 0 0 0.5rem #0c0c0c95;
+}
+
+#botao-topo i{
+    transition: 0.5s ease-in-out;
+}
+
+#botao-topo:active i{
+    transform: translateY(-4px);
+    transition: 0.1s ease-in-out;
+}
+
 /* Formatação para Tablet */
 
 @media (min-width: 768px) {
