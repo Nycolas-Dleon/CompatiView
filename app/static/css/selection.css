@@ -225,6 +225,29 @@ select:active {
     cursor: pointer;
 }
 
+.cln_remover_item {
+    text-align: right;
+    vertical-align: middle;
+    width: 60px;
+    padding-right: 15px;
+}
+
+.bnt_remover_item {
+    background-image: url('../imgs/lixeira.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 18px;
+    height: 18px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.bnt_remover_item:hover {
+    background-image: url('../imgs/lixeira_hover.png');
+}
+
 .btns-session {
     display: grid;
     grid-template-rows: 4.7rem 4.7rem;

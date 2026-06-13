@@ -53,6 +53,7 @@
                 <tr>
                     <th>Componente</th>
                     <th>Escolha</th>
+                    <th></th>
                 </tr>
             </thead>
 
@@ -60,15 +61,24 @@
                 <tr>
                     <td>Processador</td>
                     <td>{{ escolha.cpu_user or '-' }}</td>
+                    <td class="cln_remover_item">
+                        <button type="reset" class="bnt_remover_item"></button>
+                    </td>
                 </tr>
                 <tr>
                     <td>Placa de Vídeo</td>
                     <td>{{ escolha.gpu_user or '-' }}</td>
+                    <td class="cln_remover_item">
+                        <button type="reset" class="bnt_remover_item"></button>
+                    </td>
                 </tr>
 
                 <tr>
                     <td>Placa-mãe</td>
                     <td>{{ escolha.motherboard_user or '-' }}</td>
+                    <td class="cln_remover_item">
+                        <button type="reset" class="bnt_remover_item"></button>
+                    </td>
                 </tr>
 
                 <tr>
@@ -83,7 +93,10 @@
                             -
                             {% endif %}
                         {% endif %}
-                    </td>
+                        </td>
+                        <td class="cln_remover_item">
+                            <button type="reset" class="bnt_remover_item"></button>
+                        </td>
                 </tr>
             </tbody>
         </table>
