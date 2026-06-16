@@ -55,6 +55,9 @@ def adicionar_componente():
     
     return redirect(url_for('selectionpage'))
 
+
+
+
 @app.route('/testarcompat', methods=['GET', 'POST'])
 def testar_compatibilidade():
     dados_atuais = session.get('dados_usuario')

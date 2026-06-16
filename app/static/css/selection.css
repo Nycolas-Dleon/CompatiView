@@ -228,8 +228,8 @@ select:active {
 .cln_remover_item {
     text-align: right;
     vertical-align: middle;
-    width: 60px;
-    padding-right: 15px;
+    width: 6rem;
+    padding-right: 1.5rem;
 }
 
 .bnt_remover_item {
@@ -237,14 +237,14 @@ select:active {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    width: 18px;
-    height: 18px;
+    width: 1.8rem;
+    height: 1.8rem;
     border: none;
     background-color: transparent;
     cursor: pointer;
 }
 
-.bnt_remover_item:hover {
+.bnt_remover_item:active {
     background-image: url('../imgs/lixeira_hover.png');
 }
 
