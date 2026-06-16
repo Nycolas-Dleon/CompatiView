@@ -222,7 +222,7 @@
     }
   },
   "gpus": {
-    "MSI GeForce RTX 3060 Ventus 2X 12G": {
+    "GeForce RTX 3060 12GB - MSI Ventus 2X 12G": {
       "price": 299.97,
       "chipset": "GeForce RTX 3060 12GB",
       "memory": 12,
@@ -232,7 +232,7 @@
       "length": 235,
       "estimated_tdp": 170
     },
-    "Sapphire PULSE": {
+    "Radeon RX 9060 XT 16GB - Sapphire PULSE": {
       "price": 379.99,
       "chipset": "Radeon RX 9060 XT",
       "memory": 16,
@@ -242,7 +242,7 @@
       "length": 240,
       "estimated_tdp": 180
     },
-    "MSI SHADOW 3X OC": {
+    "GeForce RTX 5070 Ti 16GB - MSI SHADOW 3X OC": {
       "price": 829.99,
       "chipset": "GeForce RTX 5070 Ti",
       "memory": 16,
@@ -252,7 +252,7 @@
       "length": 303,
       "estimated_tdp": 300
     },
-    "Gigabyte WINDFORCE OC SFF": {
+    "GeForce RTX 5070 12GB - Gigabyte WINDFORCE OC SFF": {
       "price": 549.99,
       "chipset": "GeForce RTX 5070",
       "memory": 12,
@@ -262,7 +262,7 @@
       "length": 282,
       "estimated_tdp": 250
     },
-    "ASRock Challenger OC": {
+    "Radeon RX 9060 XT 16GB - ASRock Challenger OC": {
       "price": 369.99,
       "chipset": "Radeon RX 9060 XT",
       "memory": 16,
@@ -272,7 +272,7 @@
       "length": 249,
       "estimated_tdp": 180
     },
-    "Gigabyte GAMING OC": {
+    "Radeon RX 9070 XT 16GB - Gigabyte GAMING OC": {
       "price": 729.99,
       "chipset": "Radeon RX 9070 XT",
       "memory": 16,
@@ -282,7 +282,7 @@
       "length": 288,
       "estimated_tdp": 304
     },
-    "Asus ROG Astral OC": {
+    "GeForce RTX 5090 32GB - Asus ROG Astral OC": {
       "price": 3359.99,
       "chipset": "GeForce RTX 5090",
       "memory": 32,
@@ -292,7 +292,7 @@
       "length": 358,
       "estimated_tdp": 575
     },
-    "ASRock Challenger D": {
+    "Radeon RX 6600 8GB - ASRock Challenger D": {
       "price": 219.99,
       "chipset": "Radeon RX 6600",
       "memory": 8,
@@ -302,7 +302,7 @@
       "length": 269,
       "estimated_tdp": 132
     },
-    "Asus PRIME OC": {
+    "Radeon RX 9070 XT 16GB - Asus PRIME OC": {
       "price": 719.99,
       "chipset": "Radeon RX 9070 XT",
       "memory": 16,
@@ -312,7 +312,7 @@
       "length": 312,
       "estimated_tdp": 304
     },
-    "Asus PRIME": {
+    "GeForce RTX 5060 Ti 16GB - Asus PRIME": {
       "price": 479.99,
       "chipset": "GeForce RTX 5060 Ti",
       "memory": 16,
@@ -322,7 +322,7 @@
       "length": 304,
       "estimated_tdp": 180
     },
-    "MSI VENTUS 2X BLACK OC": {
+    "GeForce RTX 4060 8GB - MSI VENTUS 2X BLACK OC": {
       "price": 449.99,
       "chipset": "GeForce RTX 4060",
       "memory": 8,
@@ -332,7 +332,7 @@
       "length": 199,
       "estimated_tdp": 115
     },
-    "MSI VENTUS 2X PLUS OC": {
+    "GeForce RTX 5060 Ti 16GB - MSI VENTUS 2X PLUS OC": {
       "price": 499.99,
       "chipset": "GeForce RTX 5060 Ti",
       "memory": 16,
@@ -342,7 +342,7 @@
       "length": 227,
       "estimated_tdp": 180
     },
-    "MSI VENTUS 3X OC": {
+    "GeForce RTX 5070 Ti 16GB - MSI VENTUS 3X OC": {
       "price": 789.99,
       "chipset": "GeForce RTX 5070 Ti",
       "memory": 16,
@@ -352,7 +352,7 @@
       "length": 303,
       "estimated_tdp": 300
     },
-    "ASRock Steel Legend": {
+    "Radeon RX 9070 XT 16GB - ASRock Steel Legend": {
       "price": 699.99,
       "chipset": "Radeon RX 9070 XT",
       "memory": 16,
@@ -362,7 +362,7 @@
       "length": 298,
       "estimated_tdp": 304
     },
-    "Intel Limited Edition": {
+    "Arc B580 12GB - Intel Limited Edition": {
       "price": 289.99,
       "chipset": "Arc B580",
       "memory": 12,
@@ -372,7 +372,7 @@
       "length": 272,
       "estimated_tdp": 190
     },
-    "MSI SHADOW 2X OC": {
+    "GeForce RTX 5060 8GB - MSI SHADOW 2X OC": {
       "price": 299.99,
       "chipset": "GeForce RTX 5060",
       "memory": 8,
@@ -382,7 +382,7 @@
       "length": 197,
       "estimated_tdp": 145
     },
-    "PNY OC": {
+    "GeForce RTX 5070 12GB - PNY OC": {
       "price": 549.99,
       "chipset": "GeForce RTX 5070",
       "memory": 12,
@@ -392,7 +392,7 @@
       "length": 300,
       "estimated_tdp": 250
     },
-    "XFX Swift OC": {
+    "Radeon RX 9060 XT 16GB - XFX Swift OC": {
       "price": 389.98,
       "chipset": "Radeon RX 9060 XT",
       "memory": 16,
@@ -402,7 +402,7 @@
       "length": 290,
       "estimated_tdp": 180
     },
-    "MSI VENTUS 2X OC": {
+    "GeForce RTX 3050 6GB - MSI VENTUS 2X OC": {
       "price": 179.99,
       "chipset": "GeForce RTX 3050 6GB",
       "memory": 6,
@@ -412,7 +412,7 @@
       "length": 189,
       "estimated_tdp": 70
     },
-    "Gigabyte WINDFORCE OC": {
+    "GeForce RTX 5060 8GB - Gigabyte WINDFORCE OC": {
       "price": 299.99,
       "chipset": "GeForce RTX 5060",
       "memory": 8,
