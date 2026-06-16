@@ -213,9 +213,6 @@ select:active {
     border-bottom: 0.2rem solid rgba(220, 220, 220, 0.4);
 }
 
-.table-session td {
-    border-radius: 0.3rem;
-}
 .table-session tbody tr:nth-child(even){
     background: rgba(220, 220, 220, 0.06);
 }
@@ -228,8 +225,8 @@ select:active {
 .cln_remover_item {
     text-align: right;
     vertical-align: middle;
-    width: 60px;
-    padding-right: 15px;
+    width: 6rem;
+    padding-right: 1.5rem;
 }
 
 .bnt_remover_item {
@@ -237,14 +234,14 @@ select:active {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    width: 18px;
-    height: 18px;
+    width: 1.8rem;
+    height: 1.8rem;
     border: none;
     background-color: transparent;
     cursor: pointer;
 }
 
-.bnt_remover_item:hover {
+.bnt_remover_item:active {
     background-image: url('../imgs/lixeira_hover.png');
 }
 
@@ -278,6 +275,10 @@ select:active {
     transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
     border: none;
     border-radius: 0.75rem;
+}
+
+.btn-salvar-config:hover {
+    cursor: not-allowed;
 }
 
 .btn-testar-compatibilidade:hover {

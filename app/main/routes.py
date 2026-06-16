@@ -55,6 +55,29 @@ def adicionar_componente():
     
     return redirect(url_for('selectionpage'))
 
+
+@app.route('/remover', methods=['GET', 'POST'])
+def remover_componente():
+    dados = session.get('dados_usuario', {})
+    form_enviado = request.form
+    if form_enviado.get('tipo_componente') == 'cpu':
+        dados['cpu_user'] = None
+
+    if form_enviado.get('tipo_componente') == 'gpu': 
+        dados['gpu_user'] = None
+
+    if form_enviado.get('tipo_componente') == 'motherboard':
+        dados['motherboard_user'] = None
+
+    if form_enviado.get('tipo_componente') == 'ram':
+        dados['ram_user']['tamanho'] = None
+        dados['ram_user']['tipo'] = None
+        dados['ram_user']['quantidade'] = None
+
+    session['dados_usuario'] = dados
+    session.modified = True
+    return redirect(url_for('selectionpage'))
+
 @app.route('/testarcompat', methods=['GET', 'POST'])
 def testar_compatibilidade():
     dados_atuais = session.get('dados_usuario')
