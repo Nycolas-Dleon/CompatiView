@@ -90,3 +90,46 @@ def testar_compatibilidade():
 
     return redirect(url_for('selectionpage'))
     
+@app.route("/componentes")
+def listar_componentes():
+    components = load_json() # Os componentes na forma de dicionário Python
+    componentes = [] # Uma lista vazia onde cada elemento da lista é um dict contendo as informações de cada linha da listagem das peças
+
+    for categoria, itens in components.items(): #.items() devolve uma sequência de pares (chave, valor)
+
+        # Isso ignora a RAM
+        if categoria == "rams":
+            continue # faz o loop seguir
+
+        for nome, dados in itens.items(): # pares na nova lista itens 
+
+            componentes.append({ # cada elemento da lista é um dicionário contendo nome, categoria e preço
+                "nome": dados.get("chipset", nome), # se não houver chipset devolve nome
+                "categoria": categoria,
+                "preco": dados.get("price") * 5.50
+            })
+
+    # Paginação
+    ITENS_POR_PAGINA = 10 # constante que determina número de itens por página
+
+    page = request.args.get("page", 1, type=int) # page faz parte da url, se não especificar page é 1
+
+    inicio = (page - 1) * ITENS_POR_PAGINA # isso calcula a primeira linha, se for 1 a primeira linha é o indice 0
+    fim = inicio + ITENS_POR_PAGINA # isso naturalmente calcula onde acaba a lista da página
+
+    componentes_pagina = componentes[inicio:fim] # fatiando a lista pra mostrar só o que a página deve mostrar
+
+    def calcular_total_paginas(total_itens, itens_por_pagina): # pra ver e arredonadar o numero de paginas
+        if total_itens % itens_por_pagina == 0:
+         return total_itens // itens_por_pagina
+
+        return (total_itens // itens_por_pagina) + 1
+
+    total_paginas = calcular_total_paginas(len(componentes), ITENS_POR_PAGINA)
+
+    return render_template(
+        "componentes.html",
+        componentes=componentes_pagina,
+        page=page,
+        total_paginas=total_paginas
+    )

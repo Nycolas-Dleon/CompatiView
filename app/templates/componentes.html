@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block link_css %}<link rel="stylesheet" href="{{ url_for('static', filename='css/components.css') }}">{% endblock %}
+
+{% block body %}
+
+<table class="table-container">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Categoria</th>
+            <th>Preço</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+    {% for componente in componentes %}
+        <tr>
+            <td>{{ componente.nome }}</td>
+            <td>
+                {% if componente.categoria == "cpus" %}
+                    CPU
+                {% elif componente.categoria == "gpus" %}
+                    GPU
+                {% elif componente.categoria == "motherboards" %}
+                Placa-mãe
+                {% endif %}
+            </td>
+            <td>R$ {{ "%.2f"|format(componente.preco) }}</td>
+        </tr>
+    {% endfor %}
+
+    </tbody>
+</table>
+
+<div class="pagination">
+
+    {% if page > 1 %}
+    <a href="?page={{ page - 1 }}">
+        <img src="/static/imgs/angle-left-solid.png" alt="Anterior" class="iconarrow">
+    </a>
+    {% endif %}
+
+    <span class="page-info">
+        Página {{ page }} de {{ total_paginas }}
+    </span>
+
+    {% if page < total_paginas %}
+    <a href="?page={{ page + 1 }}">
+        <img src="/static/imgs/angle-right-solid.png" alt="Próximo" class="iconarrow">
+    </a>
+    {% endif %}
+
+</div>
+
+{% endblock %}
