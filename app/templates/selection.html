@@ -135,13 +135,21 @@
     </div>
 
     <div class="resultado">
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            {% for message in messages %}
-            <p>{{ message }}</p>
-            {% endfor %}
+    {% if get_flashed_messages() %}
+    {% if get_flashed_messages()[0] == 'ecompativel' %}   
+        <p>é compatível</p>
+    {% else %}
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
     {% endif %}
-    {% endwith %}
+    {% endif %}
     </div>
 </div>
 
