@@ -57,11 +57,11 @@ def fonte(cpu_name, gpu_name):
 
 def limite_ram(pentes:int, ram_size:int, motherboard_name:str) -> bool:
 
-    build_ram = pentes * ram_size
-    supported_ram = motherboards[motherboard_name]['max_memory']
+    build_ram = int(pentes) * int(ram_size.replace('GB', ''))
+    supported_ram = int(motherboards[motherboard_name]['max_memory'])
 
     return build_ram <= supported_ram
 
 def limite_pentes(pentes:int, motherboard_name:str) -> bool:
 
-    return pentes <= motherboards[motherboard_name]['memory_slots']
+    return int(pentes) <= motherboards[motherboard_name]['memory_slots']
