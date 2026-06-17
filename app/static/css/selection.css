@@ -175,7 +175,7 @@ select:active {
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
     background: rgba(12, 12, 12, 0.92);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    border: 0.1rem solid rgba(255, 255, 255, 0.06);
     border-radius: 1rem;
     box-shadow: 0 1.6rem 4.5rem rgba(0, 0, 0, 0.22);
     backdrop-filter: blur(2rem);
@@ -292,16 +292,70 @@ select:active {
 
 .resultado {
     display: grid;
+    background-color: rgba(255, 255, 255, 0.06);
+    max-height: 33rem;
+    min-width: 80rem;
+    max-width: 30rem;
+    margin: 0 auto;
+    box-sizing: border-box;
+    margin-top: 4rem;
+    border-radius: 1rem;
+    margin-right: 6.5rem;
 }
 
-.resultado p {
-    place-self: center;
+.resultado h2 {
+    text-align: center;
+    margin-top: 2rem;
+    letter-spacing: 0.1rem;
 }
 
 .resultado ul {
-    place-self: center;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
 }
 
+.resultado li {
+    margin-bottom: 1rem;
+    text-align: justify;
+    letter-spacing: 0.15rem;
+}
+
+.span-incompativel {
+    color: #fb542b;
+}
+
+.span-compativel {
+    color: #2bfb5f;
+}
+
+.relatorio {
+    max-width: 38rem;
+    margin: 0 auto;
+}
+
+i {
+    color: red;
+    font-weight: bolder;
+    font-size: 1.8rem;
+}
+
+#space {
+    margin-right: 2rem;
+}
+
+.erros-de-envio {
+    margin: 0 auto;
+    letter-spacing: 0.2rem;
+    color: #f73c36;
+    margin-bottom: 4rem;
+    font-weight: bold;
+}
+
+.compativel {
+    place-self: center;
+    margin-bottom: 1.5rem;
+}
 @media (max-width: 490px) {
     .container-geral {
         display: flex;
