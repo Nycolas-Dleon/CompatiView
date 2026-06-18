@@ -82,28 +82,28 @@ def remover_componente():
 def testar_compatibilidade():
     dados_atuais = session.get('dados_usuario')
     if not dados_atuais:
-        flash('Nenhuma configuração encontrada.')
+        flash('01Nenhuma configuração encontrada.')
         return redirect(url_for('selectionpage'))
 
-    if dados_atuais['gpu_user'] is None or dados_atuais['cpu_user'] is None or dados_atuais['motherboard_user'] is None or dados_atuais['ram_user']['quantidade'] == None:
-        flash('Não foi possível verificar a compatibilidade! Preencha os campos vazios.')
+    if dados_atuais['gpu_user'] is None or dados_atuais['cpu_user'] is None or dados_atuais['motherboard_user'] is None or dados_atuais['ram_user']['quantidade'] == None or dados_atuais['ram_user']['tipo'] == None or dados_atuais['ram_user']['tamanho'] == None:
+        flash('02Não foi possível verificar a compatibilidade! Preencha os campos vazios.')
         return redirect(url_for('selectionpage'))
 
     else:
         if not cpu_motherboard(dados_atuais['cpu_user'], dados_atuais['motherboard_user']):
-            flash('O processador não é compatível com o socket da placa-mãe.')
+            flash('03O processador não é compatível com o socket da placa-mãe.')
 
         if not ram_motherboard(dados_atuais['ram_user']['tipo'], dados_atuais['motherboard_user']): 
-            flash('O tipo de memória RAM não é suportado pela placa-mãe.')
+            flash('04O tipo de memória RAM não é suportado pela placa-mãe.')
 
         if not ram_cpu(dados_atuais['ram_user']['tipo'], dados_atuais['cpu_user']): 
-            flash('O processador não suporta esse tipo de memória RAM.')
+            flash('05O processador não suporta esse tipo de memória RAM.')
 
         if not limite_ram(dados_atuais['ram_user']['quantidade'], dados_atuais['ram_user']['tamanho'], dados_atuais['motherboard_user']): 
-            flash('A placa-mãe não suporta essa quantidade de memória RAM.')
+            flash('06A placa-mãe não suporta essa quantidade de memória RAM.')
 
         if not limite_pentes(dados_atuais['ram_user']['quantidade'], dados_atuais['motherboard_user']):
-            flash('A placa mãe não possui slots suficientes para suportar o número de pentes de memória selecionado.')
+            flash('07A placa mãe não possui slots suficientes para suportar o número de pentes de memória selecionados.')
 
         if cpu_motherboard(dados_atuais['cpu_user'], dados_atuais['motherboard_user']) and ram_motherboard(dados_atuais['ram_user']['tipo'], dados_atuais['motherboard_user']) and ram_cpu(dados_atuais['ram_user']['tipo'], dados_atuais['cpu_user']) and limite_ram(dados_atuais['ram_user']['quantidade'], dados_atuais['ram_user']['tamanho'], dados_atuais['motherboard_user']) and limite_pentes(dados_atuais['ram_user']['quantidade'], dados_atuais['motherboard_user']):
             flash('ecompativel')
