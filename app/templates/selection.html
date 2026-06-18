@@ -27,7 +27,8 @@
                     {% for select in components[categoria].keys() %}
                         <div class='listagem-components-ram'>
                         <h3 class="nome-categoria-ram"> {{ select }}</h3>
-                            <select name="{{ select }}">
+                            <select name="{{ select }}" required>
+                                <option value=""  disabled selected hidden> - </option>
                                 {% for option in components[categoria][select] %}
                                 <option value="{{ option }}">{{ option }}</option>
                                 {% endfor %}
