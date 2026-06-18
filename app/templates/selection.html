@@ -27,7 +27,7 @@
                     {% for select in components[categoria].keys() %}
                         <div class='listagem-components-ram'>
                         <h3 class="nome-categoria-ram"> {{ select }}</h3>
-                            <select name="{{ select }}" required>
+                            <select name="{{ select }}">
                                 <option value=""  disabled selected hidden> - </option>
                                 {% for option in components[categoria][select] %}
                                 <option value="{{ option }}">{{ option }}</option>
@@ -47,7 +47,7 @@
 
 </form>
 
-<div class="grid-exibicao">
+<div class="exibicao">
     <div class="sessao-dinamica">
         <table class="table-session">
             <thead>
@@ -145,28 +145,28 @@
             {% if messages[0][:2] != '02' and messages[0][:2] != '01' %}
             <h2 class="incompativel">As escolhas do usuário são <span class="span-incompativel">incompatíveis!</span></h2>
             {% endif %}
+            {% if messages[0][:2] != '02' and messages[0][:2] != '01' %}
             <div class="relatorio">
             <ul>
-            {% if messages[0][:2] != '02' and messages[0][:2] != '01' %}
                 {% for message in messages %}
                 <li>{% if message[:2] in ['03','04','05','06','07'] %}<span id="space"><i class="fa-solid fa-xmark"></i></span>{% endif %}{{ message[2:] }}</li>
                 {% endfor %}
-            {% endif %}
             </ul>
             </div>
+            {% endif %}
+            <div class="erros-de-envio">
             {% if messages[0][:2] == '02' or messages[0][:2] == '01' %}
                 {% for mensagem in messages %}
-                <p class="erros-de-envio">{{ mensagem[2:] }}</p>
+                <p>{{ mensagem[2:] }}</p>
                 {% endfor %}
             {% endif %}
+            </div>
         {% endif %}
         {% endwith %}
     {% endif %}
     {% endif %}
     </div>
-
 </div>
-
 {% endblock %}
 
 

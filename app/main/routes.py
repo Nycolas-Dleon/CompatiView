@@ -85,7 +85,7 @@ def testar_compatibilidade():
         flash('01Nenhuma configuração encontrada.')
         return redirect(url_for('selectionpage'))
 
-    if dados_atuais['gpu_user'] is None or dados_atuais['cpu_user'] is None or dados_atuais['motherboard_user'] is None or dados_atuais['ram_user']['quantidade'] == None:
+    if dados_atuais['gpu_user'] is None or dados_atuais['cpu_user'] is None or dados_atuais['motherboard_user'] is None or dados_atuais['ram_user']['quantidade'] == None or dados_atuais['ram_user']['tipo'] == None or dados_atuais['ram_user']['tamanho'] == None:
         flash('02Não foi possível verificar a compatibilidade! Preencha os campos vazios.')
         return redirect(url_for('selectionpage'))
 
