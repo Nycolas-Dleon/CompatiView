@@ -65,7 +65,7 @@ CompatiView
     <hr>
     <div class="cards-outros">
 
-        <a href="/" target="_blank" rel="noopener noreferrer">
+        <a href="/" target="_blank" rel="noopener noreferrer" onclick="abrirAlerta(event)">
          <div class="card">
             <i class="fa-solid fa-bookmark"></i>
             <h3>Predefinições</h3>
@@ -75,7 +75,7 @@ CompatiView
          </div>
         </a>
 
-        <a href="/" target="_blank" rel="noopener noreferrer">
+        <a href="{{ url_for('listar_componentes') }}" target="_blank" rel="noopener noreferrer">
          <div class="card">
             <i class="fa-solid fa-clipboard-list"></i>
             <h3>Tabela de Peças</h3>
@@ -85,7 +85,7 @@ CompatiView
          </div>
         </a>
 
-        <a href="/" target="_blank" rel="noopener noreferrer">
+        <a href="/" target="_blank" rel="noopener noreferrer" onclick="abrirAlerta(event)">
             <div class="card">
                 <i class="fa-solid fa-dollar-sign"></i>
                 <h3>Orçamento</h3>
@@ -95,6 +95,14 @@ CompatiView
             </div>
         </a>
     </div>
+
+    <div id="alerta-embreve" class="alerta-overlay">
+        <h3>Em breve!</h3>
+        <p>Esta função ainda está em desenvolvimento, agradecemos a compreensão.</p>
+        <button onclick="fecharAlerta(event)"><i class="fa-regular fa-circle-xmark"></i></button>
+        <div class="barra-progresso"></div>
+    </div>
+    
 </section>
 
 <section id="sobre">
@@ -138,4 +146,7 @@ CompatiView
 </section>
 
 <a href="#" id="botao-topo"><i class="fa-solid fa-arrow-up"></i></a>
+{% endblock %}
+{% block script %}
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 {% endblock %}

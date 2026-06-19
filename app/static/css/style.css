@@ -343,6 +343,79 @@
     scale: 0.8;
 }
 
+.alerta-overlay{
+    text-transform: none;
+    color: #7041cd;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+    background-color: #f0f0f0;
+    backdrop-filter: blur(5px);
+    box-sizing: border-box;
+    box-shadow: 0 0 2rem #f0f0f0a0;
+    justify-self: center;
+    text-align: center;
+    position: fixed;
+    top: 7rem;
+    right: 0;
+    padding: 4rem;
+    max-width: 50rem;
+    z-index: 1000;
+}
+
+.alerta-overlay.mostrar{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.alerta-overlay h3{
+    text-transform: uppercase;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-decoration: underline solid 2px;
+}
+
+.alerta-overlay p{
+    font-size: 2rem;
+}
+
+.alerta-overlay button{
+    background: none;
+    border: none;
+    color: #7041cd;
+    font-size: 3rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    transition: 0.2s ease-in-out;
+}
+
+.alerta-overlay button:hover{
+    color: #f00000;
+    scale: 1.1;
+    transition: 0.2s ease-in-out;
+}
+
+.alerta-overlay button:active{
+    color: #7041cd71;
+    scale: 0.95;
+}
+
+.barra-progresso{
+    margin-top: 3rem;
+    background-color: #7041cd;
+    width: 100%;
+    height: 3px;
+    transition: width 0s linear;
+}
+
+.alerta-overlay.mostrar .barra-progresso {
+    width: 0%;
+    transition: width 5s linear; 
+}
+
 /* Estilos da Seção Sobre */
 
 #sobre{
