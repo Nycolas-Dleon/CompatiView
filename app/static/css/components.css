@@ -64,3 +64,43 @@ td:last-child {
     color: white;
     font-weight: bold;
 }
+
+/* Formulário de filtragem */
+.filtros{
+    width:90%;
+    margin:25px auto;
+
+    display:flex;
+    justify-content:flex-end;
+}
+
+.filtros form{
+    display:flex;
+    gap:10px;
+}
+
+.filtros select,
+.filtros button{
+
+    background:#25115a;
+    color:white;
+
+    border:1px solid #6a35ff;
+    border-radius:8px;
+
+    padding:10px 15px;
+
+    font-size:15px;
+
+    margin-right: 10px;
+}
+
+.filtros button{
+
+    cursor:pointer;
+    transition:.2s;
+}
+
+.filtros button:hover{
+    background:#6a35ff;
+}

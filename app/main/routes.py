@@ -128,8 +128,22 @@ def listar_componentes():
                 "preco": dados.get("price") * 5.50
             })
 
+    # Filtragem
+    categoria_filtro = request.args.get("categoria", "")
+    
+    if categoria_filtro != "":
+        componentes_filtrados = []
+
+        for componente in componentes:
+
+            if componente["categoria"] == categoria_filtro:
+
+                componentes_filtrados.append(componente)
+
+        componentes = componentes_filtrados
+
     # Paginação
-    ITENS_POR_PAGINA = 10 # constante que determina número de itens por página
+    ITENS_POR_PAGINA = 12 # constante que determina número de itens por página
 
     page = request.args.get("page", 1, type=int) # page faz parte da url, se não especificar page é 1
 
