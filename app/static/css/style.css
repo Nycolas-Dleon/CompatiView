@@ -46,6 +46,17 @@
     transition: 0.1s ease-in-out;
 }
 
+#componentes-btn:hover a{
+    color: #70378f;
+    transition: 0.2s ease-in-out;
+}
+
+#componentes-btn:active a{
+    transform: scale(0.95);
+    color: #7041cdc2;
+    transition: 0.1s ease-in-out;
+}
+
 /* Estilos Menu Hambúrguer */
 
 .menu-hamburguer{
