@@ -248,6 +248,10 @@ select:active {
     background-image: url('../imgs/lixeira_hover.png');
 }
 
+.bnt_remover_item:hover{
+    opacity: 0.6;
+}
+
 .btns-session {
     display: grid;
     grid-template-rows: 4.7rem 4.7rem;
