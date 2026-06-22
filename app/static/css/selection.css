@@ -182,7 +182,7 @@ select:active {
     max-height: 20rem;
     max-width: 98%;
     margin: 0 auto;
-    margin-bottom: 1.6rem;
+    margin-bottom: 0.3rem;
     margin-top: 0.6rem;
 }
 
@@ -315,17 +315,18 @@ select:active {
     box-shadow: 0 0 10px rgb(140, 0, 255);
 }
 
-.aviso{text-align: center;
-       color: rgb(255, 255, 255);
-       font-size: 16px;
-       position: absolute;
-       top: 0;
-       left: 0;
-       width: 100%;
-       background: linear-gradient(1deg,#5434d665, #ffffff0f);
-       border-bottom: 2px solid #5434d6;
-       padding: 1.5rem 0;
-       font-weight: bold;
+.aviso {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(1deg,#5434d665, #ffffff0f);
+    border-bottom: 2px solid #5434d6;
+    padding: 1.5rem 0;
+    font-weight: bold;
 }
 
 .resultado h2 {
