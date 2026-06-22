@@ -70,7 +70,7 @@ footer{
     width: 100%;
     background-color: #0a0a0acf;
     color: #f0f0f09a;
-    position: relative;
+    position: absolute;
     bottom: 0;
 }
 
