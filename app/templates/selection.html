@@ -136,6 +136,7 @@
     </div>
 
     <div class="resultado">
+        <p class="aviso">AVISO DE CONFIGURAÇÃO</p>
     {% if get_flashed_messages() %}
     {% if get_flashed_messages()[0] == 'ecompativel' %}   
     <h2 class="compativel">As escolhas do usuário são <span class="span-compativel">compatíveis!</span></h2>
@@ -168,6 +169,3 @@
     </div>
 </div>
 {% endblock %}
-
-
-
