@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title%}CompatiView{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    {% block link_css %}{% endblock %} 
+    <link rel="shortcut icon" href="{{ url_for('static', filename='imgs/favicon.ico') }}" type="image/x-icon">
+    {% block link_icons %}{% endblock %}
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=SUSE:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background"></div>
+    <div class="background-overlay"></div>
+    
+    <header>
+
+        <nav class="navbar">
+            <div class="navbar-overlay"></div>
+            <a href="/" id="logo-link"><img src="{{ url_for('static', filename='imgs/Logo.svg') }}" alt="Logo"></a>
+        
+            {% block nav_links %}
+            {% endblock %}
+        
+        </nav>
+
+    </header>
+    {% block body %}
+    {% endblock %}
+    <footer class="footer">
+        <div class="footer-content">
+                <p>&copy; 2026 CompatiView. Todos os direitos reservados.</p>
+                <p>Desenvolvido por CompatiView Team.</p>
+        </div>
+    </footer>
+    {% block script %}
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% block link_css %}<link rel="stylesheet" href="{{ url_for('static', filename='css/components.css') }}">{% endblock %}
+
+{% block body %}
+
+<form method="GET" class="filtros">
+
+    <select name="categoria">
+
+        <option value="">Reset</option>
+
+        <option value="cpus">CPU</option>
+        <option value="gpus">GPU</option>
+        <option value="motherboards">Placa-mãe</option>
+
+    </select>
+
+    <button type="submit">
+        Filtrar
+    </button>
+
+</form>
+
+<table class="table-container">
+
+    <colgroup> <!--Isso é muito útil, determina a % que cada coluna pode ocupar-->
+        <col style="width:55%">
+        <col style="width:20%">
+        <col style="width:25%">
+    </colgroup>
+
+
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Categoria</th>
+            <th>Preço</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+    {% for componente in componentes %}
+        <tr>
+            <td>{{ componente.nome }}</td>
+            <td>
+                {% if componente.categoria == "cpus" %}
+                    CPU
+                {% elif componente.categoria == "gpus" %}
+                    GPU
+                {% elif componente.categoria == "motherboards" %}
+                Placa-mãe
+                {% endif %}
+            </td>
+            <td>R$ {{ "%.2f"|format(componente.preco) }}</td>
+        </tr>
+    {% endfor %}
+
+    </tbody>
+</table>
+
+<div class="pagination">
+
+    {% if page > 1 %}
+    <a href="?page={{ page - 1 }}&categoria={{ request.args.get('categoria', '') }}">
+        <img src="/static/imgs/angle-left-solid.png" alt="Anterior" class="iconarrow">
+    </a>
+    {% endif %}
+
+    <span class="page-info">
+        Página {{ page }} de {{ total_paginas }}
+    </span>
+
+    {% if page < total_paginas %}
+    <a href="?page={{ page + 1 }}&categoria={{ request.args.get('categoria', '') }}">
+        <img src="/static/imgs/angle-right-solid.png" alt="Próximo" class="iconarrow">
+    </a>
+    {% endif %}
+
+</div>
+
+{% endblock %}

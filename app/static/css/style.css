@@ -1,0 +1,650 @@
+/* Global */
+
+@import url('base.css');
+
+/* Formatação para Mobile (Padrão) */
+/* Estilos da Área de Login */
+
+.area-login{
+    position: fixed;
+    top: 2.4rem;
+    right: 7rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+#login-btn{
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    background-color: #7041cd;
+    transition: 0.3s ease-in-out;
+}
+
+#login-btn:hover{
+    background-color: #a600ff;
+    transition: 0.2s ease-in-out;
+}
+
+#login-btn:active{
+    transform: scale(0.95);
+    background-color: #7041cdc2;
+    transition: 0.1s ease-in-out;
+}
+
+#cadastro-btn:hover a{
+    color: #a600ff;
+    transition: 0.2s ease-in-out;
+}
+
+#cadastro-btn:active a{
+    transform: scale(0.95);
+    color: #7041cdc2;
+    transition: 0.1s ease-in-out;
+}
+
+/* Estilos Menu Hambúrguer */
+
+.menu-hamburguer{
+    position: absolute;
+    top: 2.2rem;
+    right: 1.8rem;
+    z-index: 4;
+    transition: 0.5s ease-in-out;
+}
+
+.menu-hamburguer:has(#menu-toggle:checked){
+    position: fixed;
+    top: 2.2rem;
+    right: 1rem;
+}
+
+#menu-toggle{
+    display: none;
+}
+
+.menu-icon{
+    width: 30px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 5;
+    position: relative;
+    cursor: pointer;
+}
+
+.linha{
+    height: 3px;
+    background-color: #f0f0f0;
+    border-radius: 2px;
+    transition: 0.3s ease-in-out;
+}
+
+/* Estilos do Menu */
+
+.overlay{
+    position: fixed;
+    top: 7rem;
+    right: 0;
+    width: 100%;
+    height: 5rem;
+    border-radius: 0 0 3rem 3rem;
+    background: #7041cd71;
+    z-index: 2;
+    transform: scale(0);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    backdrop-filter: blur(8px);
+}
+
+.nav_links{
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+}
+
+.nav_links ul{
+    display: flex;
+    flex-direction: row;
+}
+
+.nav_links li{
+    margin: 2rem 0;
+}
+
+.nav_links a{
+    font-size: 2rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 2rem;
+    text-decoration: underline solid 1.5px;
+    transition: 0.3s;
+}
+
+.nav_links a:hover{
+    font-weight: bolder;
+    font-size: 2.2rem;
+    color: #7041cd;
+    text-decoration: none;
+    background-color: #f0f0f0e8;
+    transition: 0.2s ease-in-out;
+}
+
+.nav_links a:active{
+    transform: scale(0.95);
+    background-color: #7041cdc2;
+    color: #f0f0f0c2;
+    text-decoration: none;
+    transition: 0.1s ease-in-out;
+}
+
+/* Animação Menu Hambúrguer*/
+
+#menu-toggle:checked + .menu-icon .linha:nth-child(1){
+    transform:  rotate(50deg) translate(2px, 20px);
+    background-color: #7041cd;
+    width: 80%;
+}
+
+#menu-toggle:checked + .menu-icon .linha:nth-child(2){
+    opacity: 0;
+    
+}
+
+#menu-toggle:checked + .menu-icon .linha:nth-child(3){
+    transform: rotate(-50deg) translate(6px, -5px);
+    background-color: #7041cd;
+    width: 80%;
+}
+
+#menu-toggle:checked ~ .overlay{
+    transform: scale(1);
+}
+
+/* Estilos Seção de Apresentação*/
+
+.apresentacao{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem;
+    padding: 3rem;
+    margin-top: 15rem;
+    margin-bottom: 50rem;
+}
+
+.apresentacao h1{
+    font-size: 6rem;
+    text-transform: none;
+    color: #7041cd;
+}
+
+.apresentacao h1 span{
+    color: #f0f0f0;
+}
+
+.apresentacao p{
+    font-size: 1.6rem;
+    color: #f0f0f0;
+    margin-bottom: 1.5rem;
+}
+
+#descricao{
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1.8rem;
+}
+
+.apresentacao a{
+    padding: 1.5rem 3rem;
+    background-color: #7041cd;
+    border-radius: 3rem;
+    font-size: 2rem;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+}
+
+.apresentacao a:hover{
+    scale: 1.1;
+    background-color: #a600ff;
+    transition: 0.2s ease-in-out;
+    box-shadow: 0 0 2.5rem #f0f0f0c2;
+}
+
+.apresentacao a:active{
+    transform: scale(0.95);
+    background-color: #7041cdc2;
+    transition: 0.1s ease-in-out;
+    box-shadow: 0 0 2.5rem #f0f0f06a;
+}
+
+/* Estilos da Seção View+ */
+
+#view-more{
+    padding: 1rem;
+    margin-bottom: 30rem;
+}
+
+#view-more h2{
+    font-size: 4rem;
+    text-transform: none;
+    margin-left: 2rem;
+    color: #f0f0f0;
+}
+
+#view-more h2 span{
+    color: #a600ff;
+}
+
+#view-more hr{
+    margin-left: 2rem;
+    margin-right: 2rem;
+    border: 0.5px solid #f0f0f0;
+}
+
+.cards-outros{
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    padding: 2rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.cards-outros a{
+    display: block;
+    width: 100%;
+    max-width: 85%;
+    margin: 0 auto;
+}
+
+.card{
+    width: 100%;
+    height: 22rem;
+    background-color: #0c0c0ccd;
+    backdrop-filter: blur(5px);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 2rem;
+    transition: 1s ease-in-out;
+}
+
+.card i{
+    font-size: 4rem;
+    color: #7041cd;
+    transition: 0.6s ease-in-out;
+}
+
+.card h3{
+    font-size: 2.5rem;
+    text-transform: none;
+    color: #7041cd;
+    transition: 0.6s ease-in-out;
+}
+
+.card p{
+    text-transform: none;
+    font-size: 1.8rem;
+    font-weight: bold;
+    transition: 0.6s ease-in-out;
+}
+
+.card:hover{
+    background-color: #f0f0f06a;
+    transition: 1s ease;
+    scale: 1.04;
+    text-decoration: none;
+    border-radius: 2rem;
+    box-shadow: 0 0 2.5rem #7041cd;
+}
+
+.card:active{
+    background-color: #f0f0f0a0;
+    transition: 0.5s ease-in-out;
+    transform: scale(0.95);
+    text-decoration: none;
+    border-radius: 5rem;
+}
+
+.card:hover i{
+    color: #f0f0f0;
+    transition: 0.6s ease-in-out;
+    scale: 1.2;
+}
+
+.card:hover h3{
+    color: #f0f0f0;
+    transition: 0.6s ease-in-out;
+    scale: 1.2;
+}
+
+.card:hover p{
+    color: #f0f0f0;
+    transition: 0.6s ease-in-out;
+    scale: 0.8;
+}
+
+.alerta-overlay{
+    text-transform: none;
+    color: #7041cd;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+    background-color: #f0f0f0;
+    backdrop-filter: blur(5px);
+    box-sizing: border-box;
+    box-shadow: 0 0 2rem #f0f0f0a0;
+    justify-self: center;
+    text-align: center;
+    position: fixed;
+    top: 7rem;
+    right: 0;
+    padding: 4rem;
+    max-width: 50rem;
+    z-index: 1000;
+}
+
+.alerta-overlay.mostrar{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.alerta-overlay h3{
+    text-transform: uppercase;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-decoration: underline solid 2px;
+}
+
+.alerta-overlay p{
+    font-size: 2rem;
+}
+
+.alerta-overlay button{
+    background: none;
+    border: none;
+    color: #7041cd;
+    font-size: 3rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    transition: 0.2s ease-in-out;
+}
+
+.alerta-overlay button:hover{
+    color: #f00000;
+    scale: 1.1;
+    transition: 0.2s ease-in-out;
+}
+
+.alerta-overlay button:active{
+    color: #7041cd71;
+    scale: 0.95;
+}
+
+.barra-progresso{
+    margin-top: 3rem;
+    background-color: #7041cd;
+    width: 100%;
+    height: 3px;
+    transition: width 0s linear;
+}
+
+.alerta-overlay.mostrar .barra-progresso {
+    width: 0%;
+    transition: width 5s linear; 
+}
+
+/* Estilos da Seção Sobre */
+
+#sobre{
+    padding: 1rem;
+    margin-bottom: 30rem;
+}
+
+#sobre h2{
+    font-size: 4rem;
+    text-transform: none;
+    margin-left: 2rem;
+    color: #f0f0f0;
+}
+
+#sobre p{
+    text-transform: none;
+    font-family: "SUSE", sans-serif;
+    font-size: 1.8rem;
+    font-weight: bolder;
+    color: #f0f0f0;
+    backdrop-filter: blur(10px);
+    background-color: #0c0c0c95;
+    border-radius: 0 3rem 0 3rem;
+    padding: 2rem;
+    margin: 2rem;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 8rem;
+    margin-top: 2rem;
+}
+
+#sobre span{
+    font-size: 2.2rem;
+    color: #7041cd;
+}
+
+#sobre span #destaque{
+    color: #f0f0f0;
+    font-weight: bold;
+}
+
+#sobre hr{
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 4rem;
+    border: 0.5px solid #f0f0f0;
+}
+
+/* Estilos da Seção Contatos */
+
+#contatos{
+    padding: 1rem;
+    margin-bottom: 47rem;
+}
+
+#contatos h2{
+    font-size: 4rem;
+    text-transform: none;
+    margin-left: 2rem;
+    color: #f0f0f0;
+}
+
+#contatos p{
+    font-size: 2rem;
+    font-weight: bold;
+    color: #f0f0f0;
+    padding: 2rem;
+    margin: 2rem;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 5rem;
+    margin-top: 2rem;
+}
+
+#contatos hr{
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 4rem;
+    border: 0.5px solid #f0f0f0;
+}
+
+#contatos .links-contatos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+}
+
+#contatos .links-contatos i{
+    font-size: 2.5rem;
+    margin-right: 1rem;
+}
+
+#contatos a:hover{
+    text-decoration: solid underline 1.5px #7041cd;
+    color: #7041cd;
+    transition: 0.2s ease-in-out;
+}
+
+#contatos a:active{
+    color: #4d2e89;
+    transition: 0.1s ease-in-out;
+}
+
+/* Botão de retorno ao topo */
+
+#botao-topo{
+    background-color: #f0f0f0;
+    color: #7041cd;
+    position: fixed;
+    bottom: 2.2rem;
+    right: 1.8rem;
+    padding: 1rem;
+    border-radius: 100%;
+    scale: 0.8;
+    font-size: 2rem;
+    text-align: center;
+    justify-content: center;
+    z-index: 5;
+    transition: 0.5s ease-in-out;
+    box-shadow: 0 0 1.5rem #7041cd;
+}
+
+#botao-topo:hover{
+    scale: 1;
+    font-size: 2.5rem;
+    background-color: #7041cd;
+    color: #f0f0f0;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 0 1.5rem #f0f0f0c2;
+}
+
+#botao-topo:active{
+    scale: 0.9;
+    background-color: #4d2e89;
+    color: #f0f0f0a0;
+    transition: 0.1s ease-in-out;
+    box-shadow: 0 0 0.5rem #0c0c0c95;
+}
+
+#botao-topo i{
+    transition: 0.5s ease-in-out;
+}
+
+#botao-topo:active i{
+    transform: translateY(-4px);
+    transition: 0.1s ease-in-out;
+}
+
+/* Formatação para Tablet */
+
+@media (min-width: 768px) {
+
+    .apresentacao{
+        margin-top: 14rem;
+    }
+
+    .apresentacao h1{
+        font-size: 6rem;
+    }
+
+    .apresentacao p{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    }
+
+    #descricao{
+        font-size: 2.2rem;
+    }
+
+    .apresentacao a{
+        font-size: 2.2rem;
+        padding: 2rem 4rem;
+    }
+
+    .cards-outros a{
+    max-width: 90%;
+    }
+}
+
+/* Formatação para Desktop */
+
+@media (min-width: 1024px) {
+    
+    .overlay{
+        width: 40rem;
+    }
+
+    .apresentacao{
+        margin-top: 16rem;
+    }
+
+    .apresentacao h1{
+        font-size: 8rem;
+    }
+
+    .apresentacao p{
+    font-size: 2.6rem;
+    margin-bottom: 2rem;
+    }
+
+    #descricao{
+        font-size: 2.8rem;
+    }
+
+    .apresentacao a{
+        font-size: 2.8rem;
+        padding: 2rem 4rem;
+    }
+
+    .cards-outros{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+    max-width: 98%;
+    margin: 2rem auto 0 auto;
+    }
+
+    .cards-outros a{
+        max-width: 100%;
+    }
+
+    .cards-outros a:nth-child(3){
+        grid-column: span 2;
+    }
+
+    #contatos{
+        margin-bottom: 35rem;
+    }
+
+}

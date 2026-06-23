@@ -1,0 +1,152 @@
+{% extends 'base.html' %}
+{% block title %}
+CompatiView
+{% endblock%}
+
+{% block link_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block link_icons %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+{% endblock %}
+
+{% block nav_links %}
+
+    <ul class="area-login">
+        <li id="login-btn">
+            <a href="#" target="_blank" rel="noopenenoreferrer">Entrar</a>
+        </li>
+        <li id="cadastro-btn">
+            <a href="#" target="_blank" rel="noopenenoreferrer">Cadastre-se</a>
+        </li>
+    </ul>
+
+    <div class="menu-hamburguer">
+        <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">
+                <div class="linha"></div>
+                <div class="linha"></div>
+                <div class="linha"></div>
+            </label>
+
+            <div class="overlay">
+            <ul class="nav_links">
+                <li id="mais-button">
+                    <a href="#view-more">View+</a>
+                </li>
+                <li id="sobre-button">
+                    <a href="#sobre">Sobre</a>
+                </li>
+                <li id="contatos-button">
+                    <a href="#contatos">Contatos</a>
+                </li>
+            </ul>
+            </div>
+    </div>
+
+{% endblock %}
+
+{% block body %}
+
+<section class="apresentacao">
+    
+    <h1>Compati<span>View</span></h1>
+    <p id="descricao">A melhor escolha para verificar a compatibilidade entre Hardwares</p>
+    <p>Clique no botão abaixo e teste já!</p>
+
+    <a href="{{ url_for('selectionpage') }}" target="_self" rel="noopener noreferrer">Acessar</a>
+
+</section>
+
+<section id="view-more">
+    <br><br><br><br><br>
+    <h2>View<span>+</span></h2>
+    <hr>
+    <div class="cards-outros">
+
+        <a href="/" target="_blank" rel="noopener noreferrer" onclick="abrirAlerta(event)">
+         <div class="card">
+            <i class="fa-solid fa-bookmark"></i>
+            <h3>Predefinições</h3>
+            <p>
+                Salve suas configurações favoritas e acesse-as rapidamente para facilitar futuras montagens.
+            </p>
+         </div>
+        </a>
+
+        <a href="{{ url_for('listar_componentes') }}" target="_blank" rel="noopener noreferrer">
+         <div class="card">
+            <i class="fa-solid fa-clipboard-list"></i>
+            <h3>Tabela de Peças</h3>
+            <p>
+                Veja uma tabela completa de peças de hardware, com informações detalhadas sobre cada componente para ajudar na sua escolha.
+            </p>
+         </div>
+        </a>
+
+        <a href="/" target="_blank" rel="noopener noreferrer" onclick="abrirAlerta(event)">
+            <div class="card">
+                <i class="fa-solid fa-dollar-sign"></i>
+                <h3>Orçamento</h3>
+                <p>
+                Calcule o custo total do seu PC com base nas peças selecionadas.
+                </p>
+            </div>
+        </a>
+    </div>
+
+    <div id="alerta-embreve" class="alerta-overlay">
+        <h3>Em breve!</h3>
+        <p>Esta função ainda está em desenvolvimento, agradecemos a compreensão.</p>
+        <button onclick="fecharAlerta(event)"><i class="fa-regular fa-circle-xmark"></i></button>
+        <div class="barra-progresso"></div>
+    </div>
+    
+</section>
+
+<section id="sobre">
+    <br><br><br><br><br>
+    <h2>Sobre</h2>
+    <hr>
+    <p> 
+        Montar um PC pode ser um quebra-cabeça caro. 
+        <br><br>
+        O <span>Compati<span id="destaque">View</span></span> chega para simplificar essa tarefa, funcionando como um guia inteligente que verifica em tempo real se as peças escolhidas funcionam bem juntas. Com uma interface intuitiva, ele não apenas diz "sim" ou "não" para a sua escolhas, mas também sugere componentes substitutos que se encaixam perfeitamente no seu setup.
+        <br><br>
+        O <span>Compati<span id="destaque">View</span></span> é a ferramenta definitiva para entusiastas de tecnologia, gamers e profissionais que buscam montar o PC dos sonhos sem dores de cabeça. Com ele, você pode explorar as possibilidades, comparar componentes e garantir que cada peça escolhida seja a melhor para o seu projeto.
+        <br><br>
+        É a segurança de que cada centavo investido no seu hardware terá o desempenho esperado, sem surpresas na hora da montagem.        
+    </p>
+    <p>
+        Este é um projeto acadêmico desenvolvido por um grupo de estudantes do curso de Engenharia de Software do Instituto Federal da Paraíba (IFPB) - Campus João Pessoa. O objetivo é criar uma aplicação web que auxilie os usuários a verificar a compatibilidade entre diferentes componentes de hardware para montagem de computadores, proporcionando uma experiência mais segura e informada na escolha dos componentes.
+        <br><br>
+        O projeto é uma iniciativa para aplicar os conhecimentos adquiridos durante o curso, utilizando tecnologias modernas de desenvolvimento web, como Flask para o backend e HTML/CSS para o frontend. A aplicação visa oferecer uma interface amigável e intuitiva, permitindo que os usuários possam facilmente verificar a compatibilidade entre processadores, placas-mãe, memórias RAM, placas de vídeo e outros componentes essenciais para a montagem de um computador.
+    </p>
+</section>
+
+<section id="contatos">
+    <br><br><br><br><br>
+    <h2>Contatos</h2>
+    <hr>
+    <p>Entre em contato conosco para dúvidas, sugestões ou parcerias:</p>
+    <div class="links-contatos">
+        <span>
+            <a href="mailto:compatiview@gmail.com?subject=Contato%20CompatiView" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-envelope"></i>Envie-nos um email
+            </a>
+        </span>
+        <br><br>
+        <span>
+            <a href="https://github.com/Nycolas-Dleon/CompatiView.git" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github"></i>Repositório do Projeto
+            </a>
+        </span>
+    </div>
+</section>
+
+<a href="#" id="botao-topo"><i class="fa-solid fa-arrow-up"></i></a>
+{% endblock %}
+{% block script %}
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+{% endblock %}
