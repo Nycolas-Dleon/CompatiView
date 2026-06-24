@@ -6,7 +6,7 @@ from . import main_bp
 
 @main_bp.route('/')
 def homepage():
-    return render_template('index.html')
+    return render_template('main/index.html')
 
 @main_bp.route('/selection')
 def selectionpage():
@@ -24,7 +24,7 @@ def selectionpage():
             }
         }
     dados_atuais = session.get('dados_usuario', {})
-    return render_template('selection.html', components=components, nomes=nomes, escolha=dados_atuais)
+    return render_template('main/selection.html', components=components, nomes=nomes, escolha=dados_atuais)
 
 @main_bp.route('/adicionar', methods=['POST'])
 def adicionar_componente():
@@ -162,7 +162,7 @@ def listar_componentes():
     total_paginas = calcular_total_paginas(len(componentes), ITENS_POR_PAGINA)
 
     return render_template(
-        "componentes.html",
+        "main/componentes.html",
         componentes=componentes_pagina,
         page=page,
         total_paginas=total_paginas
