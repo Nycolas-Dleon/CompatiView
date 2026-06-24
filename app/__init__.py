@@ -3,9 +3,7 @@ from config import DevelopmentConfig
 from app.security import gerar_csrf_token, validar_csrf_token
 
 def create_app(config_class=DevelopmentConfig):
-    app = Flask(__name__,
-                template_folder='../templates',
-                static_folder='../static')
+    app = Flask(__name__)
     app.config.from_object(config_class)
 
     # Disponibiliza a função gerar_csrf_token() nos templates jinja2 com o nome csrf_token().

@@ -1,16 +1,17 @@
-from flask import Flask, redirect, render_template, url_for, session, request, flash
+from flask import Flask, redirect, render_template, url_for, session, request, flash, current_app
 from app.utils.compatibilidade import *
 from app.utils.data_manager import load_json
-from app import app 
+from . import main_bp
+ 
 
-@app.route('/')
+@main_bp.route('/')
 def homepage():
     return render_template('index.html')
 
-@app.route('/selection')
+@main_bp.route('/selection')
 def selectionpage():
     components = load_json()
-    nomes = app.config["nomes"]
+    nomes = current_app.config["nomes"]
     if 'dados_usuario' not in session:
         session['dados_usuario'] =  {
             'cpu_user': None,
@@ -25,7 +26,7 @@ def selectionpage():
     dados_atuais = session.get('dados_usuario', {})
     return render_template('selection.html', components=components, nomes=nomes, escolha=dados_atuais)
 
-@app.route('/adicionar', methods=['POST'])
+@main_bp.route('/adicionar', methods=['POST'])
 def adicionar_componente():
     dados = session.get('dados_usuario')
     if not dados:
@@ -56,7 +57,7 @@ def adicionar_componente():
     return redirect(url_for('selectionpage'))
 
 
-@app.route('/remover', methods=['GET', 'POST'])
+@main_bp.route('/remover', methods=['GET', 'POST'])
 def remover_componente():
     dados = session.get('dados_usuario', {})
     form_enviado = request.form
@@ -78,7 +79,7 @@ def remover_componente():
     session.modified = True
     return redirect(url_for('selectionpage'))
 
-@app.route('/testarcompat', methods=['GET', 'POST'])
+@main_bp.route('/testarcompat', methods=['GET', 'POST'])
 def testar_compatibilidade():
     dados_atuais = session.get('dados_usuario')
     if not dados_atuais:
@@ -109,7 +110,7 @@ def testar_compatibilidade():
             flash('ecompativel')
     return redirect(url_for('selectionpage'))
     
-@app.route("/componentes")
+@main_bp.route("/componentes")
 def listar_componentes():
     components = load_json() # Os componentes na forma de dicionário Python
     componentes = [] # Uma lista vazia onde cada elemento da lista é um dict contendo as informações de cada linha da listagem das peças
