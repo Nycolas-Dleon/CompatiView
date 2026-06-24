@@ -3,7 +3,8 @@
 
 {% block body %}
 
-<form action="{{ url_for('adicionar_componente')}}" method="POST">
+<form action="{{ url_for('main.adicionar_componente')}}" method="POST">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
     <div class="container-geral">
 
         {% for categoria in components.keys() %}
@@ -65,7 +66,8 @@
                     <td>{{ escolha.cpu_user or '-' }}</td>
                     <td class="cln_remover_item">
                     {% if escolha.cpu_user != None %}
-                        <form action="{{ url_for('remover_componente') }}" method="post">
+                        <form action="{{ url_for('main.remover_componente') }}" method="post">
+                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                             <input type="hidden" name="tipo_componente" value="cpu">
                             <button type="submit" class="bnt_remover_item"></button>
                         </form>
@@ -73,13 +75,13 @@
                     </td>
                 </tr>
 
-
                 <tr>
                     <td>Placa de Vídeo</td>
                     <td>{{ escolha.gpu_user or '-' }}</td>
                     <td class="cln_remover_item">
                     {% if escolha.gpu_user != None %}
-                        <form action="{{ url_for('remover_componente') }}" method="post">
+                        <form action="{{ url_for('main.remover_componente') }}" method="post">
+                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                             <input type="hidden" name="tipo_componente" value="gpu">
                             <button type="submit" class="bnt_remover_item"></button>
                         </form>
@@ -87,13 +89,13 @@
                     </td>
                 </tr>
 
-
                 <tr>
                     <td>Placa-mãe</td>
                     <td>{{ escolha.motherboard_user or '-' }}</td>
                     <td class="cln_remover_item">
                     {% if escolha.motherboard_user != None %}
-                        <form action="{{ url_for('remover_componente') }}" method="post">
+                        <form action="{{ url_for('main.remover_componente') }}" method="post">
+                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                             <input type="hidden" name="tipo_componente" value="motherboard">
                             <button type="submit" class="bnt_remover_item"></button>
                         </form>
@@ -116,7 +118,8 @@
                         </td>
                         <td class="cln_remover_item">
                         {% if escolha.ram_user.tamanho != None %}
-                            <form action="{{ url_for('remover_componente') }}" method="post">
+                            <form action="{{ url_for('main.remover_componente') }}" method="post">
+                            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                                 <input type="hidden" name="tipo_componente" value="ram">
                                 <button type="submit" class="bnt_remover_item"></button> 
                             </form>
@@ -126,10 +129,12 @@
             </tbody>
         </table>
         <div class="btns-session">
-            <form action="{{ url_for('testar_compatibilidade') }}" method="POST">
+            <form action="{{ url_for('main.testar_compatibilidade') }}" method="POST">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                 <input class="btn-testar-compatibilidade" type="submit" value="Verificar Compatibilidade"> 
             </form>
             <form action="" method="">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                 <abbr title="Indisponível"><input class="btn-salvar-config" type="submit" value="Salvar Configuração"></abbr>
             </form>
         </div>

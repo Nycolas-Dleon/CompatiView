@@ -1,16 +1,17 @@
-from flask import Flask, redirect, render_template, url_for, session, request, flash
+from flask import Flask, redirect, render_template, url_for, session, request, flash, current_app
 from app.utils.compatibilidade import *
 from app.utils.data_manager import load_json
-from app import app 
+from . import main_bp
+ 
 
-@app.route('/')
+@main_bp.route('/')
 def homepage():
-    return render_template('index.html')
+    return render_template('main/index.html')
 
-@app.route('/selection')
+@main_bp.route('/selection')
 def selectionpage():
     components = load_json()
-    nomes = app.config["nomes"]
+    nomes = current_app.config["nomes"]
     if 'dados_usuario' not in session:
         session['dados_usuario'] =  {
             'cpu_user': None,
@@ -23,13 +24,13 @@ def selectionpage():
             }
         }
     dados_atuais = session.get('dados_usuario', {})
-    return render_template('selection.html', components=components, nomes=nomes, escolha=dados_atuais)
+    return render_template('main/selection.html', components=components, nomes=nomes, escolha=dados_atuais)
 
-@app.route('/adicionar', methods=['POST'])
+@main_bp.route('/adicionar', methods=['POST'])
 def adicionar_componente():
     dados = session.get('dados_usuario')
     if not dados:
-        return redirect(url_for('selectionpage'))
+        return redirect(url_for('main.selectionpage'))
 
     form_enviado = request.form
 
@@ -53,10 +54,10 @@ def adicionar_componente():
     session['dados_usuario'] = dados
     session.modified = True
     
-    return redirect(url_for('selectionpage'))
+    return redirect(url_for('main.selectionpage'))
 
 
-@app.route('/remover', methods=['GET', 'POST'])
+@main_bp.route('/remover', methods=['GET', 'POST'])
 def remover_componente():
     dados = session.get('dados_usuario', {})
     form_enviado = request.form
@@ -76,9 +77,9 @@ def remover_componente():
 
     session['dados_usuario'] = dados
     session.modified = True
-    return redirect(url_for('selectionpage'))
+    return redirect(url_for('main.selectionpage'))
 
-@app.route('/testarcompat', methods=['GET', 'POST'])
+@main_bp.route('/testarcompat', methods=['GET', 'POST'])
 def testar_compatibilidade():
     dados_atuais = session.get('dados_usuario')
     if not dados_atuais:
@@ -87,7 +88,7 @@ def testar_compatibilidade():
 
     if dados_atuais['gpu_user'] is None or dados_atuais['cpu_user'] is None or dados_atuais['motherboard_user'] is None or dados_atuais['ram_user']['quantidade'] == None or dados_atuais['ram_user']['tipo'] == None or dados_atuais['ram_user']['tamanho'] == None:
         flash('02Não foi possível verificar a compatibilidade! Preencha os campos vazios.')
-        return redirect(url_for('selectionpage'))
+        return redirect(url_for('main.selectionpage'))
 
     else:
         if not cpu_motherboard(dados_atuais['cpu_user'], dados_atuais['motherboard_user']):
@@ -107,9 +108,9 @@ def testar_compatibilidade():
 
         if cpu_motherboard(dados_atuais['cpu_user'], dados_atuais['motherboard_user']) and ram_motherboard(dados_atuais['ram_user']['tipo'], dados_atuais['motherboard_user']) and ram_cpu(dados_atuais['ram_user']['tipo'], dados_atuais['cpu_user']) and limite_ram(dados_atuais['ram_user']['quantidade'], dados_atuais['ram_user']['tamanho'], dados_atuais['motherboard_user']) and limite_pentes(dados_atuais['ram_user']['quantidade'], dados_atuais['motherboard_user']):
             flash('ecompativel')
-    return redirect(url_for('selectionpage'))
+    return redirect(url_for('main.selectionpage'))
     
-@app.route("/componentes")
+@main_bp.route("/componentes")
 def listar_componentes():
     components = load_json() # Os componentes na forma de dicionário Python
     componentes = [] # Uma lista vazia onde cada elemento da lista é um dict contendo as informações de cada linha da listagem das peças
@@ -161,7 +162,7 @@ def listar_componentes():
     total_paginas = calcular_total_paginas(len(componentes), ITENS_POR_PAGINA)
 
     return render_template(
-        "componentes.html",
+        "main/componentes.html",
         componentes=componentes_pagina,
         page=page,
         total_paginas=total_paginas
