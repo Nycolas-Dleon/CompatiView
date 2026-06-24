@@ -255,10 +255,9 @@ select:active {
 .btns-session {
     display: grid;
     grid-template-rows: 4.7rem 4.7rem;
-    min-width: 90%;
+    min-width: 90.4%;
     justify-self: center;
-    margin-top: 1.7rem;
-    margin-left: 0.6rem;
+    margin-top: 1.8rem;
     gap: 0.3rem;
 }
 
