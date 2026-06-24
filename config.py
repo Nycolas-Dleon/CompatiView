@@ -5,7 +5,7 @@ class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY')
 
     SESSION_COOKIE_HTTPONLY = True
-    SESSION_COOKIE_SAMESITE = True
+    SESSION_COOKIE_SAMESITE = 'Lax'
     SESSION_COOKIE_SECURE = False
 
 # Inicializa configuração de produção, que herda a classe de config mas muda o secure (agora o cookie apenas trafega se o protocolo for seguro).

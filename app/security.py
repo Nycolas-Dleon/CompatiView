@@ -27,6 +27,6 @@ def validar_csrf_token():
     enviado = request.form.get('csrf_token')
     esperado = session.get('_csrf_token')
     # Se um dos dois não existir ou os dois não forem iguais, o sistema retorna permissão negada.
-    if not enviado or not esperado or secrets.compare_digest(enviado,esperado):
+    if not enviado or not esperado or not secrets.compare_digest(enviado,esperado):
         abort(403)
 

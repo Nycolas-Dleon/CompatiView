@@ -30,7 +30,7 @@ def selectionpage():
 def adicionar_componente():
     dados = session.get('dados_usuario')
     if not dados:
-        return redirect(url_for('selectionpage'))
+        return redirect(url_for('main.selectionpage'))
 
     form_enviado = request.form
 
@@ -54,7 +54,7 @@ def adicionar_componente():
     session['dados_usuario'] = dados
     session.modified = True
     
-    return redirect(url_for('selectionpage'))
+    return redirect(url_for('main.selectionpage'))
 
 
 @main_bp.route('/remover', methods=['GET', 'POST'])
@@ -77,7 +77,7 @@ def remover_componente():
 
     session['dados_usuario'] = dados
     session.modified = True
-    return redirect(url_for('selectionpage'))
+    return redirect(url_for('main.selectionpage'))
 
 @main_bp.route('/testarcompat', methods=['GET', 'POST'])
 def testar_compatibilidade():
@@ -88,7 +88,7 @@ def testar_compatibilidade():
 
     if dados_atuais['gpu_user'] is None or dados_atuais['cpu_user'] is None or dados_atuais['motherboard_user'] is None or dados_atuais['ram_user']['quantidade'] == None or dados_atuais['ram_user']['tipo'] == None or dados_atuais['ram_user']['tamanho'] == None:
         flash('02Não foi possível verificar a compatibilidade! Preencha os campos vazios.')
-        return redirect(url_for('selectionpage'))
+        return redirect(url_for('main.selectionpage'))
 
     else:
         if not cpu_motherboard(dados_atuais['cpu_user'], dados_atuais['motherboard_user']):
@@ -108,7 +108,7 @@ def testar_compatibilidade():
 
         if cpu_motherboard(dados_atuais['cpu_user'], dados_atuais['motherboard_user']) and ram_motherboard(dados_atuais['ram_user']['tipo'], dados_atuais['motherboard_user']) and ram_cpu(dados_atuais['ram_user']['tipo'], dados_atuais['cpu_user']) and limite_ram(dados_atuais['ram_user']['quantidade'], dados_atuais['ram_user']['tamanho'], dados_atuais['motherboard_user']) and limite_pentes(dados_atuais['ram_user']['quantidade'], dados_atuais['motherboard_user']):
             flash('ecompativel')
-    return redirect(url_for('selectionpage'))
+    return redirect(url_for('main.selectionpage'))
     
 @main_bp.route("/componentes")
 def listar_componentes():
