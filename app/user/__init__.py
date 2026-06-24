@@ -1,3 +1,3 @@
 from flask import Blueprint
-main_bp = Blueprint('main', __name__)
+user_bp = Blueprint('user', __name__)
 from . import routes
