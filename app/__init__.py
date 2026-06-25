@@ -23,6 +23,11 @@ def create_app(config_class=DevelopmentConfig):
     app.register_blueprint(user_bp, url_prefix='/user')
     app.register_blueprint(auth_bp)
 
+    # Tratador de erro de permissão negada
+    @app.errorhandler(403)
+    def acesso_negado(e):
+        return render_template('errors/403.html'), 403
+
     # Configura "nomes" no app. Isso serve para formatar os titulos que estão no banco de dados na hora da listagem.
     app.config["nomes"] = {
             'cpus' : 'Processadores',

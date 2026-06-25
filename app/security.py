@@ -8,8 +8,7 @@ def login_required(f):
     @wraps(f)
     def wrapper(*args, **kwargs):
         if 'usuario' not in session:
-            flash('Você precisa estar logado para acessar esta página!', 'error')
-            return redirect(url_for('login'))
+            abort(403)
         return f(*args, **kwargs)
     return wrapper
         
