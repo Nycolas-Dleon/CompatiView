@@ -1,5 +1,4 @@
 import json
-import csv
 from pathlib import Path
 
 '''
@@ -59,10 +58,17 @@ def load_users():
         linhas = arquivo.read().splitlines()
 
     for i in range(1, len(linhas)):
+        if not linhas[i].split(';'):
+            continue
+
         linha = linhas[i].split(';')
+
+        if len(linha) < 3:
+            continue
+
         if linha[0] not in users.keys():
             users[linha[0]] = {}
             users[linha[0]]['senha'] = linha[1]
-            users[linha[0]]['salvos'] = linha[2]
+            users[linha[0]]['salvamentos'] = linha[2]
             
     return users
