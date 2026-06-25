@@ -47,3 +47,22 @@ def load_json(categoria:str=''):
     
     elif categoria == 'rams':
         return componentes_geral["rams"]
+
+def load_users():
+    '''
+    load_users() transforma o banco de dados em um dicionário python maleável para facilitar a autenticação e listagem de salvamentos.
+    '''
+    users = {}
+    PATH_CSV = PATH_DATA / 'users.csv'
+
+    with open(PATH_CSV, 'r') as arquivo:
+        linhas = arquivo.read().splitlines()
+
+    for i in range(1, len(linhas)):
+        linha = linhas[i].split(';')
+        if linha[0] not in users.keys():
+            users[linha[0]] = {}
+            users[linha[0]]['senha'] = linha[1]
+            users[linha[0]]['salvos'] = linha[2]
+            
+    return users

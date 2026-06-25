@@ -2,7 +2,7 @@ import secrets
 from functools import wraps
 from flask import session, flash, redirect, url_for, abort, request
 
-# Decorator de login required
+# Decorators de gerenciamento de sessão
 def login_required(f):
     '''Garante que o usuário possui uma conta e está autenticado.'''
     @wraps(f)
