@@ -1,6 +1,5 @@
 import json
 from pathlib import Path
-from flask import session
 
 '''
 O fluxo de relacionar os paths com variáveis usando a biblioteca pathlib serve para evitar problemas de caminho para pastas em outros computadores ou com diferentes sistemas operacionais.
