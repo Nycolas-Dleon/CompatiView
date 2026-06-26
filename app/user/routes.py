@@ -1,6 +1,7 @@
 from flask import Flask, redirect, render_template, url_for, session, request, flash 
 from app.utils.data_manager import load_json
 from app.security import login_required
+from app.utils.data_manager import load_users
 from . import user_bp
 
 @user_bp.route("/componentes")
@@ -65,7 +66,7 @@ def listar_componentes():
 @user_bp.route("/salvar", methods=['POST', 'GET'])
 @login_required
 def salvar():
-
+    load_users()[session['usuario']['salvamentos']].append(session['dados_usuario']) 
     return redirect(url_for('main.selectionpage'))
 
 
