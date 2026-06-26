@@ -133,9 +133,9 @@
                 <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                 <input class="btn-testar-compatibilidade" type="submit" value="Verificar Compatibilidade"> 
             </form>
-            <form action="" method="">
+            <form action="{{ url_for('user.salvar')}}" method="POST">
             <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-                <abbr title="Indisponível"><input class="btn-salvar-config" type="submit" value="Salvar Configuração"></abbr>
+                <input class="btn-salvar-config" type="submit" value="Salvar Configuração">
             </form>
         </div>
     </div>

@@ -61,3 +61,17 @@ def listar_componentes():
         page=page,
         total_paginas=total_paginas
     )
+
+@user_bp.route("/salvar", methods=['POST', 'GET'])
+@login_required
+def salvar():
+
+    return redirect(url_for('main.selectionpage'))
+
+
+
+
+
+
+
+
