@@ -1,5 +1,5 @@
 from flask import Flask, redirect, render_template, url_for, session, request, flash 
-from app.utils.data_manager import load_json
+from app.utils.data_manager import append_components, load_json
 from app.security import login_required
 from app.utils.data_manager import load_users
 from . import user_bp
@@ -72,14 +72,11 @@ def salvar():
         flash('00Não foi possível salvar essa configuração! Preencha todos os campos.')
         return redirect(url_for('main.selectionpage'))
 
-    lista_modificada = load_users()[session['usuario']['salvamentos']].append(session['dados_usuario']) 
-    
+    username = session.get('usuario', {})
+    usuarios = load_users()
+    lista_modificada = usuarios[username]['salvamentos']
+    lista_modificada.append(session.get('dados_usuario')) 
+    append_components(lista_modificada, username)
+
     return redirect(url_for('main.selectionpage'))
-
-
-
-
-
-
-
 
