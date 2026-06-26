@@ -16,6 +16,7 @@ def cadastro():
     # função que adiciona usuário no arquivo csv.
     add_user(usuario, senha_hash)
 
+    flash('Usuário cadastrado com sucesso!', 'sucess')
     return redirect(url_for("main.homepage"))
 
 @auth_bp.route('/login', methods=['POST', 'GET'])
@@ -28,7 +29,7 @@ def login():
             session['usuario'] = username
             return redirect(url_for('main.selectionpage'))
 
-        flash('Usuário ou senhas incorretos.', 'error')
+        flash('Usuário ou senha incorretos!', 'error')
 
     return render_template('auth/login.html')
 

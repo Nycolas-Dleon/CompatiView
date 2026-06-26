@@ -77,6 +77,7 @@ def salvar():
     lista_modificada = usuarios[username]['salvamentos']
     lista_modificada.append(session.get('dados_usuario')) 
     append_components(lista_modificada, username)
+    flash('Sua configuração foi salva com sucesso!', 'sucess')
 
     return redirect(url_for('main.selectionpage'))
 
