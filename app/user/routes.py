@@ -66,7 +66,14 @@ def listar_componentes():
 @user_bp.route("/salvar", methods=['POST', 'GET'])
 @login_required
 def salvar():
-    load_users()[session['usuario']['salvamentos']].append(session['dados_usuario']) 
+    dados_atuais = session.get('dados_usuario')
+
+    if dados_atuais['gpu_user'] is None or dados_atuais['cpu_user'] is None or dados_atuais['motherboard_user'] is None or dados_atuais['ram_user']['quantidade'] == None or dados_atuais['ram_user']['tipo'] == None or dados_atuais['ram_user']['tamanho'] == None:
+        flash('00Não foi possível salvar essa configuração! Preencha todos os campos.')
+        return redirect(url_for('main.selectionpage'))
+
+    lista_modificada = load_users()[session['usuario']['salvamentos']].append(session['dados_usuario']) 
+    
     return redirect(url_for('main.selectionpage'))
 
 

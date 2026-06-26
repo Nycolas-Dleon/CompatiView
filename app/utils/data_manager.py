@@ -72,3 +72,9 @@ def load_users():
             users[linha[0]]['salvamentos'] = linha[2]
             
     return users
+
+def append_components():
+    '''
+    append_components() modifica a lista de salvamentos do arquivo csv.
+    '''
+    
