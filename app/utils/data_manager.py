@@ -1,5 +1,4 @@
 import json
-import csv
 from pathlib import Path
 
 '''
@@ -47,3 +46,64 @@ def load_json(categoria:str=''):
     
     elif categoria == 'rams':
         return componentes_geral["rams"]
+
+def load_users():
+    '''
+    load_users() transforma o banco de dados em um dicionário python maleável para facilitar a autenticação e listagem de salvamentos.
+    '''
+    users = {}
+    PATH_CSV = PATH_DATA / 'users.csv'
+
+    with open(PATH_CSV, 'r') as arquivo:
+        linhas = arquivo.read().splitlines()
+
+    for i in range(1, len(linhas)):
+        if not linhas[i].split(';'):
+            continue
+
+        linha = linhas[i].split(';')
+
+
+        if len(linha) < 3:
+            continue
+
+        if linha[0] not in users.keys():
+            users[linha[0]] = {}
+            users[linha[0]]['senha'] = linha[1]
+            try:
+                users[linha[0]]['salvamentos'] = json.loads(linha[2])
+            except json.JSONDecodeError:
+                users[linha[0]]['salvamentos'] = []
+
+    return users
+
+def append_components(lista_modificada:list, usuario:str):
+    '''
+    append_components() modifica a lista de salvamentos de um usuário específico.
+
+    Parameters 
+    ----------
+    lista_modificada : list
+        Esse parâmetro indica a lista que sobrescreverá a lista atual.
+
+    usuario : str
+        Esse parâmetro indica qual usuário passará pela mudança.
+    '''
+    PATH_CSV = PATH_DATA / 'users.csv'
+    with open(PATH_CSV, 'r') as arquivo:
+        linhas = arquivo.read().splitlines()
+
+    for i in range(1, len(linhas)):
+        linha = linhas[i].split(';')
+
+        if linha[0] == usuario:
+            salvamentos_str = json.dumps(lista_modificada)
+            linha[2] = salvamentos_str
+            linhas[i] = ';'.join(linha)
+            break
+
+    with open(PATH_CSV, 'w', encoding='utf-8') as arquivo:
+        for linha_att in linhas:
+            arquivo.write(linha_att + '\n')
+
+

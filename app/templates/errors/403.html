@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}
+CompatiView | 403
+{% endblock %}
+
+{% block body %}
+<h3>Permissão negada! Faça <a href="{{ url_for('auth.login') }}">login</a> para continuar.</h3>
+<h3><button onclick="history.back()">Voltar</button></h3>
+{% endblock %}
+
