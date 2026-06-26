@@ -133,9 +133,9 @@
                 <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                 <input class="btn-testar-compatibilidade" type="submit" value="Verificar Compatibilidade"> 
             </form>
-            <form action="" method="">
+            <form action="{{ url_for('user.salvar')}}" method="POST">
             <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-                <abbr title="Indisponível"><input class="btn-salvar-config" type="submit" value="Salvar Configuração"></abbr>
+                <input class="btn-salvar-config" type="submit" value="Salvar Configuração">
             </form>
         </div>
     </div>
@@ -148,10 +148,8 @@
     {% else %}
         {% with messages = get_flashed_messages() %}
             {% if messages %}
-            {% if messages[0][:2] != '02' and messages[0][:2] != '01' %}
+            {% if messages[0][:2] != '02' and messages[0][:2] != '01' and messages[0][:2] != '00' %}
             <h2 class="incompativel">As escolhas do usuário são <span class="span-incompativel">incompatíveis!</span></h2>
-            {% endif %}
-            {% if messages[0][:2] != '02' and messages[0][:2] != '01' %}
             <div class="relatorio">
             <ul>
                 {% for message in messages %}
@@ -161,7 +159,7 @@
             </div>
             {% endif %}
             <div class="erros-de-envio">
-            {% if messages[0][:2] == '02' or messages[0][:2] == '01' %}
+            {% if messages[0][:2] == '02' or messages[0][:2] == '01' or messages[0][:2] == '00' %}
                 {% for mensagem in messages %}
                 <p>{{ mensagem[2:] }}</p>
                 {% endfor %}

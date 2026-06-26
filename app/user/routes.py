@@ -1,6 +1,7 @@
 from flask import Flask, redirect, render_template, url_for, session, request, flash 
-from app.utils.data_manager import load_json
+from app.utils.data_manager import append_components, load_json
 from app.security import login_required
+from app.utils.data_manager import load_users
 from . import user_bp
 
 @user_bp.route("/componentes")
@@ -61,3 +62,21 @@ def listar_componentes():
         page=page,
         total_paginas=total_paginas
     )
+
+@user_bp.route("/salvar", methods=['POST', 'GET'])
+@login_required
+def salvar():
+    dados_atuais = session.get('dados_usuario')
+
+    if dados_atuais['gpu_user'] is None or dados_atuais['cpu_user'] is None or dados_atuais['motherboard_user'] is None or dados_atuais['ram_user']['quantidade'] == None or dados_atuais['ram_user']['tipo'] == None or dados_atuais['ram_user']['tamanho'] == None:
+        flash('00Não foi possível salvar essa configuração! Preencha todos os campos.')
+        return redirect(url_for('main.selectionpage'))
+
+    username = session.get('usuario', {})
+    usuarios = load_users()
+    lista_modificada = usuarios[username]['salvamentos']
+    lista_modificada.append(session.get('dados_usuario')) 
+    append_components(lista_modificada, username)
+
+    return redirect(url_for('main.selectionpage'))
+
