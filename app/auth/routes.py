@@ -1,22 +1,20 @@
 from flask import Flask, redirect, render_template, url_for, session, request, flash
-from app.utils.data_manager import load_users
+from app.utils.data_manager import add_user, load_users
 from werkzeug.security import generate_password_hash, check_password_hash
 from app.auth import auth_bp
 
 
-@auth_bp.route("/registro", methods=["GET", "POST"])
-def register():
+@auth_bp.route("/cadastro", methods=["GET", "POST"])
+def cadastro():
 
     if request.method == "GET":
-        return render_template("auth/registro.html")
-
+        return render_template("auth/cadastro.html")
     usuario = request.form["usuario"]
     senha = request.form["senha"]
-
     senha_hash = generate_password_hash(senha)
 
-    with open("data/users.csv", "a", encoding="utf-8") as f:
-        f.write(f"{usuario};{senha_hash};\n")
+    # função que adiciona usuário no arquivo csv.
+    add_user(usuario, senha_hash)
 
     return redirect(url_for("main.homepage"))
 
@@ -33,3 +31,4 @@ def login():
         flash('Usuário ou senhas incorretos.', 'error')
 
     return render_template('auth/login.html')
+
