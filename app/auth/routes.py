@@ -17,4 +17,4 @@ def register():
     with open("data/users.csv", "a", encoding="utf-8") as f:
         f.write(f"{usuario};{senha_hash};\n")
 
-    return redirect(url_for("main.index"))
+    return redirect(url_for("main.homepage"))
