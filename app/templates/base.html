@@ -27,6 +27,21 @@
         </nav>
 
     </header>
+
+    <div class="container-mensagens">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                {% if message and message[:2] not in ['00','01','02','03','04','05','06','07','08','09'] %}
+                    <div class="alerta alerta-{{ category }}">
+                        {{ message }}
+                    </div>
+                {% endif %}
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+
     {% block body %}
     {% endblock %}
     <footer class="footer">
