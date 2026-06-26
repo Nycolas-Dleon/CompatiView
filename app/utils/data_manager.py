@@ -106,4 +106,13 @@ def append_components(lista_modificada:list, usuario:str):
         for linha_att in linhas:
             arquivo.write(linha_att + '\n')
 
+def add_user(usuario, senha_hash):
+    '''
+    add_user() adiciona um novo usuário no arquivo csv.
+    '''
+
+    PATH_CSV = PATH_DATA / 'users.csv'
+
+    with open(PATH_CSV, "a", encoding="utf-8") as arquivo:
+        arquivo.write(f"{usuario};{senha_hash};[]\n")
 
