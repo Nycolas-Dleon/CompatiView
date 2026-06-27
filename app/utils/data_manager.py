@@ -47,9 +47,17 @@ def load_json(categoria:str=''):
     elif categoria == 'rams':
         return componentes_geral["rams"]
 
-def load_users():
+def load_users(username:str='',saves:bool=False):
     '''
     load_users() transforma o banco de dados em um dicionário python maleável para facilitar a autenticação e listagem de salvamentos.
+
+    Parameters 
+    ----------
+    username : str
+        Esse parâmetro indica o nome de usuário de referência para filtrar sua lista de salvamentos.
+
+    saves : bool
+        Esse parâmetro define se o retorno será o dicionário contendo todos os usuários ou apenas uma lista com os salvamentos de um user específico.
     '''
     users = {}
     PATH_CSV = PATH_DATA / 'users.csv'
@@ -74,6 +82,8 @@ def load_users():
                 users[linha[0]]['salvamentos'] = json.loads(linha[2])
             except json.JSONDecodeError:
                 users[linha[0]]['salvamentos'] = []
+    if saves:
+        return users[username]['salvamentos']
 
     return users
 

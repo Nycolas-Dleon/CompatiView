@@ -73,11 +73,16 @@ def salvar():
         return redirect(url_for('main.selectionpage'))
 
     username = session.get('usuario', {})
-    usuarios = load_users()
-    lista_modificada = usuarios[username]['salvamentos']
-    lista_modificada.append(session.get('dados_usuario')) 
-    append_components(lista_modificada, username)
+    lista = load_users(username, saves=True)
+    lista.append(session.get('dados_usuario')) 
+    append_components(lista, username)
     flash('Sua configuração foi salva com sucesso!', 'sucess')
 
     return redirect(url_for('main.selectionpage'))
+
+@user_bp.route('/remover-salvamento', methods=['POST', 'GET'])
+@login_required
+def remover_salvamento():
+    
+    return redirect(url_for('user/perfil'))
 
