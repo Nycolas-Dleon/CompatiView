@@ -88,18 +88,6 @@ footer{
     font-size: 2rem;
 }
 
-.profile-bar {
-    position: fixed;
-    top: 1.65rem;
-    right: 7rem;
-    font-size: 3.7rem;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1.5rem;
-}
-
 .navbar-overlay{
     position: absolute;
     top: 0;
@@ -121,6 +109,91 @@ footer{
     height: 53px;
     width: 90px;
     z-index: 4;
+}
+
+.container-mensagens {
+    position: fixed;
+    bottom: 2.4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    pointer-events: none; 
+    width: max-content;
+    max-width: calc(100vw - 3.2rem);
+}
+
+.alerta {
+    pointer-events: all;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.1rem 1.8rem;
+    border-radius: 1.2rem;
+    font-family: 'SUSE', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+    animation: alerta-entrar 0.3s ease;
+    white-space: nowrap;
+}
+
+.alerta::before {
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.alerta-sucess,
+.alerta-success {
+    background: rgba(52, 199, 130, 0.15);
+    border: 1px solid rgba(52, 199, 130, 0.4);
+    color: #34c782;
+}
+
+.alerta-sucess::before,
+.alerta-success::before {
+    content: '\f058';
+    color: #34c782;
+}
+
+.alerta-error {
+    background: rgba(224, 92, 110, 0.15);
+    border: 1px solid rgba(224, 92, 110, 0.4);
+    color: #e05c6e;
+}
+
+.alerta-error::before {
+    content: '\f057'; 
+    color: #e05c6e;
+}
+
+/* Info */
+.alerta-info {
+    background: rgba(124, 106, 247, 0.15);
+    border: 1px solid rgba(124, 106, 247, 0.4);
+    color: var(--cor-destaque, #7c6af7);
+}
+
+.alerta-info::before {
+    content: '\f05a'; 
+    color: var(--cor-destaque, #7c6af7);
+}
+
+@keyframes alerta-entrar {
+    from {
+        opacity: 0;
+        transform: translateY(1.2rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @media (min-width: 768px) {

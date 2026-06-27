@@ -21,6 +21,10 @@ CompatiView
             <a href="{{ url_for('auth.cadastro') }}" target="_self" >Cadastre-se</a>
         </li>
     </ul>
+{% else %}
+<ul class="profile-bar">
+    <li><a href="{{ url_for('user.perfil') }}"><i id="profile-icon" class="fa-solid fa-circle-user"></i></a></li>
+</ul>
 {% endif %}
     <div class="menu-hamburguer">
         <input type="checkbox" id="menu-toggle">

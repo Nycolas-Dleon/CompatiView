@@ -176,7 +176,7 @@ def update_user(username, senha_hash, novo_username:str='', nova_senha_hash:str=
                 dados[1] = nova_senha_hash
 
         linha = ';'.join(dados)
-    linhas_atualizadas.append(linha)
+        linhas_atualizadas.append(linha)
     
     if usuario_encontrado:
         with open(PATH_CSV, 'w') as arq:
