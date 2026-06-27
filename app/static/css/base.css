@@ -88,6 +88,18 @@ footer{
     font-size: 2rem;
 }
 
+.profile-bar {
+    position: fixed;
+    top: 1.65rem;
+    right: 7rem;
+    font-size: 3.7rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
 .navbar-overlay{
     position: absolute;
     top: 0;

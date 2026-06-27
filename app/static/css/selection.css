@@ -369,7 +369,7 @@ select:active {
     margin: 0 auto;
 }
 
-i {
+#icon-x {
     color: red;
     font-weight: bolder;
     font-size: 1.8rem;
