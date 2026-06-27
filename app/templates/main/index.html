@@ -12,7 +12,7 @@ CompatiView
 {% endblock %}
 
 {% block nav_links %}
-
+{% if not session.get('usuario') %}
     <ul class="area-login">
         <li id="login-btn">
             <a href="{{ url_for('auth.login') }}" target="_self">Entrar</a>
@@ -21,7 +21,7 @@ CompatiView
             <a href="{{ url_for('auth.cadastro') }}" target="_self" >Cadastre-se</a>
         </li>
     </ul>
-
+{% endif %}
     <div class="menu-hamburguer">
         <input type="checkbox" id="menu-toggle">
             <label for="menu-toggle" class="menu-icon">

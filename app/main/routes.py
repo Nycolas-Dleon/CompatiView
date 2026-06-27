@@ -110,4 +110,3 @@ def testar_compatibilidade():
             flash('ecompativel')
     return redirect(url_for('main.selectionpage'))
     
-

@@ -8,7 +8,7 @@ def login_required(f):
     @wraps(f)
     def wrapper(*args, **kwargs):
         if 'usuario' not in session:
-            abort(403)
+            abort(401)
         return f(*args, **kwargs)
     return wrapper
         

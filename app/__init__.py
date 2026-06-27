@@ -24,9 +24,9 @@ def create_app(config_class=DevelopmentConfig):
     app.register_blueprint(auth_bp)
 
     # Tratador de erro de permissão negada
-    @app.errorhandler(403)
+    @app.errorhandler(401)
     def acesso_negado(e):
-        return render_template('errors/403.html'), 403
+        return render_template('errors/401.html'), 401
 
     # Configura "nomes" no app. Isso serve para formatar os titulos que estão no banco de dados na hora da listagem.
     app.config["nomes"] = {

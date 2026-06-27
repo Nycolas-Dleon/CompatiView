@@ -148,20 +148,24 @@
     {% else %}
         {% with messages = get_flashed_messages() %}
             {% if messages %}
-            {% if messages[0][:2] != '02' and messages[0][:2] != '01' and messages[0][:2] != '00' %}
+            {% if messages[0][:2] != '02' and messages[0][:2] != '01' and messages[0][:2] != '00' and messages[0][:2] != '08' %}
             <h2 class="incompativel">As escolhas do usuário são <span class="span-incompativel">incompatíveis!</span></h2>
             <div class="relatorio">
             <ul>
                 {% for message in messages %}
-                <li>{% if message[:2] in ['03','04','05','06','07'] %}<span id="space"><i class="fa-solid fa-xmark"></i></span>{{ message[2:] }}{% endif %}</li>
+                <li>{% if message[:2] in ['03','04','05','06','07'] %}<span id="space"><i id="icon-x" class="fa-solid fa-xmark"></i></span>{{ message[2:] }}{% endif %}</li>
                 {% endfor %}
             </ul>
             </div>
             {% endif %}
             <div class="erros-de-envio">
-            {% if messages[0][:2] == '02' or messages[0][:2] == '01' or messages[0][:2] == '00' %}
+            {% if messages[0][:2] == '02' or messages[0][:2] == '01' or messages[0][:2] == '00' or messages[0][:2] == '08' %}
                 {% for mensagem in messages %}
-                <p>{{ mensagem[2:] }}</p>
+                    {% if messages[0][:2] != '08' %}
+                        <p class="erro">{{ mensagem[2:] }}</p>
+                    {% else %}
+                        <p class="sucesso">{{ mensagem[2:] }}</p>
+                    {% endif %}
                 {% endfor %}
             {% endif %}
             </div>
