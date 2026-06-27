@@ -1,5 +1,6 @@
-from flask import Flask, redirect, render_template, url_for, session, request, flash 
-from app.utils.data_manager import append_components, load_json
+from flask import Flask, redirect, render_template, url_for, session, request, flash
+from werkzeug.security import generate_password_hash 
+from app.utils.data_manager import append_components, load_json, update_user
 from app.security import login_required
 from app.utils.data_manager import load_users
 from . import user_bp
@@ -91,3 +92,43 @@ def remover_salvamento(save_id:int):
     flash('Sua save foi removida com sucesso!', 'sucess')
     return redirect(url_for('user/perfil'))
 
+@user_bp.route('/alterar-senha', methods=['GET', 'POST'])
+@login_required
+def alterar_senha():
+
+    if request.method == 'POST':
+        senha_atual_inserida = request.form.get('senha')
+        senha_atual_correta = session.get('senha')
+        nova_senha = request.form.get('nova_senha')
+
+        if senha_atual_inserida == senha_atual_correta:
+            update_user(session.get('usuario'), senha_atual_inserida, nova_senha_hash=generate_password_hash(nova_senha))
+            flash('Alteração feita com sucesso!', 'sucess')
+
+        else:
+            flash('Erro! Usuário não encontrado ou senha atual incorreta.', 'error')
+
+        return redirect(url_for('user/perfil.html'))
+
+    return render_template('user/alterar-senha.html')
+
+@user_bp.route('/alterar-username', methods=['GET', 'POST'])
+@login_required
+def alterar_username():
+
+    if request.method == 'POST':
+
+        senha_atual_inserida = request.form.get('senha')
+        senha_atual_correta = session.get('senha')
+        novo_username = request.form.get('novo_username')
+
+        if senha_atual_inserida == senha_atual_correta:
+            update_user(session.get('usuario'), senha_atual_inserida, novo_username=novo_username)
+            flash('Alteração feita com sucesso!', 'sucess')
+
+        else:
+            flash('Erro! Usuário não encontrado ou senha atual incorreta.', 'error')
+
+        return redirect(url_for('user/perfil.html'))
+
+    return render_template('user/alterar-username.html')
