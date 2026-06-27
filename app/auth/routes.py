@@ -34,9 +34,9 @@ def cadastro():
         flash("O usuário não pode ter mais que 15 caracteres", "error")
         return render_template("auth/cadastro.html")
     
-    '''if ";" in usuario or " " in usuario:
-        flash("O usuário não pode conter os caracteres ';' ou espaços em branco", "error")
-        return render_template("auth/cadastro.html")'''
+    if ";" in usuario:
+        flash("O usuário não pode conter ponto e vírgula (;)", "error")
+        return render_template("auth/cadastro.html")
     
     if len(senha) < 8:
         flash("A senha deve ter pelo menos 8 caracteres.", "error")
@@ -46,9 +46,9 @@ def cadastro():
         flash("A senha não pode conter mais que 64 caracteres", "error")
         return render_template("auth/cadastro.html")
     
-    '''if ";" in senha or " " in senha:
-        flash("A senha não pode conter os caracteres ';' ou espaços em branco", "error")
-        return render_template("auth/cadastro.html")'''
+    if ";" in senha:
+        flash("A senha não pode conter ponto e vírgula (;)", "error")
+        return render_template("auth/cadastro.html")
 
     # Verificação de conta
 
