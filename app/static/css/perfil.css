@@ -284,7 +284,6 @@
     border-color: #e05c6e;
 }
 
-/* ---------- Estado vazio ---------- */
 .salvamentos-vazio {
     display: flex;
     flex-direction: column;
@@ -325,7 +324,6 @@
     border-color: var(--cor-destaque, #7c6af7);
 }
 
-/* ---------- Modais ---------- */
 .modal-overlay {
     display: none;
     position: fixed;
@@ -507,7 +505,6 @@
     transform: translateY(-1px);
 }
 
-/* ---------- Responsivo ---------- */
 @media (max-width: 600px) {
     .perfil-header {
         flex-direction: column;
