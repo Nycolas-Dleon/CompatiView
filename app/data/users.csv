@@ -1,2 +1,2 @@
 usuario;senha;salvamentos
-wesley;scrypt:32768:8:1$lQRCldwo1zYjGVRX$492e0f10116cdcb5546677756f1edb667049dd7e292ad41a46140730e6142f2655d43fb432cf134f1624757653bb1b8830b7b12621986f7cbf36c3fec6dec551;[]
+wezz;scrypt:32768:8:1$EkDDblm0ZuzHKN3y$dfc536b7e785e6015a645e8dfd6aea19a3709ddf43ebddf7500b1786a39dfc98a45637f4f5b9267815f87995b3dcce7cf262f92f9e407c2725e04d053a6f12e7;[{"cpu_user": "AMD Ryzen 5 9600X", "gpu_user": "Radeon RX 9060 XT 16GB - Sapphire PULSE", "motherboard_user": "MSI B650 GAMING PLUS WIFI", "ram_user": {"quantidade": "3", "tamanho": "8GB", "tipo": "DDR5"}, "id": 0}]
