@@ -49,6 +49,26 @@
                 <p>Desenvolvido por CompatiView Team.</p>
         </div>
     </footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        
+        setTimeout(function() {
+            const mensagens = document.querySelectorAll('.container-mensagens');
+            
+            mensagens.forEach(function(msg) {
+                msg.style.transition = "opacity 0.3s ease";
+                msg.style.opacity = "0"; 
+                
+                setTimeout(function() {
+                    msg.remove();
+                }, 500);
+            });
+        }, 2000);
+        
+    });
+</script>
+
     {% block script %}
     {% endblock %}
 </body>
