@@ -119,10 +119,66 @@ def append_components(lista_modificada:list, usuario:str):
 def add_user(usuario, senha_hash):
     '''
     add_user() adiciona um novo usuário no arquivo csv.
+
+    Parameters 
+    ----------
+    usuario : str
+        Determina o nome de usuário que será salvo.
+    
+    senha_hash : str
+        Determina a senha que será salva naquele usuário.
     '''
 
     PATH_CSV = PATH_DATA / 'users.csv'
 
     with open(PATH_CSV, "a", encoding="utf-8") as arquivo:
         arquivo.write(f"{usuario};{senha_hash};[]\n")
+
+def update_user(username, senha_hash, novo_username:str='', nova_senha_hash:str=''):
+    '''
+    update_user() modifica informações do usuário (username e senha).
+    Essa função apenas é capaz de modificar um dos parâmetros por vez.
+
+    Parameters 
+    ----------
+    username : str
+        Esse parâmetro indica o nome se usuário que solicitou a mudança dos dados.
+
+    senha_hash : str
+        Esse parâmetro indica a senha inserida pelo usuário para requerir mudança de dados. Se essa senha diferir da sua senha atual real, o sistema retornará um erro.
+
+    novo_username : str
+        Esse parâmetro indica o novo nome de usuário que irá substituir o antigo. Por padrão, esse parâmetro é vazio, e, se apenas ele estiver vazio, a única mudança ocorrerá na senha.
+
+    nova_senha_hash : str
+        Esse parâmetro indica a nova senha que irá substituir a antiga. Por padrão, esse parâmetro também é vazio, e se unicamente ele estiver vazio, isso significa que a única mudança que o usuário quer fazer é na senha.
+    '''
+    PATH_CSV = PATH_DATA / 'users.csv'
+    with open(PATH_CSV, 'r') as arquivo:
+        linhas = arquivo.read().splitlines()
+
+    linhas_atualizadas = []
+    usuario_encontrado = False
+
+    if linhas:
+        linhas_atualizadas.append(linhas[0])
+
+    for linha in linhas[1:]:
+        dados = linha.split(';')
+        
+        if dados[0] == username and dados[1] == senha_hash:
+            usuario_encontrado = True
+
+            if novo_username and not nova_senha_hash:
+                dados[0] = novo_username
+
+            elif nova_senha_hash and not novo_username:
+                dados[1] = nova_senha_hash
+
+        linha = ';'.join(dados)
+    linhas_atualizadas.append(linha)
+    
+    if usuario_encontrado:
+        with open(PATH_CSV, 'w') as arq:
+            arq.write('\n'.join(linhas_atualizadas) + '\n')
 
