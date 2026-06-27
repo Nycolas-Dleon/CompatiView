@@ -58,12 +58,12 @@
             {% for item in salvamentos %}
             <div class="card-salvamento">
                 <div class="card-cabecalho">
-                    <i class="fa-solid fa-microchip card-icone"></i>
+                    <i class="fa-solid fa-desktop" style="margin-left: 0.2rem; font-size: 1.8rem;"></i>
                     <span class="card-id">save #{{ loop.index }}</span>
                 </div>
                 <ul class="card-specs">
                     <li>
-                        <span class="spec-label"><i class="fa-solid fa-cpu"></i> cpu</span>
+                        <span class="spec-label"><i class="fa-solid fa-microchip"></i> cpu</span>
                         <span class="spec-valor">{{ item.cpu_user or '—' }}</span>
                     </li>
                     <li>
