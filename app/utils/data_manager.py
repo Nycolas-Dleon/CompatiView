@@ -94,7 +94,7 @@ def append_components(lista_modificada:list, usuario:str):
     Parameters 
     ----------
     lista_modificada : list
-        Esse parâmetro indica a lista que sobrescreverá a lista atual.
+        Esse parâmetro indica a modificação que sobrescreverá a lista atual.
 
     usuario : str
         Esse parâmetro indica qual usuário passará pela mudança.
