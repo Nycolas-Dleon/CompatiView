@@ -379,10 +379,18 @@ i {
     margin-right: 2rem;
 }
 
-.erros-de-envio p {
+.erro {
     margin: 0 auto;
     letter-spacing: 0.2rem;
     color: #f73c36;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.sucesso {
+    margin: 0 auto;
+    letter-spacing: 0.2rem;
+    color: #2bfb5f;
     font-weight: bold;
     font-size: 1.3rem;
 }
