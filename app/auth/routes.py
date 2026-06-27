@@ -76,9 +76,16 @@ def login():
 
         if username in load_users().keys() and check_password_hash(load_users()[username]['senha'], senha_tentada):
             session['usuario'] = username
+            session['senha'] = senha_tentada
             return redirect(url_for('main.selectionpage'))
 
-        flash('Usuário ou senhas incorretos.', 'error')
+        flash('Usuário ou senha incorretos!', 'error')
 
     return render_template('auth/login.html')
+
+@auth_bp.route('/logout')
+def logout():
+    session.clear()
+    flash('Você saiu do sistema.', 'info')
+    return redirect(url_for('main.homepage'))
 
