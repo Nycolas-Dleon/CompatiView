@@ -66,18 +66,28 @@ def listar_componentes():
 @user_bp.route("/salvar", methods=['POST', 'GET'])
 @login_required
 def salvar():
-    dados_atuais = session.get('dados_usuario')
+    dados_atuais = session.get('dados_usuario', {}).copy()
 
     if dados_atuais['gpu_user'] is None or dados_atuais['cpu_user'] is None or dados_atuais['motherboard_user'] is None or dados_atuais['ram_user']['quantidade'] == None or dados_atuais['ram_user']['tipo'] == None or dados_atuais['ram_user']['tamanho'] == None:
         flash('00Não foi possível salvar essa configuração! Preencha todos os campos.')
         return redirect(url_for('main.selectionpage'))
 
     username = session.get('usuario', {})
-    usuarios = load_users()
-    lista_modificada = usuarios[username]['salvamentos']
-    lista_modificada.append(session.get('dados_usuario')) 
-    append_components(lista_modificada, username)
+    lista = load_users(username, saves=True)
+    dados_atuais['id'] = len(lista) # Cria um id de salvamento (será útil no endpoint de remoção).
+    lista.append(dados_atuais) 
+    append_components(lista, username)
     flash('08Sua configuração foi salva com sucesso!')
 
     return redirect(url_for('main.selectionpage'))
+
+@user_bp.route('/remover-salvamento', methods=['POST', 'GET'])
+@login_required
+def remover_salvamento(save_id:int):
+    nome_usuario = session.get('usuario','')
+    saves_usuario = load_users(nome_usuario, saves=True)
+    saves_usuario.pop(save_id - 1)
+    append_components(saves_usuario, nome_usuario)
+    flash('Sua save foi removida com sucesso!', 'sucess')
+    return redirect(url_for('user/perfil'))
 
