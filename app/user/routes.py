@@ -77,7 +77,7 @@ def salvar():
     dados_atuais['id'] = len(lista) # Cria um id de salvamento (será útil no endpoint de remoção).
     lista.append(dados_atuais) 
     append_components(lista, username)
-    flash('Sua configuração foi salva com sucesso!', 'sucess')
+    flash('08Sua configuração foi salva com sucesso!')
 
     return redirect(url_for('main.selectionpage'))
 
