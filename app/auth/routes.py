@@ -28,6 +28,7 @@ def login():
         if username in load_users().keys() and check_password_hash(load_users()[username]['senha'], senha_tentada):
             session['usuario'] = username
             session['senha'] = senha_tentada
+            flash('Usuário logado com sucesso!', 'sucess')
             return redirect(url_for('main.selectionpage'))
 
         flash('Usuário ou senha incorretos!', 'error')
