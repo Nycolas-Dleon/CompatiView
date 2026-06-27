@@ -46,27 +46,88 @@
         </div>
     </section>
 
+<section class="perfil-salvamentos">
+        <h2 class="secao-titulo">
+            <i class="fa-solid fa-bookmark"></i>
+            salvamentos
+            <span class="secao-contador">{{ salvamentos|length }}</span>
+        </h2>
+
+        {% if salvamentos %}
+        <div class="salvamentos-grid">
+            {% for item in salvamentos %}
+            <div class="card-salvamento">
+                <div class="card-cabecalho">
+                    <i class="fa-solid fa-microchip card-icone"></i>
+                    <span class="card-id">save #{{ loop.index }}</span>
+                </div>
+                <ul class="card-specs">
+                    <li>
+                        <span class="spec-label"><i class="fa-solid fa-cpu"></i> cpu</span>
+                        <span class="spec-valor">{{ item.cpu_user or '—' }}</span>
+                    </li>
+                    <li>
+                        <span class="spec-label"><i class="fa-solid fa-display"></i> gpu</span>
+                        <span class="spec-valor">{{ item.gpu_user or '—' }}</span>
+                    </li>
+                    <li>
+                        <span class="spec-label"><i class="fa-solid fa-server"></i> placa-mãe</span>
+                        <span class="spec-valor">{{ item.motherboard_user or '—' }}</span>
+                    </li>
+                    <li>
+                        <span class="spec-label"><i class="fa-solid fa-memory"></i> ram</span>
+                        <span class="spec-valor">
+                            {% if item.ram_user and item.ram_user.tamanho %}
+                                {{ item.ram_user.tamanho }} {{ item.ram_user.tipo }} ({{ item.ram_user.quantidade }}x)
+                            {% else %}
+                                —
+                            {% endif %}
+                        </span>
+                    </li>
+                </ul>
+                <div class="card-acoes">
+                    <form method="post" action="{{ url_for('user.remover_salvamento') }}">
+                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                        <input type="hidden" name="save_id" value="{{ item.id }}">
+                        <button type="submit" class="btn-card btn-remover" title="remover salvamento">
+                            <i class="fa-solid fa-trash"></i> remover
+                        </button>
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        {% else %}
+        <div class="salvamentos-vazio">
+            <i class="fa-regular fa-bookmark"></i>
+            <p>nenhuma configuração salva ainda.</p>
+            <a href="{{ url_for('main.selectionpage') }}" class="btn-explorar">montar uma configuração</a>
+        </div>
+        {% endif %}
+    </section>
+
 </main>
 
 <!-- modal de alteração de nome de usuário ===== -->
 <div class="modal-overlay" id="modal-username">
     <div class="modal">
-        <button class="modal-fechar" title="Fechar" onclick="fecharModal('modal-username')">
+        <button class="modal-fechar" title="fechar" onclick="fecharmodal('modal-username')">
             <i class="fa-solid fa-xmark"></i>
         </button>
         <div class="modal-cabecalho">
             <i class="fa-solid fa-pencil modal-icone"></i>
-            <h2 class="modal-titulo">Alterar nome de usuário</h2>
+            <h2 class="modal-titulo">alterar nome de usuário</h2>
         </div>
-        <form method="POST" action="{{ url_for('auth.alterar_username') }}">
+        <form method="post" action="{{ url_for('auth.alterar_username') }}">
             <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
             <div class="modal-campo">
-                <label for="novo-username">Novo nome de usuário</label>
+                <label for="novo-username">novo nome de usuário</label>
                 <input
                     type="text"
                     name="novo_username"
                     id="novo-username"
-                    placeholder="Digite o novo nome..."
+                    placeholder="digite o novo nome..."
                     maxlength="50"
                     required
                     autocomplete="off"
