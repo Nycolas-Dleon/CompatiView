@@ -82,6 +82,13 @@ def salvar():
 
     return redirect(url_for('main.selectionpage'))
 
+@user_bp.route('/perfil')
+@login_required
+def perfil():
+    username = session.get('usuario', [])
+    dados_salvos = load_users(username=username, saves=True)
+    return render_template('user/perfil.html', dados_salvos=dados_salvos)
+
 @user_bp.route('/remover-salvamento', methods=['POST', 'GET'])
 @login_required
 def remover_salvamento(save_id:int):
@@ -89,7 +96,7 @@ def remover_salvamento(save_id:int):
     saves_usuario = load_users(nome_usuario, saves=True)
     saves_usuario.pop(save_id - 1)
     append_components(saves_usuario, nome_usuario)
-    flash('Sua save foi removida com sucesso!', 'sucess')
+    flash('Seu save foi removido com sucesso!', 'sucess')
     return redirect(url_for('user/perfil'))
 
 @user_bp.route('/alterar-senha', methods=['GET', 'POST'])

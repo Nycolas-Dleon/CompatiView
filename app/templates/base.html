@@ -23,7 +23,7 @@
             <a href="/" id="logo-link"><img src="{{ url_for('static', filename='imgs/Logo.svg') }}" alt="Logo"></a>
             {% if session.get('usuario') %}
             <ul class="profile-bar">
-                <li><a href="#"><i id="profile-icon" class="fa-solid fa-circle-user"></i></a></li>
+                <li><a href="{{ url_for('user.perfil') }}"><i id="profile-icon" class="fa-solid fa-circle-user"></i></a></li>
             </ul>
             {% endif %}
             {% block nav_links %}
