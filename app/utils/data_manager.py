@@ -182,3 +182,26 @@ def update_user(username, senha_hash, novo_username:str='', nova_senha_hash:str=
         with open(PATH_CSV, 'w') as arq:
             arq.write('\n'.join(linhas_atualizadas) + '\n')
 
+def delete_user(usuario:str):
+    '''
+    delete_user() deleta todas as informações do usuário passado.
+    '''
+    PATH_CSV = PATH_DATA / 'users.csv'
+    with open(PATH_CSV, 'r') as arquivo:
+        linhas = arquivo.read().splitlines()
+    
+    arquivo_alterado = []
+    arquivo_alterado.append(linhas[0])
+    usuario_encontrado = False
+    
+    for linha in linhas[1:]:
+        linha_atual = linha.split(';')
+        if linha_atual[0] == usuario:
+            usuario_encontrado = True
+            continue
+        arquivo_alterado.append(linha)
+
+    if usuario_encontrado:
+        with open(PATH_CSV, 'w') as arq:
+            arq.write('\n'.join(arquivo_alterado) + '\n')
+

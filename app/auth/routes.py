@@ -1,5 +1,5 @@
 from flask import Flask, redirect, render_template, url_for, session, request, flash
-from app.utils.data_manager import add_user, load_users
+from app.utils.data_manager import add_user, delete_user, load_users
 from werkzeug.security import generate_password_hash, check_password_hash
 from app.auth import auth_bp
 from app.security import login_required
@@ -143,7 +143,17 @@ def alterar_username():
 
     return render_template('user/alterar-username.html')
 
-@auth_bp.route('/deletar-perfil')
+@auth_bp.route('/deletar-perfil', methods=['POST', 'GET'])
 def remover_conta():
-    pass
 
+    if request.method == 'POST':
+        username = session.get('usuario')
+        senha_real = session.get('senha')
+        senha_inserida = request.form.get('senha-inserida')
+
+        if check_password_hash(senha_real, senha_inserida):
+            delete_user(username)
+            session.clear()
+            flash('Sua conta foi deletada.', 'info')
+
+    return redirect(url_for('main.homepage'))
