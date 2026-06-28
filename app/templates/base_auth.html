@@ -10,10 +10,46 @@
     {% block link_icons %}{% endblock %}
     <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=SUSE:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+
+    <div class="container-mensagens">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                {% if message and message[:2] not in ['00','01','02','03','04','05','06','07','08','09'] and message != 'ecompativel' %}
+                    <div class="alerta alerta-{{ category }}">
+                        {{ message }}
+                    </div>
+                {% endif %}
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+
     <div class="background"><img id="bg-desktop" src="{{ url_for('static', filename='imgs/BgDesktop.png') }}" alt="BgDesktop"></div>
     {% block body %}
     {% endblock %}
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        
+        setTimeout(function() {
+            const mensagens = document.querySelectorAll('.container-mensagens');
+            
+            mensagens.forEach(function(msg) {
+                msg.style.transition = "opacity 0.3s ease";
+                msg.style.opacity = "0"; 
+                
+                setTimeout(function() {
+                    msg.remove();
+                }, 500);
+            });
+        }, 2000);
+        
+    });
+</script>
+
 </body>
 </html>
