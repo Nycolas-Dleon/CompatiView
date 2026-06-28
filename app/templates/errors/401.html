@@ -1,10 +1,20 @@
-{% extends 'base.html' %}
+{% extends 'base_auth.html' %}
 {% block title %}
-CompatiView | 403
+Não Autorizado
 {% endblock %}
-
+{% block link_css %} 
+<link rel="stylesheet" href="{{ url_for('static', filename='css/401.css') }}">
+{% endblock %}
 {% block body %}
-<h3>Permissão negada! Faça <a href="{{ url_for('auth.login') }}">login</a> para continuar.</h3>
-<h3><button onclick="history.back()">Voltar</button></h3>
-{% endblock %}
 
+    <h1><span>401</span><br>Acesso não autorizado</h1>
+    <br>
+    <i class="fa-solid fa-user-slash"></i>
+    <h3>
+        Você não está autenticado(a),
+        <br>
+        faça <a href="{{ url_for('auth.login') }}">login</a> para continuar.
+    </h3>
+    <button onclick="history.back()"><i class="fa-solid fa-arrow-left-long"></i> Voltar</button>
+
+{% endblock %}

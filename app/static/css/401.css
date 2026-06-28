@@ -1,0 +1,92 @@
+
+@import url('base_auth.css');
+
+/* Estilos da Página */
+
+body{
+    color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+    justify-content: center;
+}
+
+.background{
+    background-color: #0c0c0c;
+}
+
+i{
+    font-size: 6rem;
+}
+
+h1{
+    font-weight: normal;
+    margin-top: 20rem;
+    margin-bottom: 2rem;
+    font-size: 6rem;
+}
+
+span{
+    font-size: 12rem;
+}
+
+
+h3{
+    text-transform: none;
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 4rem;
+}
+
+a:hover{
+    color: #b732ff
+}
+
+a:visited{
+    color: #f0f0f0;
+}
+
+a:visited:hover{
+    color: #b732ff;
+}
+
+button{
+    border: none;
+    border-radius: 5rem;
+    align-self: center;
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-weight: bold;
+    padding: 1rem;
+    width: 20rem;
+    background-color: #f0f0f0;
+    color: #0c0c0c;
+    transition: 0.2s ease-in-out;
+}
+
+button i{
+    font-size: 3rem;
+}
+
+button:hover{
+    background-color: #a600ff;
+    color: #f0f0f0;
+    transition: 0.2s ease-in-out;
+}
+
+button:active{
+    scale: 0.95;
+    background-color: #640099;
+    color: #b3b3b3;
+    transition: 0.1s ease-in-out;
+}
+
+/* Formatação para Desktop */
+
+@media (min-width: 1024px){
+
+    h1{
+        font-size: 6rem;
+    }
+}
