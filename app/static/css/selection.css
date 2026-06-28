@@ -244,11 +244,8 @@ select:active {
     padding-right: 1.5rem;
 }
 
-.bnt_remover_item {
-    background-image: url('../imgs/lixeira.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+.btn_remover_item {
+    color: gray;
     width: 1.8rem;
     height: 1.8rem;
     border: none;
@@ -256,12 +253,17 @@ select:active {
     cursor: pointer;
 }
 
-.bnt_remover_item:active {
-    background-image: url('../imgs/lixeira_hover.png');
+.btn_remover_item {
+    font-size: 1.8rem;
 }
 
-.bnt_remover_item:hover{
-    opacity: 0.6;
+.btn_remover_item:hover {
+    color: #fb542b;
+    transform: scale(1.1);
+}
+
+.btn_remover_item:active {
+    transform: scale(0.9);
 }
 
 .btns-session {
