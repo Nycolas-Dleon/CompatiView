@@ -79,7 +79,7 @@
                         <form action="{{ url_for('main.remover_componente') }}" method="post">
                         <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                             <input type="hidden" name="tipo_componente" value="cpu">
-                            <button type="submit" class="bnt_remover_item"></button>
+                            <button type="submit" class="btn_remover_item"><i class="fa-solid fa-trash-can"></i></button>
                         </form>
                     {% endif %}
                     </td>
@@ -93,7 +93,7 @@
                         <form action="{{ url_for('main.remover_componente') }}" method="post">
                         <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                             <input type="hidden" name="tipo_componente" value="gpu">
-                            <button type="submit" class="bnt_remover_item"></button>
+                            <button type="submit" class="btn_remover_item"><i class="fa-solid fa-trash-can"></i></button>
                         </form>
                     {% endif %}
                     </td>
@@ -107,7 +107,7 @@
                         <form action="{{ url_for('main.remover_componente') }}" method="post">
                         <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                             <input type="hidden" name="tipo_componente" value="motherboard">
-                            <button type="submit" class="bnt_remover_item"></button>
+                            <button type="submit" class="btn_remover_item"><i class="fa-solid fa-trash-can"></i></button>
                         </form>
                     {% endif %}
                     </td>
@@ -131,7 +131,7 @@
                             <form action="{{ url_for('main.remover_componente') }}" method="post">
                             <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                                 <input type="hidden" name="tipo_componente" value="ram">
-                                <button type="submit" class="bnt_remover_item"></button> 
+                                <button type="submit" class="btn_remover_item"><i class="fa-solid fa-trash-can"></i></button> 
                             </form>
                         {% endif %}
                         </td>
