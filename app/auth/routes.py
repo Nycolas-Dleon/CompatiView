@@ -13,6 +13,7 @@ def cadastro():
 
     usuario = request.form["usuario"].strip()
     senha = request.form["senha"]
+    confirmar_senha = request.form.get('confirmar_senha')
 
     # Validação
 
@@ -33,11 +34,11 @@ def cadastro():
         return render_template("auth/cadastro.html")
     
     if len(usuario) > 15:
-        flash("O usuário não pode ter mais que 15 caracteres", "error")
+        flash("O usuário não pode ter mais que 15 caracteres.", "error")
         return render_template("auth/cadastro.html")
     
     if ";" in usuario:
-        flash("O usuário não pode conter ponto e vírgula (;)", "error")
+        flash("O usuário não pode conter ponto e vírgula (;).", "error")
         return render_template("auth/cadastro.html")
     
     if len(senha) < 8:
@@ -49,7 +50,11 @@ def cadastro():
         return render_template("auth/cadastro.html")
     
     if ";" in senha:
-        flash("A senha não pode conter ponto e vírgula (;)", "error")
+        flash("A senha não pode conter ponto e vírgula (;).", "error")
+        return render_template("auth/cadastro.html")
+    
+    if senha != confirmar_senha:
+        flash("As senhas digitadas são diferentes!", "error")
         return render_template("auth/cadastro.html")
 
     # Verificação de conta
