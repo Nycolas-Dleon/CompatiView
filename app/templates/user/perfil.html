@@ -90,7 +90,14 @@
                         <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                         <input type="hidden" name="save_id" value="{{ item.id }}">
                         <button type="submit" class="btn-card btn-remover" title="remover salvamento">
-                            <i class="fa-solid fa-trash"></i> remover
+                            <i class="fa-solid fa-trash"></i> Remover Preset
+                        </button>
+                    </form>
+                    <form method="post" action="{{ url_for('user.selecionar_salvamento') }}">
+                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                        <input type="hidden" name="save_id" value="{{ item.id }}">
+                        <button type="submit" class="btn-card btn-selecionar" title="utilizar preset">
+                            <i class="fa-solid fa-circle-check"></i> Utilizar Preset
                         </button>
                     </form>
                 </div>

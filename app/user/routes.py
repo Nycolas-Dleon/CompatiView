@@ -104,3 +104,9 @@ def remover_salvamento():
     flash('Seu save foi removido com sucesso!', 'sucess')
     return redirect(url_for('user.perfil'))
 
+@user_bp.route('/selecionar-salvamento', methods=['POST', 'GET'])
+@login_required
+def selecionar_salvamento():
+    pass
+
+
