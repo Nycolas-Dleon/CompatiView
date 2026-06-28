@@ -1,0 +1,235 @@
+nav, header, footer {
+    display: none !important;
+}
+
+body{font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;}
+
+.conteiner-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 30px 25px;
+    box-sizing: border-box;
+}
+
+.form-registro{
+               display: flex;
+               flex-direction: column;
+               gap: 12px;
+               width: 100%; 
+               box-sizing: border-box;
+               max-width: 820px;
+               padding: 50px;
+               background-color: #f0f0f0;
+               color: rgb(0, 0, 0);
+               border-radius: 8px;
+               position: relative;             
+}
+
+.form-registro img{
+                   display: block;
+                   max-width: 380px;
+                   width: 100%;
+                   height: auto;
+                   margin-bottom: 20px;
+                   align-self: center;
+}
+
+.logo{
+      max-width: 100%;
+      height: auto;
+      display: block;
+}
+
+.bnt-voltar{
+            color: white;
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            padding: 5px;
+            border-radius: 10px;
+            background-color: #7041cd;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.621);
+}
+
+.bnt-voltar:hover{
+                  opacity: 50%;
+}
+
+.bnt-voltar:active{
+                   scale: 0.96;
+                   transform: translateY(1px);
+                   transition: 0.05s ease-in-out;
+
+}
+
+.bnt-info{
+          color: white;
+          position: absolute;
+          top: 25px;
+          right: 25px;
+          padding: 5px 8px;
+          border-radius: 10px;
+          background-color: #7041cd;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.621);
+}
+
+.bnt-info:hover{
+                opacity: 50%;
+}
+
+.bnt-info:active{scale: 0.96;
+                   transform: translateY(1px);
+                   transition: 0.05s ease-in-out;}
+
+#username{
+          box-sizing: border-box;
+          width: 100%;
+          padding: 12px 15px;
+          border-radius: 4px;
+}
+
+#password{
+          box-sizing: border-box;
+          width: 100%;
+          padding: 12px 15px;
+          border-radius: 4px;
+}
+
+input{
+     scale: 1;
+     font-size: 1.5rem;
+     font-weight: bold;
+     padding: 1.5rem;
+     background-color: #ffffff;
+     border: #0c0c0c50 solid 1px;
+     color: #ffffff;
+     width: 100%;
+     border-radius: 2px;
+     transition: 0.3s ease-in-out;
+}
+
+input:focus{
+            outline: #5e36ad solid 1px;
+            background-color: #7041cd10;
+            color: #9566f3;
+            transition: 0.3s ease-in-out;}
+
+input:valid{
+            border: #7041cd solid 1px;
+            color: #7041cd;
+}
+
+input::placeholder{
+                   color: #0c0c0c50;
+}
+
+input:focus::placeholder{
+                         color: #7041cd90;
+}
+
+.bnt-cadastrar{
+               align-self: center;
+               width: 40%;
+               color: white;
+               background-color:  #7041cd;
+               border: none;
+               padding: 15px;
+               border-radius: 4px;
+               cursor: pointer;
+               margin-top: 35px;
+               font-weight: bold;
+               font-size: clamp(14px, 2.2vw, 18px);
+}
+
+.bnt-cadastrar:hover{
+                     background-color: #9566f3;
+                     box-shadow: 0 0.2rem 0.5rem #0c0c0cc0;
+                     transition: 0.3s ease-in-out;
+}
+
+.bnt-cadastrar:active{             
+                      scale: 0.95;
+                      background-color: #5e36ad;
+                      box-shadow: none;
+                      transition: 0.1s ease-in-out;
+}
+
+@media (max-width: 768px) {
+
+    .bnt-voltar {
+    top: 15px;
+    left: 15px;
+    padding: 4px;
+    font-size: 0.95rem;
+    border-radius: 7px;
+    }
+
+    .bnt-info {
+    top: 15px;
+    right: 15px;
+    padding: 4px 7px;
+    font-size: 0.95rem;
+    border-radius: 7px;
+    }
+
+    .form-registro {
+        max-width: 90%;
+        padding: 40px;
+    }
+
+    input {
+        font-size: 1.2rem;
+        padding: 1.1rem 1.2rem;
+    }
+
+    .bnt-cadastrar {
+        width: 40%;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .bnt-voltar {
+    top: 10px;
+    left: 10px;
+    padding: 3px;
+    font-size: 0.85rem;
+    border-radius: 6px;
+    }
+
+    .bnt-info {
+    top: 10px;
+    right: 10px;
+    padding: 3px 6px;
+    font-size: 0.85rem;
+    border-radius: 6px;
+    }
+
+    .form-registro {
+        width: 95%;
+        padding: 30px 18px;
+        gap: 10px;
+    }
+
+    .form-registro img {
+        max-width: 260px;
+        margin-bottom: 10px;
+    }
+
+    input {
+        font-size: 1.05rem;
+        padding: 0.9rem 0.8rem;
+    }
+
+    .form-registro label {
+        font-size: 1rem;
+    }
+
+    .bnt-cadastrar {
+        width: 35%;
+        padding: 14px;
+        margin-top: 25px;
+    }
+}
