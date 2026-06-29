@@ -92,7 +92,7 @@ def perfil():
 @user_bp.route('/remover-salvamento', methods=['POST', 'GET'])
 @login_required
 def remover_salvamento():
-    save_id = int(request.form.get('save_id'))
+    save_id = int(request.form.get('save_id',''))
     nome_usuario = session.get('usuario','')
     saves_usuario = load_users(nome_usuario, saves=True)
     for i in range(len(saves_usuario)):
@@ -103,4 +103,19 @@ def remover_salvamento():
     append_components(saves_usuario, nome_usuario)
     flash('Seu save foi removido com sucesso!', 'sucess')
     return redirect(url_for('user.perfil'))
+
+@user_bp.route('/selecionar-salvamento', methods=['POST', 'GET'])
+@login_required
+def selecionar_salvamento():
+    username = session.get('usuario', '')
+    save_id = int(request.form.get('save_id',''))
+    saves = load_users(username, saves=True)
+    if saves:
+        for i in range(len(saves)):
+            if int(saves[i]['id']) == save_id:
+                session['dados_usuario'] = saves[i]
+                flash('O preset foi selecionado com sucesso!', 'sucess')
+    else:
+        flash('Não há nenhum preset salvo.', 'error')
+    return redirect(url_for('main.selectionpage'))
 

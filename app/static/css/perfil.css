@@ -253,6 +253,7 @@
     justify-content: flex-end;
     border-top: 1px solid rgba(255, 255, 255, 0.07);
     padding-top: 1rem;
+    gap: 2.8rem;
 }
 
 .card-acoes form {
@@ -273,6 +274,16 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
+}
+
+.btn-selecionar {
+    color: #9a4ac8;
+    border-color: rgba(186, 82, 224, 0.3);
+}
+
+.btn-selecionar:hover {
+    background: rgba(206, 92, 224, 0.15);
+    border-color: #c15ce0;
 }
 
 .btn-remover {

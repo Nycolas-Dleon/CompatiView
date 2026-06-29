@@ -79,7 +79,7 @@
                         <form action="{{ url_for('main.remover_componente') }}" method="post">
                         <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                             <input type="hidden" name="tipo_componente" value="cpu">
-                            <button type="submit" class="bnt_remover_item"></button>
+                            <button type="submit" class="btn_remover_item"><i class="fa-solid fa-trash-can"></i></button>
                         </form>
                     {% endif %}
                     </td>
@@ -93,7 +93,7 @@
                         <form action="{{ url_for('main.remover_componente') }}" method="post">
                         <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                             <input type="hidden" name="tipo_componente" value="gpu">
-                            <button type="submit" class="bnt_remover_item"></button>
+                            <button type="submit" class="btn_remover_item"><i class="fa-solid fa-trash-can"></i></button>
                         </form>
                     {% endif %}
                     </td>
@@ -107,7 +107,7 @@
                         <form action="{{ url_for('main.remover_componente') }}" method="post">
                         <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                             <input type="hidden" name="tipo_componente" value="motherboard">
-                            <button type="submit" class="bnt_remover_item"></button>
+                            <button type="submit" class="btn_remover_item"><i class="fa-solid fa-trash-can"></i></button>
                         </form>
                     {% endif %}
                     </td>
@@ -131,7 +131,7 @@
                             <form action="{{ url_for('main.remover_componente') }}" method="post">
                             <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                                 <input type="hidden" name="tipo_componente" value="ram">
-                                <button type="submit" class="bnt_remover_item"></button> 
+                                <button type="submit" class="btn_remover_item"><i class="fa-solid fa-trash-can"></i></button> 
                             </form>
                         {% endif %}
                         </td>
@@ -158,7 +158,7 @@
     {% else %}
         {% with messages = get_flashed_messages() %}
             {% if messages %}
-            {% if messages[0][:2] != '02' and messages[0][:2] != '01' and messages[0][:2] != '00' and messages[0][:2] != '08' and messages[0] != 'Usuário logado com sucesso!' and messages[0] != 'Usuário ou senha incorretos!' %}
+            {% if messages[0][:2] != '02' and messages[0][:2] != '01' and messages[0][:2] != '00' and messages[0][:2] != '08' and messages[0] != 'Usuário logado com sucesso!' and messages[0] != 'Usuário ou senha incorretos!' and messages[0] != 'O preset foi selecionado com sucesso!' and messages[0] != 'Não há nenhum preset salvo.' and messages[0] != 'Usuário e senha não podem conter caracteres especias.' and messages[0] != 'Informe um usuário.' and messages[0] != 'Informe uma senha.' and messages[0] != 'O usuário deve ter pelo menos 3 caracteres.' and messages[0] != 'O usuário não pode ter mais que 15 caracteres.' and messages[0] != 'O usuário não pode conter ponto e vírgula (;).' and messages[0] != 'A senha deve ter pelo menos 8 caracteres.' and messages[0] != 'A senha não pode conter mais que 64 caracteres.' and messages[0] != 'A senha não pode conter ponto e vírgula (;).' and messages[0] != 'As senhas digitadas são diferentes!'  %}
             <h2 class="incompativel">As escolhas do usuário são <span class="span-incompativel">incompatíveis!</span></h2>
             <div class="relatorio">
             <ul>

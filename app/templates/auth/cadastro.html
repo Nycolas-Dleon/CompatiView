@@ -1,28 +1,54 @@
 {% extends 'base.html' %}
-{% block link_css %}<link rel="stylesheet" href="{{ url_for('static', filename='css/registro.css') }}">{% endblock %}
+
+{% block link_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/cadastro.css') }}">
+{% endblock %}
 
 {% block body %}
+<div class="conteiner-form">
+    <form action="{{ url_for('auth.cadastro') }}" class="form-registro" method="POST">
+        
+        <a href="{{ url_for('main.homepage') }}" class="bnt-voltar" title="Voltar">
+            <i class="fa-solid fa-arrow-left-long"></i>
+        </a>
+        
+        <a href="#" class="bnt-info" title="Informação">
+            <i class="fa-solid fa-info"></i>
+        </a>
 
-<form href="{{ url_for('auth.cadastro') }}" method="POST">
-    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-    <label for="usuario">Usuário</label>
-    <input
-        type="text"
-        id="username"
-        name="usuario"
-        required
-    >
+        <img class="logo" src="{{ url_for('static', filename='imgs/Logo_dark.svg') }}" alt="Logo">
 
-    <label for="senha">Senha</label>
-    <input
-        type="password"
-        id="password"
-        name="senha"
-        required
-    >
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
 
-    <button type="submit">Cadastrar</button>
+        <label for="username">Nome de usuário :</label>
+        <input
+            type="text"
+            id="username"
+            name="usuario"
+            placeholder="Digite seu nome de usuário"
+            required
+        >
 
-</form>
+        <label for="password">Senha :</label>
+        <input
+            type="password"
+            id="password"
+            name="senha"
+            placeholder="Digite sua senha"
+            required
+        >
 
+        <label for="confirm-password">Confirme sua senha :</label>
+        <input
+            type="password"
+            id="confirm-password"
+            name="confirmar_senha"
+            placeholder="Digite novamente sua senha"
+            required
+        >
+
+        <button class="bnt-cadastrar" type="submit">Cadastrar</button>
+
+    </form>
+</div>
 {% endblock %}
