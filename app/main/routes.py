@@ -110,3 +110,18 @@ def testar_compatibilidade():
             flash('ecompativel')
     return redirect(url_for('main.selectionpage'))
     
+@main_bp.route('/reiniciar_sessao', methods=['GET', 'POST'])
+def reiniciar_sessao():
+    if request.method == 'POST':
+        session['dados_usuario'] =  {
+            'cpu_user': None,
+            'gpu_user': None,
+            'motherboard_user': None,
+            'ram_user': {
+                'tamanho': None,
+                'tipo': None,
+                'quantidade': None
+            }
+        }
+        return redirect(url_for('main.selectionpage'))
+    return render_template('main/selectionpage.html')
