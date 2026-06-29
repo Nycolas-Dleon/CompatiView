@@ -63,7 +63,7 @@
 
     {% if page > 1 %}
     <a href="?page={{ page - 1 }}&categoria={{ request.args.get('categoria', '') }}">
-        <img src="/static/imgs/angle-left-solid.png" alt="Anterior" class="iconarrow">
+        <i class="fa-solid fa-angle-left"></i>
     </a>
     {% endif %}
 
@@ -73,7 +73,7 @@
 
     {% if page < total_paginas %}
     <a href="?page={{ page + 1 }}&categoria={{ request.args.get('categoria', '') }}">
-        <img src="/static/imgs/angle-right-solid.png" alt="Próximo" class="iconarrow">
+        <i class="fa-solid fa-angle-right"></i>
     </a>
     {% endif %}
 
