@@ -9,9 +9,9 @@ Login
 {% block body %}
 
     <form action="{{ url_for('auth.login') }}" class="form-auth" method="POST">
-        <button  onclick="history.back()" class="bnt-voltar" title="Voltar">
+        <a  href="{{ url_for('main.homepage') }}" class="bnt-voltar" title="Voltar">
             <i class="fa-solid fa-arrow-left-long"></i>
-        </button>
+        </a>
         <img src="{{ url_for('static', filename='imgs/Logo_dark.svg') }}" alt="Logo">
         <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
         <div><input type="text" name="usuario" placeholder="Digite seu nome de usuário" required></div>

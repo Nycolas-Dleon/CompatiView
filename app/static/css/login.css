@@ -107,7 +107,7 @@ input:focus::placeholder{
     position: absolute;
     top: 2rem;
     left: 2rem;
-    padding: 0.5rem;
+    padding: 0.8rem;
     border-radius: 1rem;
     background-color: #7041cd;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.621);

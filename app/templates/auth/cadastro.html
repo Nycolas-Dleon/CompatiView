@@ -6,9 +6,9 @@
 <div class="conteiner-form">
     <form action="{{ url_for('auth.cadastro') }}" class="form-registro" method="POST">
         
-        <button type="button" onclick="history.back()" class="bnt-voltar" title="Voltar">
+        <a href="{{ url_for('main.homepage') }}" class="bnt-voltar" title="Voltar">
             <i class="fa-solid fa-arrow-left-long"></i>
-        </button>
+        </a>
         
         <button type="button" class="bnt-info" title="Informação" onclick="abrirModalInfo()">
             <i class="fa-solid fa-info"></i>
