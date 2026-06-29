@@ -521,6 +521,32 @@
     transform: translateY(-1px);
 }
 
+
+.bnt-voltar{
+    color: white;
+    position: absolute;
+    top: 9.5rem;
+    left: 3rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: #7041cd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.621);
+    border: none;
+    cursor: pointer;
+    opacity: 85%;
+}
+
+.bnt-voltar:hover{
+    opacity: 50%;
+    scale: 1.03;
+}
+
+.bnt-voltar:active{
+    scale: 0.96;
+    transform: translateY(1px);
+    transition: 0.05s ease-in-out;
+}
+
 @media (max-width: 600px) {
     .perfil-header {
         flex-direction: column;

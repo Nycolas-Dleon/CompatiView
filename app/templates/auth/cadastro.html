@@ -1,9 +1,7 @@
 {% extends 'base.html' %}
-
 {% block link_css %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/cadastro.css') }}">
 {% endblock %}
-
 {% block body %}
 <div class="conteiner-form">
     <form action="{{ url_for('auth.cadastro') }}" class="form-registro" method="POST">
@@ -12,14 +10,12 @@
             <i class="fa-solid fa-arrow-left-long"></i>
         </a>
         
-        <a href="#" class="bnt-info" title="Informação">
+        <button type="button" class="bnt-info" title="Informação" onclick="abrirModalInfo()">
             <i class="fa-solid fa-info"></i>
-        </a>
+        </button>
 
         <img class="logo" src="{{ url_for('static', filename='imgs/Logo_dark.svg') }}" alt="Logo">
-
         <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-
         <label for="username">Nome de usuário :</label>
         <input
             type="text"
@@ -28,7 +24,6 @@
             placeholder="Digite seu nome de usuário"
             required
         >
-
         <label for="password">Senha :</label>
         <input
             type="password"
@@ -37,7 +32,6 @@
             placeholder="Digite sua senha"
             required
         >
-
         <label for="confirm-password">Confirme sua senha :</label>
         <input
             type="password"
@@ -46,9 +40,63 @@
             placeholder="Digite novamente sua senha"
             required
         >
-
         <button class="bnt-cadastrar" type="submit">Cadastrar</button>
-
     </form>
 </div>
+
+<div class="modal-overlay" id="modal-info-cadastro">
+    <div class="modal modal-cadastro">
+        <button class="modal-fechar" title="Fechar" onclick="fecharModalInfo()">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="modal-cabecalho">
+            <i class="fa-solid fa-circle-info modal-icone"></i>
+            <h2 class="modal-titulo">Condições de cadastro</h2>
+        </div>
+
+        <div class="modal-secao">
+            <p class="modal-secao-titulo">
+                <i class="fa-solid fa-user"></i> Nome de usuário
+            </p>
+            <ul class="modal-lista">
+                <li><i class="fa-solid fa-check"></i> Entre 3 e 15 caracteres</li>
+                <li><i class="fa-solid fa-check"></i> Apenas caracteres ASCII (sem acentos ou símbolos especiais)</li>
+                <li><i class="fa-solid fa-xmark ic-proibido"></i> Não pode conter ponto e vírgula (<code>;</code>)</li>
+            </ul>
+        </div>
+
+        <div class="modal-divisor"></div>
+
+        <div class="modal-secao">
+            <p class="modal-secao-titulo">
+                <i class="fa-solid fa-lock"></i> Senha
+            </p>
+            <ul class="modal-lista">
+                <li><i class="fa-solid fa-check"></i> Entre 8 e 64 caracteres</li>
+                <li><i class="fa-solid fa-check"></i> Apenas caracteres ASCII (sem acentos ou símbolos especiais)</li>
+                <li><i class="fa-solid fa-xmark ic-proibido"></i> Não pode conter ponto e vírgula (<code>;</code>)</li>
+                <li><i class="fa-solid fa-check"></i> As duas senhas digitadas devem ser idênticas</li>
+            </ul>
+        </div>
+
+        <div class="modal-acoes">
+            <button type="button" class="btn-salvar" onclick="fecharModalInfo()">Entendido</button>
+        </div>
+    </div>
+</div>
 {% endblock %}
+
+{% block script %}
+<script>
+    function abrirModalInfo() {
+        document.getElementById('modal-info-cadastro').classList.add('ativo');
+    }
+    function fecharModalInfo() {
+        document.getElementById('modal-info-cadastro').classList.remove('ativo');
+    }
+    document.getElementById('modal-info-cadastro').addEventListener('click', function(e) {
+        if (e.target === this) fecharModalInfo();
+    });
+</script>
+{% endblock %}
+
