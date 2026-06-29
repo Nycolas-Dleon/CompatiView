@@ -68,14 +68,19 @@ def listar_componentes():
 @login_required
 def salvar():
     dados_atuais = session.get('dados_usuario', {}).copy()
+    saves = load_users(session.get('usuario', ''), saves=True)
 
     if dados_atuais['gpu_user'] is None or dados_atuais['cpu_user'] is None or dados_atuais['motherboard_user'] is None or dados_atuais['ram_user']['quantidade'] == None or dados_atuais['ram_user']['tipo'] == None or dados_atuais['ram_user']['tamanho'] == None:
         flash('00Não foi possível salvar essa configuração! Preencha todos os campos.')
         return redirect(url_for('main.selectionpage'))
 
+    elif any(all(item.get(k) == v for k,v in dados_atuais.items()) for item in saves):
+        flash('08Não é possível salvar configurações iguais!')
+        return redirect(url_for('main.selectionpage'))
+        
     username = session.get('usuario', {})
     lista = load_users(username, saves=True)
-    dados_atuais['id'] = len(lista) # Cria um id de salvamento (será útil no endpoint de remoção).
+    dados_atuais['id'] = max([item.get('id', -1) for item in lista], default=-1) + 1 # Cria um id de salvamento (será útil no endpoint de remoção).
     lista.append(dados_atuais) 
     append_components(lista, username)
     flash('08Sua configuração foi salva com sucesso!')
