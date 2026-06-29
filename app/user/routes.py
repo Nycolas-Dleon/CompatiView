@@ -75,7 +75,7 @@ def salvar():
         return redirect(url_for('main.selectionpage'))
 
     elif any(all(item.get(k) == v for k,v in dados_atuais.items()) for item in saves):
-        flash('08Não é possível salvar configurações iguais!')
+        flash('09Não é possível salvar configurações iguais!')
         return redirect(url_for('main.selectionpage'))
         
     username = session.get('usuario', {})
