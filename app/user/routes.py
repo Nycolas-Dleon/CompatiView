@@ -100,11 +100,9 @@ def remover_salvamento():
     save_id = int(request.form.get('save_id',''))
     nome_usuario = session.get('usuario','')
     saves_usuario = load_users(nome_usuario, saves=True)
-    for i in range(len(saves_usuario)):
-        if int(saves_usuario[i]['id']) == save_id:
-            saves_usuario.pop(i)
-            break
-
+    if any(item.get('id') == save_id for item in saves_usuario):
+        i =  next((indice for indice, item in enumerate(saves_usuario) if item.get('id') == save_id), None)   
+        saves_usuario.pop(i)
     append_components(saves_usuario, nome_usuario)
     flash('Seu save foi removido com sucesso!', 'sucess')
     return redirect(url_for('user.perfil'))
