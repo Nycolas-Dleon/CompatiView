@@ -2,6 +2,11 @@
 {% block link_css %}<link rel="stylesheet" href="{{ url_for('static', filename='css/components.css') }}">{% endblock %}
 
 {% block body %}
+<form action="{{ url_for('main.homepage') }}">
+<button class="bnt-voltar" title="Voltar">
+    <i class="fa-solid fa-arrow-left-long"></i>
+</button>
+</form>
 
 <form method="GET" class="filtros">
 
