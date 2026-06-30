@@ -65,7 +65,12 @@
                 <tr>
                     <th>Componente</th>
                     <th>Escolha</th>
-                    <th></th>
+                    <th>
+                        <form action="{{ url_for('main.reiniciar_sessao') }}" method="post">
+                            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                            <button type="submit" class="btn_remover_item"><i class="fa-solid fa-eraser"></i></button>
+                        </form>
+                    </th>
                 </tr>
             </thead>
 
