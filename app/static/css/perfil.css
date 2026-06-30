@@ -306,7 +306,7 @@
     border: 1px dashed rgba(255, 255, 255, 0.12);
     border-radius: 1.6rem;
     color: var(--cor-texto-suave, #aaa);
-    margin-bottom: 38rem;
+    margin-bottom: 49.3rem;
 }
 
 .salvamentos-vazio i {
@@ -525,8 +525,6 @@
 .bnt-voltar{
     color: white;
     position: absolute;
-    top: 9.5rem;
-    left: 3rem;
     padding: 1rem;
     border-radius: 1rem;
     background-color: #7041cd;
@@ -534,6 +532,10 @@
     border: none;
     cursor: pointer;
     opacity: 85%;
+    position: fixed;
+    top: 2.2rem;
+    right: 2rem;
+    z-index: 4;
 }
 
 .bnt-voltar:hover{
