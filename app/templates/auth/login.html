@@ -8,15 +8,18 @@ Login
 
 {% block body %}
 
+    <a  href="{{ url_for('main.homepage') }}" class="bnt-voltar" title="Voltar">    
+            <i class="fa-solid fa-arrow-left-long"></i>
+        </a>
     <form action="{{ url_for('auth.login') }}" class="form-auth" method="POST">
-        <a  href="{{ url_for('main.homepage') }}" class="bnt-voltar" title="Voltar">
+        <a  href="{{ url_for('main.homepage') }}" class="bnt-voltar-form" title="Voltar">    
             <i class="fa-solid fa-arrow-left-long"></i>
         </a>
         <img src="{{ url_for('static', filename='imgs/Logo_dark.svg') }}" alt="Logo">
         <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
         <div><input type="text" name="usuario" placeholder="Digite seu nome de usuário" required></div>
         <div><input type="password" name="senha" placeholder="Digite sua senha" required></div>
-        <a href="{{ url_for('auth.cadastro') }}">Ainda não possui uma conta?</a>
         <input type="submit" value="Login" id="botao-login">
+        <p>Ainda não possui uma conta?<br><br><a href="{{ url_for('auth.cadastro') }}" id="link-cadastro">Cadastre-se</a></p>
     </form>
 {% endblock %}

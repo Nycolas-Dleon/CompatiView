@@ -45,6 +45,24 @@ img{
     width: 100%;
 }
 
+.form-auth p{
+    font-size: 1rem;
+}
+
+#link-cadastro{
+    color: #7041cd;
+    text-decoration: none;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+    transition: 0.3s ease-in-out;
+    margin-left: 0.5rem;
+}
+
+#link-cadastro:active{
+    color: #5e36ad;
+    transition: 0.3s ease-in-out;
+}
+
 input{
     scale: 1;
     font-size: 1.5rem;
@@ -103,14 +121,13 @@ input:focus::placeholder{
 }
 
 .bnt-voltar{
-    color: white;
+    color: #7041cd;
     position: absolute;
     top: 2rem;
     left: 2rem;
-    padding: 0.8rem;
-    border-radius: 1rem;
-    background-color: #7041cd;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.621);
+    font-size: 2rem;
+    margin-bottom: 5rem;
+    text-shadow: 0 0 0.5rem #0c0c0c50;
     border: none;
     cursor: pointer;
 }
@@ -126,6 +143,9 @@ input:focus::placeholder{
     transition: 0.05s ease-in-out;
 }
 
+.btn-voltar-form, .bnt-voltar-form i{
+    display: none;
+}
 
 /* Formatação para tablet */
 
@@ -168,4 +188,17 @@ input:focus::placeholder{
         max-width: 90%;
     }
 
+    .btn-voltar{
+        display: none;
+    }
+
+    .bnt-voltar-form, .bnt-voltar-form i{
+        display: block;
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        font-size: 2rem;
+        color: #7041cd;
+        text-shadow: 0 0 0.5rem #0c0c0c50;
+    }
 }
