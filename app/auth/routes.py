@@ -1,5 +1,5 @@
 from flask import Flask, redirect, render_template, url_for, session, request, flash
-from app.utils.data_manager import add_user, delete_user, load_users
+from app.utils.data_manager import add_user, delete_user, load_users, validate_username, validate_password, passwords_match
 from werkzeug.security import generate_password_hash, check_password_hash
 from app.auth import auth_bp
 from app.security import login_required
@@ -17,44 +17,20 @@ def cadastro():
 
     # Validação
 
-    if not usuario.isascii() or not senha.isascii():
-        flash("Usuário e senha não podem conter caracteres especias.", "error")
+    err = ""
+
+    username_validation = validate_username(usuario)
+    password_validation = validate_password(senha)
+
+    err += username_validation
+    err += password_validation
+
+    if err:
+        flash(err, "error")
         return render_template("auth/cadastro.html")
 
-    if not usuario:
-        flash("Informe um usuário.", "error")
-        return render_template("auth/cadastro.html")
-
-    if not senha:
-        flash("Informe uma senha.", "error")
-        return render_template("auth/cadastro.html")
-
-    if len(usuario) < 3:
-        flash("O usuário deve ter pelo menos 3 caracteres.", "error")
-        return render_template("auth/cadastro.html")
-    
-    if len(usuario) > 15:
-        flash("O usuário não pode ter mais que 15 caracteres.", "error")
-        return render_template("auth/cadastro.html")
-    
-    if ";" in usuario:
-        flash("O usuário não pode conter ponto e vírgula (;).", "error")
-        return render_template("auth/cadastro.html")
-    
-    if len(senha) < 8:
-        flash("A senha deve ter pelo menos 8 caracteres.", "error")
-        return render_template("auth/cadastro.html")
-    
-    if len(senha) > 64:
-        flash("A senha não pode conter mais que 64 caracteres", "error")
-        return render_template("auth/cadastro.html")
-    
-    if ";" in senha:
-        flash("A senha não pode conter ponto e vírgula (;).", "error")
-        return render_template("auth/cadastro.html")
-    
-    if senha != confirmar_senha:
-        flash("As senhas digitadas são diferentes!", "error")
+    if not passwords_match(senha, confirmar_senha):
+        flash("As senha confirmada não é igual a senha inserida", "error")
         return render_template("auth/cadastro.html")
 
     # Verificação de conta

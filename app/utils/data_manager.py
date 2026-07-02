@@ -205,3 +205,36 @@ def delete_user(usuario:str):
         with open(PATH_CSV, 'w') as arq:
             arq.write('\n'.join(arquivo_alterado) + '\n')
 
+def validate_username(username):
+
+    error = ""
+
+    if not username.isalnum():
+        error += "O nome de usuário só pode conter caracteres alfanuméricos. "
+    
+    if len(username) < 3:
+        error += "O nome de usuário deve conter no mínimo 3 caracteres. "
+
+    if len(username) > 15:
+        error += "O nome de usuário não pode conter mais que 15 caracteres. "
+    
+    return error
+
+def validate_password(password):
+
+    error = ""
+
+    if not password.isalnum():
+        error += "A senha só pode conter caracteres alfanuméricos. "
+    
+    if len(password) < 8:
+        error += "A senha deve conter no mínimo 8 caracteres. "
+
+    if len(password) > 64:
+        error += "A senha não pode conter mais que 64 caracteres. "
+    
+    return error
+    
+def passwords_match(password, confirmation):
+
+    return password == confirmation
