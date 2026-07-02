@@ -1,0 +1,258 @@
+{% extends 'base.html' %}
+
+{% block title %}Perfil — CompatiView{% endblock %}
+
+{% block link_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/perfil.css') }}">
+{% endblock %}
+
+{% block body %}
+<button type="button" onclick="history.back()" class="bnt-voltar" title="Voltar">
+    <i class="fa-solid fa-arrow-left-long"></i>
+</button>
+<main class="perfil-container">
+
+    <section class="perfil-header">
+        <div class="perfil-avatar">
+            <i class="fa-solid fa-circle-user"></i>
+        </div>
+        <div class="perfil-info">
+            <div class="perfil-nome-wrapper">
+                <h1 class="perfil-saudacao">
+                    Olá, <span class="perfil-nome">{{ session.get('usuario', 'Usuário') }}</span>
+                </h1>
+                <button class="btn-editar-nome"
+                        title="Alterar nome de usuário"
+                        onclick="abrirModal('modal-username')">
+                    <i class="fa-solid fa-pencil"></i>
+                </button>
+            </div>
+            <p class="perfil-subtitulo">Seus componentes salvos estão aqui.</p>
+        </div>
+        <div class="perfil-acoes">
+            <button class="btn-acao btn-alterar-senha"
+                    title="Alterar senha"
+                    onclick="abrirModal('modal-senha')">
+                <i class="fa-solid fa-lock"></i>
+                Alterar senha
+            </button>
+            <a href="{{ url_for('auth.logout') }}" class="btn-acao btn-logout">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Sair
+            </a>
+            <button class="btn-acao btn-remover-conta"
+                    title="Remover conta"
+                    onclick="abrirModal('modal-remover-conta')">
+                <i class="fa-solid fa-trash-can"></i>
+                Remover conta
+            </button>
+        </div>
+    </section>
+
+<section class="perfil-salvamentos">
+        <h2 class="secao-titulo">
+            <i class="fa-solid fa-bookmark"></i>
+            salvamentos
+            <span class="secao-contador">{{ salvamentos|length }}</span>
+        </h2>
+
+        {% if salvamentos %}
+        <div class="salvamentos-grid">
+            {% for item in salvamentos %}
+            <div class="card-salvamento">
+                <div class="card-cabecalho">
+                    <i class="fa-solid fa-desktop" style="margin-left: 0.2rem; font-size: 1.8rem;"></i>
+                    <span class="card-id">save #{{ loop.index }}</span>
+                </div>
+                <ul class="card-specs">
+                    <li>
+                        <span class="spec-label"><i class="fa-solid fa-microchip"></i> cpu</span>
+                        <span class="spec-valor">{{ item.cpu_user or '—' }}</span>
+                    </li>
+                    <li>
+                        <span class="spec-label"><i class="fa-solid fa-display"></i> gpu</span>
+                        <span class="spec-valor">{{ item.gpu_user or '—' }}</span>
+                    </li>
+                    <li>
+                        <span class="spec-label"><i class="fa-solid fa-server"></i> placa-mãe</span>
+                        <span class="spec-valor">{{ item.motherboard_user or '—' }}</span>
+                    </li>
+                    <li>
+                        <span class="spec-label"><i class="fa-solid fa-memory"></i> ram</span>
+                        <span class="spec-valor">
+                            {% if item.ram_user and item.ram_user.tamanho %}
+                                {{ item.ram_user.tamanho }} {{ item.ram_user.tipo }} ({{ item.ram_user.quantidade }}x)
+                            {% else %}
+                                —
+                            {% endif %}
+                        </span>
+                    </li>
+                </ul>
+                <div class="card-acoes">
+                    <form method="post" action="{{ url_for('user.remover_salvamento') }}">
+                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                        <input type="hidden" name="save_id" value="{{ item.id }}">
+                        <button type="submit" class="btn-card btn-remover" title="remover salvamento">
+                            <i class="fa-solid fa-trash"></i> Remover Preset
+                        </button>
+                    </form>
+                    <form method="post" action="{{ url_for('user.selecionar_salvamento') }}">
+                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                        <input type="hidden" name="save_id" value="{{ item.id }}">
+                        <button type="submit" class="btn-card btn-selecionar" title="utilizar preset">
+                            <i class="fa-solid fa-circle-check"></i> Utilizar Preset
+                        </button>
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        {% else %}
+        <div class="salvamentos-vazio">
+            <i class="fa-regular fa-bookmark"></i>
+            <p>nenhuma configuração salva ainda.</p>
+            <a href="{{ url_for('main.selectionpage') }}" class="btn-explorar">montar uma configuração</a>
+        </div>
+        {% endif %}
+    </section>
+
+</main>
+
+<!-- modal de alteração de nome de usuário ===== -->
+<div class="modal-overlay" id="modal-username">
+    <div class="modal">
+        <button class="modal-fechar" title="fechar" onclick="fecharModal('modal-username')">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="modal-cabecalho">
+            <i class="fa-solid fa-pencil modal-icone"></i>
+            <h2 class="modal-titulo">alterar nome de usuário</h2>
+        </div>
+        <form method="post" action="{{ url_for('auth.alterar_username') }}">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <div class="modal-campo">
+                <label for="novo-username">novo nome de usuário</label>
+                <input
+                    type="text"
+                    name="novo_username"
+                    id="novo-username"
+                    placeholder="digite o novo nome..."
+                    maxlength="50"
+                    required
+                    autocomplete="off"
+                >
+            </div>
+            <div class="modal-campo">
+                <label for="senha-username">Confirme sua senha atual</label>
+                <input
+                    type="password"
+                    name="senha-inserida"
+                    id="senha-username"
+                    placeholder="Digite sua senha..."
+                    required
+                    autocomplete="current-password"
+                >
+            </div>
+            <div class="modal-acoes">
+                <button type="button" class="btn-cancelar" onclick="fecharModal('modal-username')">Cancelar</button>
+                <button type="submit" class="btn-salvar">Salvar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- modal de alteração de senha -->
+<div class="modal-overlay" id="modal-senha">
+    <div class="modal">
+        <button class="modal-fechar" title="Fechar" onclick="fecharModal('modal-senha')">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="modal-cabecalho">
+            <i class="fa-solid fa-lock modal-icone"></i>
+            <h2 class="modal-titulo">Alterar senha</h2>
+        </div>
+        <form method="POST" action="{{ url_for('auth.alterar_senha') }}">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <div class="modal-campo">
+                <label for="senha-atual">Senha atual</label>
+                <input
+                    type="password"
+                    name="senha-inserida"
+                    id="senha-atual"
+                    placeholder="Digite sua senha atual..."
+                    required
+                    autocomplete="current-password"
+                >
+            </div>
+            <div class="modal-campo">
+                <label for="nova-senha">Nova senha</label>
+                <input
+                    type="password"
+                    name="nova_senha"
+                    id="nova-senha"
+                    placeholder="Digite a nova senha..."
+                    required
+                    autocomplete="new-password"
+                >
+            </div>
+            <div class="modal-acoes">
+                <button type="button" class="btn-cancelar" onclick="fecharModal('modal-senha')">Cancelar</button>
+                <button type="submit" class="btn-salvar">Salvar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- modal de remover conta -->
+<div class="modal-overlay" id="modal-remover-conta">
+    <div class="modal modal-perigo">
+        <button class="modal-fechar" title="Fechar" onclick="fecharModal('modal-remover-conta')">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="modal-cabecalho">
+            <i class="fa-solid fa-triangle-exclamation modal-icone modal-icone-perigo"></i>
+            <h2 class="modal-titulo">Remover conta</h2>
+        </div>
+        <p class="modal-aviso">Essa ação é permanente e não pode ser desfeita. Todos os seus salvamentos serão perdidos.</p>
+        <form method="POST" action="{{ url_for('auth.remover_conta') }}">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <div class="modal-campo">
+                <label for="senha-remover">Confirme sua senha para continuar</label>
+                <input
+                    type="password"
+                    id="senha-remover"
+                    name="senha-inserida"
+                    placeholder="Digite sua senha..."
+                    required
+                    autocomplete="current-password"
+                >
+            </div>
+            <div class="modal-acoes">
+                <button type="button" class="btn-cancelar" onclick="fecharModal('modal-remover-conta')">Cancelar</button>
+                <button type="submit" class="btn-deletar">Remover conta</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+    function abrirModal(id) {
+        document.getElementById(id).classList.add('ativo');
+    }
+    function fecharModal(id) {
+        var modal = document.getElementById(id);
+        modal.classList.remove('ativo');
+        modal.querySelectorAll('input[type="password"], input[type="text"]').forEach(function(el) {
+            el.value = '';
+        });
+    }
+    document.querySelectorAll('.modal-overlay').forEach(function(overlay) {
+        overlay.addEventListener('click', function(e) {
+            if (e.target === overlay) fecharModal(overlay.id);
+        });
+    });
+</script>
+{% endblock %}

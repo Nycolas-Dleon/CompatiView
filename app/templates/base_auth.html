@@ -4,29 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title%}CompatiView{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base_auth.css') }}">
     {% block link_css %}{% endblock %} 
     <link rel="shortcut icon" href="{{ url_for('static', filename='imgs/favicon.ico') }}" type="image/x-icon">
     {% block link_icons %}{% endblock %}
     <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=SUSE:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
 </head>
 <body>
+  
     <div class="background"></div>
-    <div class="background-overlay"></div>
-    
-    <header>
-
-        <nav class="navbar">
-            <div class="navbar-overlay"></div>
-            <a href="/" id="logo-link"><img src="{{ url_for('static', filename='imgs/Logo.svg') }}" alt="Logo"></a>
-            {% block nav_links %}
-            {% endblock %}
-        </nav>
-
-    </header>
-
     <div class="container-mensagens">
         {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
@@ -40,15 +29,9 @@
             {% endif %}
         {% endwith %}
     </div>
-
+  
     {% block body %}
     {% endblock %}
-    <footer class="footer">
-        <div class="footer-content">
-                <p>&copy; 2026 CompatiView. Todos os direitos reservados.</p>
-                <p>Desenvolvido por CompatiView Team.</p>
-        </div>
-    </footer>
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
@@ -69,7 +52,5 @@
     });
 </script>
 
-    {% block script %}
-    {% endblock %}
 </body>
 </html>

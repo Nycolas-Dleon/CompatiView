@@ -1,6 +1,31 @@
 @import url('base.css'); /* Não pode faltar o CSS da base */
 
 /* Container da tabela */
+
+.bnt-voltar{
+    color: white;
+    position: absolute;
+    top: 9.5rem;
+    left: 1.5rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: #7041cd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.621);
+    border: none;
+    cursor: pointer;
+    opacity: 85%;
+}
+
+.bnt-voltar:hover{
+    opacity: 50%;
+    scale: 1.03;
+}
+
+.bnt-voltar:active{
+    scale: 0.96;
+    transform: translateY(1px);
+    transition: 0.05s ease-in-out;
+}
 .table-container {
     width: 90%;
     margin: 30px auto;
@@ -51,8 +76,8 @@ td:last-child {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
-    margin: 30px 0 11.1rem;
+    gap: 2rem;
+    margin: 3rem 0 30.8rem;
 }
 
 .iconarrow {

@@ -12,16 +12,20 @@ CompatiView
 {% endblock %}
 
 {% block nav_links %}
-
+{% if not session.get('usuario') %}
     <ul class="area-login">
         <li id="login-btn">
-            <a href="#" target="_blank" rel="noopenenoreferrer">Entrar</a>
+            <a href="{{ url_for('auth.login') }}" target="_self">Entrar</a>
         </li>
         <li id="cadastro-btn">
-            <a href="#" target="_blank" rel="noopenenoreferrer">Cadastre-se</a>
+            <a href="{{ url_for('auth.cadastro') }}" target="_self" >Cadastre-se</a>
         </li>
     </ul>
-
+{% else %}
+<ul class="profile-bar">
+    <li><a href="{{ url_for('user.perfil') }}"><i id="profile-icon" class="fa-solid fa-circle-user"></i></a></li>
+</ul>
+{% endif %}
     <div class="menu-hamburguer">
         <input type="checkbox" id="menu-toggle">
             <label for="menu-toggle" class="menu-icon">
@@ -55,7 +59,7 @@ CompatiView
     <p id="descricao">A melhor escolha para verificar a compatibilidade entre Hardwares</p>
     <p>Clique no botão abaixo e teste já!</p>
 
-    <a href="{{ url_for('selectionpage') }}" target="_self" rel="noopener noreferrer">Acessar</a>
+    <a href="{{ url_for('main.selectionpage') }}" target="_self" rel="noopener noreferrer">Acessar</a>
 
 </section>
 
@@ -65,7 +69,7 @@ CompatiView
     <hr>
     <div class="cards-outros">
 
-        <a href="/" target="_blank" rel="noopener noreferrer" onclick="abrirAlerta(event)">
+        <a href="{{ url_for('user.perfil') }}" target="_self">
          <div class="card">
             <i class="fa-solid fa-bookmark"></i>
             <h3>Predefinições</h3>
@@ -75,7 +79,7 @@ CompatiView
          </div>
         </a>
 
-        <a href="{{ url_for('listar_componentes') }}" target="_blank" rel="noopener noreferrer">
+        <a href="{{ url_for('user.listar_componentes') }}" target="_self">
          <div class="card">
             <i class="fa-solid fa-clipboard-list"></i>
             <h3>Tabela de Peças</h3>
